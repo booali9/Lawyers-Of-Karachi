@@ -1,0 +1,237 @@
+.bookingMain {
+  flex: 1;
+  margin-top: 90px;
+}
+
+.bookingHero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 5rem 0 4rem 0;
+  text-align: center;
+}
+
+.bookingHero h1 {
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.heroDesc {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.bookingGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+}
+
+@media (max-width: 992px) {
+  .bookingGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.formSection h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.formIntro {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(197, 168, 92, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.checkboxLabel span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.formNote {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoCard,
+.contactCard {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.infoCard h3,
+.contactCard h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.benefitsList,
+.prepList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefitsList li,
+.prepList li {
+  padding-left: 1.8rem;
+  position: relative;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.benefitsList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.prepList li::before {
+  content: '•';
+  position: absolute;
+  left: 0.3rem;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.contactCard p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.urgentContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.urgentLink {
+  padding: 1rem;
+  background: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  font-weight: 600;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.urgentLink:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .formSection h2,
+  .infoCard h3,
+  .contactCard h3 {
+    color: var(--accent);
+  }
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .infoCard,
+  .contactCard {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .urgentLink {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}

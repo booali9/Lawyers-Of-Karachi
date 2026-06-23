@@ -1,0 +1,500 @@
+.contactMain {
+  flex: 1;
+}
+
+/* Hero Section */
+.contactHero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 8rem 0 5rem 0;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.heroLabel {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-inter), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.contactHero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.heroDesc {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .contactHero {
+    padding: 6rem 0 4rem 0;
+    margin-top: 70px;
+  }
+}
+
+/* Quick Contact Cards */
+.quickContact {
+  background-color: var(--surface);
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.quickCard {
+  background: var(--background);
+  padding: 2.5rem 2rem;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  color: inherit;
+}
+
+.quickCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.quickIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.quickCard h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.quickCard p {
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.availability {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  background: rgba(197, 168, 92, 0.1);
+  border-radius: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .quickCard {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  .quickCard h3 {
+    color: var(--accent);
+  }
+}
+
+/* Contact Grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+}
+
+@media (max-width: 992px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Form Section */
+.formSection h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.formDesc {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(197, 168, 92, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.checkboxLabel span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.formNote {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .formSection h2 {
+    color: var(--accent);
+  }
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Info Section */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoCard,
+.hoursCard,
+.socialCard {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.infoCard h2 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.infoIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.infoItem strong {
+  display: block;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.infoItem p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+.infoItem a {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.infoItem a:hover {
+  color: var(--accent);
+}
+
+.hoursCard h3,
+.socialCard h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.hoursList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hoursList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-muted);
+}
+
+.hoursList li:last-child {
+  border-bottom: none;
+}
+
+.hoursList li.emergency {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.socialLinks a {
+  padding: 0.8rem 1.5rem;
+  background: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  font-weight: 600;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .infoCard,
+  .hoursCard,
+  .socialCard {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  .infoCard h2,
+  .hoursCard h3,
+  .socialCard h3 {
+    color: var(--accent);
+  }
+  .infoItem strong {
+    color: var(--accent);
+  }
+  .hoursList li {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+  .socialLinks a {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Offices Section */
+.officesSection {
+  background-color: var(--surface);
+}
+
+.officesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.officeCard {
+  background: var(--background);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.officeCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.officeCard h3 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.officeDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.officeDetail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.detailIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.officeDetail p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.officeDetail a {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.officeDetail a:hover {
+  color: var(--accent);
+}
+
+.directionsLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  font-weight: 600;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.directionsLink:hover {
+  color: var(--accent-dark);
+  transform: translateX(5px);
+}
+
+@media (max-width: 576px) {
+  .officesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .officeCard {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  .officeCard h3 {
+    color: var(--accent);
+  }
+}
+
+/* Emergency Banner */
+.emergencyBanner {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  color: #fff;
+}
+
+.emergencyBanner h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.emergencyDesc {
+  font-size: 1.2rem;
+  color: #fecaca;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emergencyActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .emergencyActions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

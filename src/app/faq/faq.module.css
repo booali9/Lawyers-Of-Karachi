@@ -1,0 +1,244 @@
+.faqMain {
+  flex: 1;
+}
+
+/* Hero Section */
+.faqHero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 8rem 0 5rem 0;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.heroLabel {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-inter), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.faqHero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.heroDesc {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .faqHero {
+    padding: 6rem 0 4rem 0;
+    margin-top: 70px;
+  }
+}
+
+/* Quick Links */
+.quickLinksSection {
+  background-color: var(--surface);
+  padding: 2rem 0;
+}
+
+.quickLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quickLink {
+  padding: 0.75rem 1.5rem;
+  background: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quickLink:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .quickLink {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* FAQ Categories */
+.faqCategory {
+  margin-bottom: 4rem;
+  scroll-margin-top: 100px;
+}
+
+.categoryTitle {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .categoryTitle {
+    color: var(--accent);
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faqItem {
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius-lg);
+  padding: 0;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.faqItem:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.faqItem[open] {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.faqQuestion {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: '+';
+  font-size: 2rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: var(--transition);
+  font-weight: 300;
+}
+
+.faqItem[open] .faqQuestion::after {
+  content: '−';
+}
+
+.faqQuestion:hover {
+  color: var(--accent);
+}
+
+.faqAnswer {
+  padding: 0 2rem 2rem 2rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faqAnswer p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .faqItem {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .faqQuestion {
+    color: var(--accent);
+  }
+}
+
+/* Contact Section */
+.contactSection {
+  background-color: var(--surface);
+}
+
+.contactBox {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  padding: 4rem 3rem;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-lg);
+}
+
+.contactContent h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contactContent p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.contactActions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .contactBox {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .contactActions {
+    flex-direction: column;
+    width: 100%;
+  }
+}
