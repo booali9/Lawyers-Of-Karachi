@@ -5,18 +5,24 @@ import { notFound } from "next/navigation";
 import styles from "./service.module.css";
 import { servicesData } from "./servicesData";
 
-export function generateMetadata({ params }) {
-  const service = servicesData[params.slug];
+export function generateStaticParams() {
+  return Object.keys(servicesData).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = servicesData[slug];
   if (!service) return { title: "Service Not Found" };
-  
+
   return {
     title: `${service.title} | Karachi Legal House`,
     description: service.desc,
   };
 }
 
-export default function ServicePage({ params }) {
-  const service = servicesData[params.slug];
+export default async function ServicePage({ params }) {
+  const { slug } = await params;
+  const service = servicesData[slug];
 
   if (!service) {
     notFound();
