@@ -49,13 +49,11 @@ export default function Navbar() {
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            {dropdownOpen && (
-              <div className={styles.dropdownMenu}>
+            <div className={`${styles.dropdownMenu} ${dropdownOpen ? styles.dropdownVisible : ''}`}>
                 {areas.map((a, i) => (
-                  <Link key={i} href={a.href} className={styles.dropdownItem}>{a.name}</Link>
+                  <Link key={i} href={a.href} className={styles.dropdownItem} onClick={() => setDropdownOpen(false)}>{a.name}</Link>
                 ))}
               </div>
-            )}
           </div>
           <Link href="/lawyers" className={styles.link}>Team</Link>
           <Link href="/success-stories" className={styles.link}>Results</Link>
