@@ -1,0 +1,133 @@
+.articleMain {
+  flex: 1;
+}
+
+/* ─── HERO ─── */
+.articleHero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  margin-top: 80px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.heroBg {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 4rem;
+  width: 100%;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a0a0a0;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #ffffff;
+}
+
+.articleHero h1 {
+  font-family: var(--font-playfair), serif;
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+}
+
+.articleMeta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888888;
+  font-size: 0.9rem;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* ─── BODY ─── */
+.articleContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.articleContent {
+  font-family: var(--font-inter), sans-serif;
+  color: #333333;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.leadPara {
+  font-size: 1.2rem;
+  color: #555555;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.articleContent h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  color: #000000;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.articleContent p {
+  margin-bottom: 1.5rem;
+}
+
+.articleContent ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.articleContent li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .articleHero {
+    height: 50vh;
+    margin-top: 70px;
+  }
+  .heroInner {
+    padding-bottom: 2rem;
+  }
+}

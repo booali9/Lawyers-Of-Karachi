@@ -58,8 +58,8 @@
 }
 .lawyerCard { display: flex; flex-direction: column; background: #fff; }
 .lawyerImageWrapper { position: relative; height: 420px; overflow: hidden; }
-.lawyerPhoto { object-fit: cover; object-position: top; filter: grayscale(100%); transition: all 0.5s ease; }
-.lawyerCard:hover .lawyerPhoto { filter: grayscale(0%); transform: scale(1.04); }
+.lawyerPhoto { object-fit: cover; object-position: top; transition: all 0.5s ease; }
+.lawyerCard:hover .lawyerPhoto { transform: scale(1.04); }
 .lawyerOverlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
@@ -90,7 +90,7 @@
 .whyGrid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 7rem; align-items: center; }
 .whyImageCol { position: relative; }
 .whyImageWrapper { position: relative; width: 100%; aspect-ratio: 4/5; }
-.whyImg { object-fit: cover; filter: grayscale(100%); }
+.whyImg { object-fit: cover; }
 .whyContent {}
 .whyContent h2 { font-family: var(--font-playfair), serif; font-size: clamp(2rem, 4vw, 3rem); color: #000; line-height: 1.15; margin-bottom: 2.5rem; }
 .whyContent .eyebrow { color: #888; }

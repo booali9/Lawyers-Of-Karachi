@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, Calendar, User } from "lucide-react";
 import styles from "./blog.module.css";
 
 export const metadata = {
@@ -16,161 +17,127 @@ export default function BlogPage() {
       title: "Understanding Bail Laws in Pakistan: Your Complete Guide",
       excerpt: "Learn about bail procedures, types of bail, and your rights under Pakistani criminal law. Essential information for anyone facing criminal charges.",
       date: "June 15, 2026",
-      author: "Advocate Muhammad Taqi",
+      author: "Advocate Shehroze Ahmed",
       readTime: "8 min read",
-      image: "/hero.png"
+      image: "/images/criminal_law.png"
     },
     {
       category: "Family Law",
       title: "Khula Process in Pakistan: Step-by-Step Guide for 2026",
       excerpt: "Complete guide to filing for khula in Pakistan, required documents, court procedures, and timeline. Everything you need to know about dissolution of marriage.",
       date: "June 10, 2026",
-      author: "Advocate Fatima Qureshi",
+      author: "Advocate Shehroze Ahmed",
       readTime: "10 min read",
-      image: "/hero.png"
+      image: "/images/family_law.png"
     },
     {
       category: "Corporate Law",
       title: "How to Register a Company in Pakistan: SECP Process",
       excerpt: "Step-by-step guide to company registration with SECP, required documents, fees, and timeline. Start your business legally in Pakistan.",
       date: "June 5, 2026",
-      author: "Advocate Ahmed Hassan",
+      author: "Advocate Shehroze Ahmed",
       readTime: "12 min read",
-      image: "/hero.png"
+      image: "/images/corporate_law.png"
     },
     {
       category: "Property Law",
       title: "Property Transfer Process in Pakistan: Complete Documentation Guide",
       excerpt: "Learn about property transfer procedures, documentation requirements, and legal precautions to avoid fraud in real estate transactions.",
       date: "May 28, 2026",
-      author: "Advocate Saima Malik",
+      author: "Advocate Shehroze Ahmed",
       readTime: "9 min read",
-      image: "/hero.png"
+      image: "/images/property_law.png"
     },
     {
-      category: "Cyber Law",
-      title: "PECA Law Explained: What You Need to Know About Cyber Crimes",
-      excerpt: "Understanding the Prevention of Electronic Crimes Act (PECA) 2016, cyber crime penalties, and how to protect yourself online in Pakistan.",
+      category: "Civil Law",
+      title: "Filing a Civil Suit in Pakistan: What You Need to Know",
+      excerpt: "Understanding the civil litigation process, from filing the initial plaint to the final judgment and decree. A practical guide for litigants.",
       date: "May 20, 2026",
-      author: "Advocate Kashif Raza",
-      readTime: "7 min read",
-      image: "/hero.png"
+      author: "Advocate Shehroze Ahmed",
+      readTime: "11 min read",
+      image: "/images/civil_law.png"
     },
     {
-      category: "Supreme Court",
-      title: "Recent Supreme Court Judgments: Impact on Pakistani Law",
-      excerpt: "Analysis of important Supreme Court decisions from 2026 and their implications for civil rights, criminal law, and constitutional matters.",
+      category: "Cyber Crime",
+      title: "PECA 2016: Your Rights and Cyber Defamation in Pakistan",
+      excerpt: "How to report cyber harassment, digital fraud, and online defamation to the FIA under the Prevention of Electronic Crimes Act.",
       date: "May 15, 2026",
-      author: "Advocate Ayesha Siddiqui",
-      readTime: "15 min read",
-      image: "/hero.png"
+      author: "Advocate Shehroze Ahmed",
+      readTime: "7 min read",
+      image: "/images/cyber_law.png"
     }
-  ];
-
-  const categories = [
-    "All", "Criminal Law", "Family Law", "Corporate Law", 
-    "Property Law", "Cyber Law", "Supreme Court", "Legal Guides"
   ];
 
   return (
     <>
       <Navbar />
       <main className={styles.blogMain}>
+        
         {/* Hero Section */}
         <section className={styles.blogHero}>
-          <div className="container text-center">
-            <span className={styles.heroLabel}>Legal Knowledge Base</span>
-            <h1>Legal Blog & Insights</h1>
+          <Image src="/images/hero_banner.png" alt="Legal Blog" fill priority className={styles.heroBg} />
+          <div className={styles.heroOverlay}></div>
+          <div className={`container ${styles.heroInner}`}>
+            <span className={styles.heroEyebrow}>
+              <span className={styles.eyebrowLine}></span>
+              Knowledge Hub
+            </span>
+            <h1>Legal Blog &amp; Insights</h1>
             <p className={styles.heroDesc}>
-              Stay informed with latest legal news, Supreme Court judgments, expert analysis, and practical legal guides for Pakistan
+              Expert analysis, legal guides, and updates on Pakistani law by Advocate Shehroze Ahmed and the team at Karachi Legal House.
             </p>
           </div>
         </section>
 
-        {/* Categories Filter */}
-        <section className={`section ${styles.categoriesSection}`}>
+        {/* Categories Section */}
+        <section className={styles.categoriesSection}>
           <div className="container">
             <div className={styles.categories}>
-              {categories.map((category, index) => (
-                <button key={index} className={styles.categoryBtn}>
-                  {category}
-                </button>
-              ))}
+              <button className={`${styles.categoryBtn} ${styles.active}`}>All Posts</button>
+              <button className={styles.categoryBtn}>Criminal Law</button>
+              <button className={styles.categoryBtn}>Family Law</button>
+              <button className={styles.categoryBtn}>Corporate Law</button>
+              <button className={styles.categoryBtn}>Property Law</button>
             </div>
           </div>
         </section>
 
-        {/* Blog Posts Grid */}
+        {/* Blog Grid */}
         <section className="section">
           <div className="container">
             <div className={styles.blogGrid}>
               {blogPosts.map((post, index) => (
                 <article key={index} className={styles.blogCard}>
                   <div className={styles.blogImageWrapper}>
-                    <Image 
-                      src={post.image} 
+                    <Image
+                      src={post.image}
                       alt={post.title}
-                      width={400}
-                      height={250}
-                      className={styles.blogImage}
+                      fill
+                      className={styles.blogImg}
                     />
-                    <span className={styles.blogCategory}>{post.category}</span>
+                    <div className={styles.categoryTag}>{post.category}</div>
                   </div>
                   <div className={styles.blogContent}>
                     <div className={styles.blogMeta}>
-                      <span className={styles.blogDate}>{post.date}</span>
-                      <span className={styles.separator}>•</span>
-                      <span className={styles.blogReadTime}>{post.readTime}</span>
+                      <span className={styles.metaItem}>
+                        <Calendar size={14} /> {post.date}
+                      </span>
+                      <span className={styles.metaItem}>
+                        <User size={14} /> {post.author}
+                      </span>
                     </div>
-                    <h2>{post.title}</h2>
-                    <p className={styles.blogExcerpt}>{post.excerpt}</p>
-                    <div className={styles.blogFooter}>
-                      <span className={styles.blogAuthor}>By {post.author}</span>
-                      <Link href="#" className={styles.readMore}>
-                        Read More →
+                    <h2 className={styles.blogTitle}>
+                      <Link href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+                        {post.title}
                       </Link>
-                    </div>
+                    </h2>
+                    <p className={styles.blogExcerpt}>{post.excerpt}</p>
+                    <Link href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className={styles.readMoreBtn}>
+                      Read Article <ArrowRight size={16} />
+                    </Link>
                   </div>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Newsletter Subscribe */}
-        <section className={`section ${styles.newsletterSection}`}>
-          <div className="container text-center">
-            <h2>Subscribe to Legal Updates</h2>
-            <p className={styles.newsletterDesc}>
-              Get the latest legal insights, case updates, and news delivered to your inbox
-            </p>
-            <div className={styles.newsletterForm}>
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className={styles.newsletterInput}
-              />
-              <button type="button" className="btn btn-primary">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className={`section ${styles.ctaSection}`}>
-          <div className="container text-center">
-            <h2>Need Legal Advice?</h2>
-            <p className={styles.ctaDesc}>
-              Have questions about any legal matter? Our expert attorneys are here to help you.
-            </p>
-            <div className={styles.ctaActions}>
-              <Link href="/book-consultation" className="btn btn-primary">
-                Schedule Consultation
-              </Link>
-              <Link href="/contact" className="btn btn-secondary">
-                Contact Us
-              </Link>
             </div>
           </div>
         </section>

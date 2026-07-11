@@ -35,8 +35,8 @@
 .practiceCard:hover { background: #000; color: #fff; }
 
 .cardImageWrapper { position: relative; height: 250px; overflow: hidden; }
-.cardImage { object-fit: cover; filter: grayscale(100%); transition: all 0.5s ease; }
-.practiceCard:hover .cardImage { filter: grayscale(0%); transform: scale(1.04); }
+.cardImage { object-fit: cover; transition: all 0.5s ease; }
+.practiceCard:hover .cardImage { transform: scale(1.04); }
 .cardImageOverlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); transition: background 0.5s ease; }
 .practiceCard:hover .cardImageOverlay { background: rgba(0,0,0,0.1); }
 

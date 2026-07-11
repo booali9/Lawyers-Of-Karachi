@@ -5,7 +5,7 @@
   position: relative; height: 75vh; min-height: 500px;
   margin-top: 80px; display: flex; align-items: flex-end; overflow: hidden;
 }
-.heroBgImg { object-fit: cover; object-position: center; z-index: 0; filter: grayscale(50%); }
+.heroBgImg { object-fit: cover; object-position: center; z-index: 0; }
 .heroOverlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);

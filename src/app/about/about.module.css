@@ -105,7 +105,6 @@
 
 .storyImage {
   object-fit: cover;
-  filter: grayscale(100%);
 }
 
 .storyAccent {
@@ -240,12 +239,10 @@
 
 .missionImg {
   object-fit: cover;
-  filter: grayscale(100%) brightness(0.4);
   transition: all 0.5s ease;
 }
 
 .missionCard:hover .missionImg {
-  filter: grayscale(0%) brightness(0.5);
   transform: scale(1.04);
 }
 
@@ -407,7 +404,7 @@
 
 .expertiseImg {
   object-fit: cover;
-  filter: grayscale(100%);
+  object-position: center;
   transition: all 0.4s ease;
 }
 
@@ -419,7 +416,6 @@
 }
 
 .expertiseCard:hover .expertiseImg {
-  filter: grayscale(0%);
   transform: scale(1.06);
 }
 
