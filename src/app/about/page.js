@@ -2,11 +2,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { Scale, GraduationCap, Handshake, Briefcase, Lock, Zap, ArrowRight, CheckCircle } from "lucide-react";
 import styles from "./about.module.css";
 
 export const metadata = {
   title: "About Us | Karachi Legal House - Premier Law Firm in Pakistan",
-  description: "Learn about Karachi Legal House, a leading law firm in Pakistan with over 15 years of experience. Meet our expert team and discover our commitment to legal excellence.",
+  description: "Learn about Karachi Legal House, a leading law firm in Pakistan. Meet our expert team of advocates and discover our commitment to legal excellence.",
 };
 
 export default function AboutPage() {
@@ -14,276 +15,215 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className={styles.aboutMain}>
-        {/* Hero Section */}
+
+        {/* ─── HERO BANNER ─── */}
         <section className={styles.aboutHero}>
-          <div className="container text-center">
-            <span className={styles.heroLabel}>About Our Firm</span>
-            <h1>Excellence in Legal Practice Since 2010</h1>
+          <Image
+            src="/images/hero_banner.png"
+            alt="Karachi Legal House"
+            fill
+            priority
+            className={styles.heroBgImage}
+          />
+          <div className={styles.heroOverlay} />
+          <div className={`container ${styles.heroInner}`}>
+            <p className={styles.heroEyebrow}>
+              <span className={styles.eyebrowLine} />
+              About Our Firm
+            </p>
+            <h1 className={styles.heroTitle}>Excellence in Legal<br />Practice Since 2010</h1>
             <p className={styles.heroDesc}>
-              A legacy of trust, professionalism, and unwavering commitment to justice across Pakistan
+              A legacy of trust, professionalism, and unwavering commitment to justice across Pakistan.
             </p>
           </div>
         </section>
 
-        {/* Firm Story */}
-        <section className="section">
+        {/* ─── STORY SECTION ─── */}
+        <section className={styles.storySection}>
           <div className="container">
             <div className={styles.storyGrid}>
-              <div className={styles.storyContent}>
-                <h2>Our Story</h2>
-                <p className={styles.storyText}>
-                  Established in 2010, Karachi Legal House has grown from a small practice into one of Pakistan's most respected law firms. Our journey began with a simple vision: to provide honest, effective legal representation that puts clients first.
-                </p>
-                <p className={styles.storyText}>
-                  Over the past 15 years, we have successfully represented thousands of clients in matters ranging from criminal defense to corporate transactions. Our team of highly qualified advocates has argued cases before the Supreme Court of Pakistan, all High Courts, and numerous specialized tribunals.
-                </p>
-                <p className={styles.storyText}>
-                  Today, Karachi Legal House stands as a testament to what dedication, expertise, and integrity can achieve. We continue to grow, not just in size, but in the depth of our legal knowledge and the breadth of our client relationships.
-                </p>
-              </div>
-              <div className={styles.storyImageWrapper}>
-                <Image 
-                  src="/hero.png" 
-                  alt="Karachi Legal House Office" 
-                  width={600} 
-                  height={400}
-                  className={styles.storyImage}
-                />
-                <div className={styles.storyStats}>
-                  <div className={styles.statCard}>
-                    <div className={styles.statNumber}>15+</div>
-                    <div className={styles.statLabel}>Years of Excellence</div>
+              <div className={styles.storyImageCol}>
+                <div className={styles.storyImageWrapper}>
+                  <Image
+                    src="/images/criminal_law.png"
+                    alt="Karachi Legal House Office"
+                    fill
+                    className={styles.storyImage}
+                  />
+                </div>
+                <div className={styles.storyAccent} />
+                <div className={styles.storyStatsOverlay}>
+                  <div className={styles.statItem}>
+                    <span className={styles.statNum}>15+</span>
+                    <span className={styles.statLabel}>Years of Excellence</span>
                   </div>
-                  <div className={styles.statCard}>
-                    <div className={styles.statNumber}>25+</div>
-                    <div className={styles.statLabel}>Expert Lawyers</div>
-                  </div>
-                  <div className={styles.statCard}>
-                    <div className={styles.statNumber}>3000+</div>
-                    <div className={styles.statLabel}>Cases Handled</div>
-                  </div>
-                  <div className={styles.statCard}>
-                    <div className={styles.statNumber}>98%</div>
-                    <div className={styles.statLabel}>Success Rate</div>
+                  <div className={styles.statItem}>
+                    <span className={styles.statNum}>3000+</span>
+                    <span className={styles.statLabel}>Cases Handled</span>
                   </div>
                 </div>
+              </div>
+              <div className={styles.storyContent}>
+                <p className={styles.eyebrow}>
+                  <span className={styles.eyebrowLine} />
+                  Our Story
+                </p>
+                <h2>Built on Trust,<br />Driven by Results.</h2>
+                <p className={styles.storyText}>
+                  Established in 2010, Karachi Legal House has grown from a boutique practice into one of Pakistan's most respected law firms. Our journey began with a clear vision — to provide honest, strategic, and effective legal representation that puts clients first.
+                </p>
+                <p className={styles.storyText}>
+                  Over the past 15 years, we have successfully represented thousands of clients in matters ranging from criminal defence to complex corporate transactions. Our advocates have argued before the Supreme Court, all High Courts, and numerous specialised tribunals across Pakistan.
+                </p>
+                <p className={styles.storyText}>
+                  Today, Karachi Legal House stands as a testament to what dedication, expertise, and integrity can achieve together.
+                </p>
+                <Link href="/lawyers" className={styles.storyBtn}>
+                  Meet Our Team <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Mission & Vision */}
-        <section className={`section ${styles.missionSection}`}>
+        {/* ─── MISSION & VISION ─── */}
+        <section className={styles.missionSection}>
           <div className="container">
             <div className={styles.missionGrid}>
               <div className={styles.missionCard}>
-                <div className={styles.missionIcon}>🎯</div>
-                <h2>Our Mission</h2>
-                <p>
-                  To deliver the highest quality legal services with integrity, professionalism, and compassion. We are committed to protecting our clients' rights, achieving favorable outcomes, and contributing to the advancement of justice in Pakistan.
-                </p>
+                <div className={styles.missionImageWrapper}>
+                  <Image src="/images/civil_law.png" alt="Our Mission" fill className={styles.missionImg} />
+                  <div className={styles.missionOverlay} />
+                  <div className={styles.missionCardContent}>
+                    <Scale size={36} className={styles.missionSvg} />
+                    <h2>Our Mission</h2>
+                    <p>To deliver the highest quality legal services with integrity, professionalism, and compassion — protecting our clients' rights and contributing to the advancement of justice in Pakistan.</p>
+                  </div>
+                </div>
               </div>
               <div className={styles.missionCard}>
-                <div className={styles.missionIcon}>👁️</div>
-                <h2>Our Vision</h2>
-                <p>
-                  To be recognized as Pakistan's most trusted and innovative law firm, setting the standard for legal excellence, ethical practice, and client satisfaction. We aspire to be the first choice for individuals and businesses seeking expert legal representation.
-                </p>
+                <div className={styles.missionImageWrapper}>
+                  <Image src="/images/corporate_law.png" alt="Our Vision" fill className={styles.missionImg} />
+                  <div className={styles.missionOverlay} />
+                  <div className={styles.missionCardContent}>
+                    <GraduationCap size={36} className={styles.missionSvg} />
+                    <h2>Our Vision</h2>
+                    <p>To be recognised as Pakistan's most trusted and innovative law firm — setting the standard for legal excellence, ethical practice, and client satisfaction across all tiers of the judiciary.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Core Values */}
-        <section className="section">
+        {/* ─── CORE VALUES ─── */}
+        <section className={styles.valuesSection}>
           <div className="container">
-            <div className="text-center" style={{marginBottom: '4rem'}}>
-              <h2>Our Core Values</h2>
-              <p style={{color: 'var(--text-muted)', fontSize: '1.1rem'}}>
-                The principles that guide every decision we make
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                What We Stand For
               </p>
+              <h2>Our Core Values</h2>
+              <p className={styles.sectionDesc}>The principles that guide every decision we make</p>
             </div>
             <div className={styles.valuesGrid}>
-              <div className={styles.valueCard}>
-                <div className={styles.valueIcon}>⚖️</div>
-                <h3>Integrity</h3>
-                <p>We uphold the highest ethical standards in every case, ensuring honesty, transparency, and trustworthiness in all our dealings.</p>
-              </div>
-              <div className={styles.valueCard}>
-                <div className={styles.valueIcon}>🎓</div>
-                <h3>Excellence</h3>
-                <p>We continuously strive for excellence in legal research, argumentation, and client service, never settling for mediocrity.</p>
-              </div>
-              <div className={styles.valueCard}>
-                <div className={styles.valueIcon}>🤝</div>
-                <h3>Client Focus</h3>
-                <p>Our clients' needs, concerns, and goals are at the center of everything we do. Your success is our success.</p>
-              </div>
-              <div className={styles.valueCard}>
-                <div className={styles.valueIcon}>💼</div>
-                <h3>Professionalism</h3>
-                <p>We maintain the highest standards of professional conduct, treating all parties with respect and dignity.</p>
-              </div>
-              <div className={styles.valueCard}>
-                <div className={styles.valueIcon}>🔒</div>
-                <h3>Confidentiality</h3>
-                <p>We protect client information with utmost care, ensuring complete privacy and attorney-client privilege.</p>
-              </div>
-              <div className={styles.valueCard}>
-                <div className={styles.valueIcon}>⚡</div>
-                <h3>Responsiveness</h3>
-                <p>We respond promptly to client inquiries and adapt quickly to changing legal circumstances and needs.</p>
-              </div>
+              {[
+                { icon: <Scale size={32} />, title: 'Integrity', desc: 'We uphold the highest ethical standards in every case — honesty, transparency, and trustworthiness in all our dealings.' },
+                { icon: <GraduationCap size={32} />, title: 'Excellence', desc: 'We continuously strive for excellence in legal research, argumentation, and client service, never settling for mediocrity.' },
+                { icon: <Handshake size={32} />, title: 'Client Focus', desc: 'Our clients\' needs, concerns, and goals are at the centre of everything we do. Your success is our success.' },
+                { icon: <Briefcase size={32} />, title: 'Professionalism', desc: 'We maintain the highest standards of professional conduct, treating all parties with respect and dignity.' },
+                { icon: <Lock size={32} />, title: 'Confidentiality', desc: 'We protect client information with utmost care, ensuring complete privacy and attorney-client privilege at all times.' },
+                { icon: <Zap size={32} />, title: 'Responsiveness', desc: 'We respond promptly to client inquiries and adapt quickly to changing legal circumstances and evolving needs.' },
+              ].map((v) => (
+                <div key={v.title} className={styles.valueCard}>
+                  <div className={styles.valueIcon}>{v.icon}</div>
+                  <h3>{v.title}</h3>
+                  <p>{v.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Our Expertise */}
-        <section className={`section ${styles.expertiseSection}`}>
+        {/* ─── EXPERTISE (image strip) ─── */}
+        <section className={styles.expertiseSection}>
           <div className="container">
-            <div className="text-center" style={{marginBottom: '4rem'}}>
-              <h2>Areas of Expertise</h2>
-              <p style={{color: 'var(--text-muted)', fontSize: '1.1rem'}}>
-                Comprehensive legal services across multiple practice areas
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                What We Do
               </p>
+              <h2>Areas of Expertise</h2>
             </div>
             <div className={styles.expertiseGrid}>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>⚖️</span>
-                <span>Criminal Defense</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>👨‍👩‍👧‍👦</span>
-                <span>Family Law</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>🏢</span>
-                <span>Corporate Law</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>🏠</span>
-                <span>Property Law</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>📋</span>
-                <span>Civil Litigation</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>📜</span>
-                <span>Constitutional Law</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>💻</span>
-                <span>Cyber Crime</span>
-              </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseIcon}>💼</span>
-                <span>Banking & Finance</span>
-              </div>
+              {[
+                { img: '/images/criminal_law.png', label: 'Criminal Defence' },
+                { img: '/images/family_law.png',   label: 'Family Law' },
+                { img: '/images/corporate_law.png',label: 'Corporate Law' },
+                { img: '/images/property_law.png', label: 'Property Law' },
+                { img: '/images/civil_law.png',    label: 'Civil Litigation' },
+                { img: '/images/cyber_law.png',    label: 'Cyber Crime' },
+              ].map((e) => (
+                <div key={e.label} className={styles.expertiseCard}>
+                  <div className={styles.expertiseImgWrapper}>
+                    <Image src={e.img} alt={e.label} fill className={styles.expertiseImg} />
+                    <div className={styles.expertiseOverlay} />
+                  </div>
+                  <span className={styles.expertiseLabel}>{e.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Credentials & Memberships */}
-        <section className="section">
+        {/* ─── CREDENTIALS ─── */}
+        <section className={styles.credentialsSection}>
           <div className="container">
-            <div className="text-center" style={{marginBottom: '4rem'}}>
-              <h2>Professional Credentials</h2>
-              <p style={{color: 'var(--text-muted)', fontSize: '1.1rem'}}>
-                Recognized and certified by leading legal institutions
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                Recognition
               </p>
+              <h2>Professional Credentials</h2>
             </div>
             <div className={styles.credentialsGrid}>
-              <div className={styles.credentialCard}>
-                <h4>Pakistan Bar Council</h4>
-                <p>Licensed and registered advocates</p>
-              </div>
-              <div className={styles.credentialCard}>
-                <h4>Supreme Court of Pakistan</h4>
-                <p>Authorized to practice before the apex court</p>
-              </div>
-              <div className={styles.credentialCard}>
-                <h4>High Court Bar Association</h4>
-                <p>Active members in good standing</p>
-              </div>
-              <div className={styles.credentialCard}>
-                <h4>District Bar Association</h4>
-                <p>Registered with all major district bars</p>
-              </div>
+              {[
+                { title: 'Pakistan Bar Council', desc: 'Licensed and registered advocates in good standing' },
+                { title: 'Supreme Court of Pakistan', desc: 'Authorised to practice before the apex court' },
+                { title: 'High Court Bar Association', desc: 'Active members at all High Courts of Pakistan' },
+                { title: 'District Bar Association', desc: 'Registered with all major district bar associations' },
+              ].map((c) => (
+                <div key={c.title} className={styles.credentialCard}>
+                  <CheckCircle size={28} className={styles.credentialIcon} />
+                  <h4>{c.title}</h4>
+                  <p>{c.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className={`section ${styles.whyChooseSection}`}>
+        {/* ─── CTA ─── */}
+        <section className={styles.ctaSection}>
           <div className="container">
-            <div className="text-center" style={{marginBottom: '3rem'}}>
-              <h2>Why Choose Karachi Legal House</h2>
-            </div>
-            <div className={styles.whyChooseGrid}>
-              <div className={styles.whyChooseItem}>
-                <span className={styles.checkIcon}>✓</span>
-                <div>
-                  <h4>Experienced Legal Team</h4>
-                  <p>Our advocates have decades of combined experience across all legal domains</p>
-                </div>
+            <div className={styles.ctaInner}>
+              <div>
+                <h2 className={styles.ctaTitle}>Ready to Discuss Your Legal Matter?</h2>
+                <p className={styles.ctaDesc}>Schedule a free, confidential consultation with our experienced legal team today.</p>
               </div>
-              <div className={styles.whyChooseItem}>
-                <span className={styles.checkIcon}>✓</span>
-                <div>
-                  <h4>Supreme Court Practice</h4>
-                  <p>Qualified to represent clients in Pakistan's highest court</p>
-                </div>
-              </div>
-              <div className={styles.whyChooseItem}>
-                <span className={styles.checkIcon}>✓</span>
-                <div>
-                  <h4>Proven Track Record</h4>
-                  <p>98% success rate with thousands of satisfied clients</p>
-                </div>
-              </div>
-              <div className={styles.whyChooseItem}>
-                <span className={styles.checkIcon}>✓</span>
-                <div>
-                  <h4>24/7 Availability</h4>
-                  <p>Round-the-clock support for urgent legal matters</p>
-                </div>
-              </div>
-              <div className={styles.whyChooseItem}>
-                <span className={styles.checkIcon}>✓</span>
-                <div>
-                  <h4>Transparent Communication</h4>
-                  <p>Regular updates and clear explanations at every stage</p>
-                </div>
-              </div>
-              <div className={styles.whyChooseItem}>
-                <span className={styles.checkIcon}>✓</span>
-                <div>
-                  <h4>Competitive Fees</h4>
-                  <p>Fair pricing with flexible payment options</p>
-                </div>
+              <div className={styles.ctaActions}>
+                <Link href="/book-consultation" className={styles.ctaPrimary}>
+                  Book Free Consultation
+                </Link>
+                <Link href="/lawyers" className={styles.ctaSecondary}>
+                  Meet Our Team
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className={`section ${styles.ctaSection}`}>
-          <div className="container text-center">
-            <h2>Ready to Discuss Your Legal Matter?</h2>
-            <p className={styles.ctaDesc}>
-              Schedule a free consultation with our experienced legal team today
-            </p>
-            <div className={styles.ctaActions}>
-              <Link href="/book-consultation" className="btn btn-primary">
-                Book Free Consultation
-              </Link>
-              <Link href="/lawyers" className="btn btn-secondary">
-                Meet Our Team
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

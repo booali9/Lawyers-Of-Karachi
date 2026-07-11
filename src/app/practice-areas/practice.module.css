@@ -1,299 +1,96 @@
-.practiceMain {
-  flex: 1;
-}
+.practiceMain { flex: 1; }
 
-/* Hero Section */
+/* ─── HERO ─── */
 .practiceHero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-  padding: 8rem 0 5rem 0;
-  margin-top: 80px;
-  text-align: center;
+  position: relative; height: 75vh; min-height: 500px;
+  margin-top: 80px; display: flex; align-items: flex-end; overflow: hidden;
 }
-
-.heroLabel {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 700;
-  font-family: var(--font-inter), sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+.heroBg { object-fit: cover; object-position: center; z-index: 0; }
+.heroOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.15) 100%);
+  z-index: 1;
 }
-
-.practiceHero h1 {
-  color: #fff;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1.5rem;
+.heroInner { position: relative; z-index: 2; padding-bottom: 5rem; }
+.eyebrow {
+  display: flex; align-items: center; gap: 1rem; font-size: 0.75rem;
+  font-family: var(--font-inter), sans-serif; text-transform: uppercase;
+  letter-spacing: 3px; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem;
 }
-
-.heroDesc {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.7;
+.eyebrowLine { display: block; width: 40px; height: 1px; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+.heroTitle {
+  font-family: var(--font-playfair), serif; font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.2rem;
 }
+.heroDesc { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 520px; line-height: 1.7; margin: 0; }
+@media (max-width: 768px) { .practiceHero { margin-top: 70px; height: 60vh; } }
 
-@media (max-width: 768px) {
-  .practiceHero {
-    padding: 6rem 0 4rem 0;
-    margin-top: 70px;
-  }
-}
-
-/* Practice Grid */
+/* ─── PRACTICE GRID ─── */
+.practiceSection { padding: 8rem 0; background: #f5f5f5; }
 .practiceGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 2px; background: #d0d0d0;
 }
+.practiceCard { background: #fff; display: flex; flex-direction: column; transition: all 0.3s ease; }
+.practiceCard:hover { background: #000; color: #fff; }
 
-@media (max-width: 576px) {
-  .practiceGrid {
-    grid-template-columns: 1fr;
-  }
-}
+.cardImageWrapper { position: relative; height: 250px; overflow: hidden; }
+.cardImage { object-fit: cover; filter: grayscale(100%); transition: all 0.5s ease; }
+.practiceCard:hover .cardImage { filter: grayscale(0%); transform: scale(1.04); }
+.cardImageOverlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); transition: background 0.5s ease; }
+.practiceCard:hover .cardImageOverlay { background: rgba(0,0,0,0.1); }
 
-/* Practice Card */
-.practiceCard {
-  background: var(--surface);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
+.cardContent { padding: 2.5rem; flex-grow: 1; display: flex; flex-direction: column; gap: 1.5rem; }
+.cardHeader h2 { font-family: var(--font-playfair), serif; font-size: 1.8rem; margin: 0 0 0.4rem; transition: color 0.3s ease; }
+.practiceCard:hover .cardHeader h2 { color: #fff; }
+.shortDesc { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-inter), sans-serif; margin: 0; transition: color 0.3s ease; }
+.practiceCard:hover .shortDesc { color: rgba(255,255,255,0.6); }
 
-.practiceCard:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
-}
+.fullDesc { font-size: 0.95rem; color: #555; line-height: 1.7; margin: 0; flex-grow: 1; transition: color 0.3s ease; }
+.practiceCard:hover .fullDesc { color: #ccc; }
 
-.cardHeader {
-  padding: 3rem 2.5rem 2rem 2.5rem;
-  background: linear-gradient(to bottom, var(--background), var(--surface));
-  border-bottom: 2px solid var(--accent);
-}
+.servicesSection h4 { font-family: var(--font-inter), sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #000; margin: 0 0 1rem; transition: color 0.3s ease; }
+.practiceCard:hover .servicesSection h4 { color: #fff; }
+.servicesList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.servicesList li { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.85rem; color: #666; transition: color 0.3s ease; line-height: 1.4; }
+.practiceCard:hover .servicesList li { color: #aaa; }
+.bullet { display: block; width: 4px; height: 4px; background: #000; border-radius: 50%; margin-top: 6px; flex-shrink: 0; transition: background 0.3s ease; }
+.practiceCard:hover .bullet { background: #fff; }
 
-.practiceIcon {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-}
+.cardFooter { margin-top: 1rem; }
+.learnMore { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-family: var(--font-inter), sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #000; transition: all 0.3s ease; }
+.practiceCard:hover .learnMore { color: #fff; gap: 1rem; }
 
-.cardHeader h2 {
-  color: var(--primary);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
+@media (max-width: 992px) { .practiceGrid { grid-template-columns: 1fr; } }
 
-.shortDesc {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 1.05rem;
-  margin: 0;
-}
+/* ─── WHY SECTION ─── */
+.whySection { background: #fff; padding: 8rem 0; }
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.eyebrowDark { display: flex; align-items: center; justify-content: center; gap: 1rem; font-size: 0.75rem; font-family: var(--font-inter), sans-serif; text-transform: uppercase; letter-spacing: 3px; color: #888; margin-bottom: 1.2rem; }
+.eyebrowLineDark { display: block; width: 40px; height: 1px; background: #888; flex-shrink: 0; }
+.sectionHeader h2 { font-family: var(--font-playfair), serif; font-size: clamp(2rem, 4vw, 3rem); color: #000; }
 
-.cardBody {
-  padding: 2.5rem;
-  flex-grow: 1;
-}
+.benefitsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: #e0e0e0; }
+.benefitCard { background: #fff; padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; transition: all 0.3s ease; }
+.benefitCard:hover { background: #000; }
+.benefitIcon { color: #000; transition: color 0.3s ease; }
+.benefitCard:hover .benefitIcon { color: #fff; }
+.benefitCard h3 { font-family: var(--font-playfair), serif; font-size: 1.2rem; color: #000; margin: 0; transition: color 0.3s ease; }
+.benefitCard p { font-size: 0.88rem; color: #666; line-height: 1.6; margin: 0; transition: color 0.3s ease; }
+.benefitCard:hover h3, .benefitCard:hover p { color: rgba(255,255,255,0.85); }
 
-.fullDesc {
-  color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  font-size: 1.05rem;
-}
+@media (max-width: 992px) { .benefitsGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .benefitsGrid { grid-template-columns: 1fr; } }
 
-.servicesSection {
-  margin-top: 2rem;
-}
+/* ─── CTA SECTION ─── */
+.ctaSection { background: #000; padding: 6rem 0; }
+.ctaInner { display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.ctaTitle { font-family: var(--font-playfair), serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: #fff; margin-bottom: 0.8rem; }
+.ctaDesc { font-size: 0.95rem; color: #888; line-height: 1.7; max-width: 480px; margin: 0; }
+.ctaActions { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+.ctaPrimary { display: inline-flex; align-items: center; padding: 1rem 2rem; background: #fff; color: #000; font-size: 0.8rem; font-family: var(--font-inter), sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.25s ease; border: 1px solid #fff; white-space: nowrap; }
+.ctaPrimary:hover { background: transparent; color: #fff; }
+.ctaSecondary { display: inline-flex; align-items: center; padding: 1rem 2rem; border: 1px solid #333; color: #fff; font-size: 0.8rem; font-family: var(--font-inter), sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.25s ease; white-space: nowrap; }
+.ctaSecondary:hover { border-color: #fff; }
 
-.servicesSection h4 {
-  color: var(--primary);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-family: var(--font-inter), sans-serif;
-  font-weight: 700;
-}
-
-.servicesList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.servicesList li {
-  padding: 0.75rem 0;
-  padding-left: 2rem;
-  position: relative;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.servicesList li:last-child {
-  border-bottom: none;
-}
-
-.servicesList li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.cardFooter {
-  padding: 2rem 2.5rem;
-  background: var(--background);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.consultLink {
-  color: var(--primary);
-  font-weight: 600;
-  text-align: center;
-  transition: var(--transition);
-  font-size: 0.95rem;
-}
-
-.consultLink:hover {
-  color: var(--accent);
-  transform: translateX(5px);
-}
-
-@media (prefers-color-scheme: dark) {
-  .practiceCard {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .cardHeader h2 {
-    color: var(--accent);
-  }
-  .servicesSection h4 {
-    color: var(--accent);
-  }
-  .servicesList li {
-    border-bottom-color: rgba(255, 255, 255, 0.05);
-  }
-  .cardFooter {
-    border-top-color: rgba(255, 255, 255, 0.05);
-  }
-  .consultLink {
-    color: var(--accent);
-  }
-  .consultLink:hover {
-    color: var(--accent-light);
-  }
-}
-
-/* Why Section */
-.whySection {
-  background-color: var(--surface);
-}
-
-.benefitsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
-}
-
-.benefitCard {
-  background: var(--background);
-  padding: 2.5rem 2rem;
-  border-radius: var(--border-radius-lg);
-  text-align: center;
-  transition: var(--transition);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: var(--shadow-sm);
-}
-
-.benefitCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
-}
-
-.benefitIcon {
-  font-size: 3.5rem;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-.benefitCard h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.benefitCard p {
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .benefitCard {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .benefitCard h3 {
-    color: var(--accent);
-  }
-}
-
-/* CTA Section */
-.ctaSection {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-}
-
-.ctaSection h2 {
-  color: #fff;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.ctaDesc {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ctaActions {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.ctaInfo {
-  margin-top: 2rem;
-}
-
-.ctaInfo p {
-  color: #94a3b8;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-@media (max-width: 576px) {
-  .ctaActions {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+@media (max-width: 768px) { .ctaInner { flex-direction: column; text-align: center; } .ctaActions { justify-content: center; } }

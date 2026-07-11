@@ -47,10 +47,8 @@ export default function Footer() {
             <li><Link href="/services/family-law">Family Law</Link></li>
             <li><Link href="/services/corporate-law">Corporate Law</Link></li>
             <li><Link href="/services/property-law">Property Law</Link></li>
-            <li><Link href="/services/civil-law">Civil Litigation</Link></li>
-            <li><Link href="/services/constitutional-law">Constitutional Law</Link></li>
-            <li><Link href="/services/cyber-crime">Cyber Crime</Link></li>
-            <li><Link href="/services/banking-finance">Banking & Finance</Link></li>
+            <li><Link href="/services/civil-litigation">Civil Litigation</Link></li>
+            <li><Link href="/services/cyber-law">Cyber Crime</Link></li>
           </ul>
         </div>
 

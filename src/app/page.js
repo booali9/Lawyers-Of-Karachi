@@ -3,349 +3,244 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./page.module.css";
+import { Scale, Award, BookOpen, Users, Building, Home as HomeIcon, ClipboardList, Monitor, GraduationCap, Handshake, Star, Lock, Zap, CircleDollarSign, Phone, Mail, ArrowRight, CheckCircle } from "lucide-react";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main className={styles.main}>
-        {/* Hero Section */}
+
+        {/* ─── HERO ─── */}
         <section className={styles.hero}>
-          <div className={`container ${styles.heroContainer}`}>
-            <div className={`${styles.heroContent} animate-fade-in`}>
-              <span className={styles.subtitle}>Premier Legal Services in Pakistan</span>
+          <div className={styles.heroOverlay} />
+          <Image
+            src="/images/hero_banner.png"
+            alt="Karachi Legal House"
+            fill
+            priority
+            className={styles.heroBgImage}
+          />
+          <div className={`container ${styles.heroInner}`}>
+            <div className={styles.heroContent}>
+              <p className={styles.heroEyebrow}>
+                <span className={styles.eyebrowLine} />
+                Advocates & Legal Consultants — Karachi
+              </p>
               <h1 className={styles.heroTitle}>
-                Your Trusted Partner in Legal Excellence
+                Trusted Legal<br />Excellence Since<br />Day One.
               </h1>
               <p className={styles.heroDesc}>
-                With over a decade of distinguished service, Karachi Legal House stands as a beacon of legal expertise in Pakistan. We specialize in Criminal, Family, Corporate, Civil, and Property Law, delivering results that matter.
+                Led by Advocate Shehroze Ahmed (BA LL.B), our firm delivers expert representation in Criminal, Civil, Family, and Corporate Law across all courts of Pakistan.
               </p>
               <div className={styles.heroActions}>
-                <Link href="/book-consultation" className="btn btn-primary">
-                  Schedule Free Consultation
+                <Link href="/book-consultation" className={styles.heroCta}>
+                  Book Free Consultation <ArrowRight size={18} />
                 </Link>
-                <Link href="/practice-areas" className="btn btn-secondary">
-                  Our Practice Areas
-                </Link>
-              </div>
-              <div className={styles.heroStats}>
-                <div className={styles.heroStat}>
-                  <strong>15+</strong>
-                  <span>Years Experience</span>
-                </div>
-                <div className={styles.heroStat}>
-                  <strong>1000+</strong>
-                  <span>Cases Won</span>
-                </div>
-                <div className={styles.heroStat}>
-                  <strong>98%</strong>
-                  <span>Success Rate</span>
-                </div>
+                <a href="tel:+923001234567" className={styles.heroPhone}>
+                  <Phone size={18} /> +92 300 123 4567
+                </a>
               </div>
             </div>
-            <div className={styles.heroImage}>
-              <Image 
-                src="/hero.png" 
-                alt="Professional Legal Services" 
-                width={600} 
-                height={500}
-                priority
-                className={styles.heroImg}
-              />
-            </div>
-          </div>
-        </section>
 
-        {/* About Preview Section */}
-        <section className={`section ${styles.aboutPreview}`}>
-          <div className="container">
-            <div className={styles.aboutGrid}>
-              <div className={styles.aboutContent}>
-                <span className={styles.sectionLabel}>About Our Firm</span>
-                <h2>Leading Law Firm in Pakistan Since 2010</h2>
-                <p className={styles.aboutText}>
-                  Karachi Legal House has established itself as one of Pakistan's most respected law firms. Our team of highly qualified advocates and legal experts brings decades of combined experience across multiple jurisdictions, including the Supreme Court of Pakistan, High Courts, and specialized tribunals.
-                </p>
-                <p className={styles.aboutText}>
-                  We pride ourselves on providing personalized legal solutions that protect your rights, defend your interests, and achieve favorable outcomes. Our commitment to excellence, integrity, and client satisfaction sets us apart in the legal profession.
-                </p>
-                <div className={styles.aboutFeatures}>
-                  <div className={styles.aboutFeature}>
-                    <span className={styles.featureIcon}>✓</span>
-                    <span>Licensed by Pakistan Bar Council</span>
-                  </div>
-                  <div className={styles.aboutFeature}>
-                    <span className={styles.featureIcon}>✓</span>
-                    <span>Supreme Court Advocates</span>
-                  </div>
-                  <div className={styles.aboutFeature}>
-                    <span className={styles.featureIcon}>✓</span>
-                    <span>24/7 Legal Support</span>
-                  </div>
-                  <div className={styles.aboutFeature}>
-                    <span className={styles.featureIcon}>✓</span>
-                    <span>Multilingual Services</span>
-                  </div>
-                </div>
-                <Link href="/about" className="btn btn-primary" style={{marginTop: '2rem'}}>
-                  Learn More About Us
-                </Link>
+            <div className={styles.heroStats}>
+              <div className={styles.heroStat}>
+                <span className={styles.statNum}>25+</span>
+                <span className={styles.statLabel}>Years Experience</span>
               </div>
-              <div className={styles.aboutImageWrapper}>
-                <div className={styles.aboutImageBox}>
-                  <div className={styles.experienceBadge}>
-                    <strong>15+</strong>
-                    <span>Years of Excellence</span>
-                  </div>
-                </div>
+              <div className={styles.statDivider} />
+              <div className={styles.heroStat}>
+                <span className={styles.statNum}>1000+</span>
+                <span className={styles.statLabel}>Cases Won</span>
+              </div>
+              <div className={styles.statDivider} />
+              <div className={styles.heroStat}>
+                <span className={styles.statNum}>98%</span>
+                <span className={styles.statLabel}>Success Rate</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Practice Areas */}
-        <section className={`section ${styles.practiceSection}`}>
+        {/* ─── PRINCIPAL LAWYER ─── */}
+        <section className={styles.principalSection}>
           <div className="container">
-            <div className="text-center">
-              <span className={styles.sectionLabel}>What We Do</span>
-              <h2>Our Practice Areas</h2>
-              <p className={styles.sectionDesc}>
-                Comprehensive legal services delivered by experienced professionals
+            <div className={styles.principalGrid}>
+              <div className={styles.principalImageCol}>
+                <div className={styles.principalImageWrapper}>
+                  <Image
+                    src="/images/lawyer-1.jpeg"
+                    alt="Advocate Shehroze Ahmed"
+                    fill
+                    className={styles.principalImg}
+                  />
+                </div>
+                <div className={styles.principalImageAccent} />
+              </div>
+              <div className={styles.principalTextCol}>
+                <p className={styles.eyebrow}>
+                  <span className={styles.eyebrowLine} />
+                  Principal Lawyer
+                </p>
+                <h2 className={styles.principalName}>Advocate<br />Shehroze Ahmed</h2>
+                <p className={styles.principalQual}>BA LL.B &nbsp;|&nbsp; Karachi University</p>
+                <p className={styles.principalBio}>
+                  Advocate Shehroze Ahmed is the founding principal of Karachi Legal House with a distinguished track record spanning criminal defence, constitutional law, and civil litigation. He has successfully represented clients across all tiers of Pakistani courts, earning a reputation for strategic precision and unwavering client commitment.
+                </p>
+                <div className={styles.highlights}>
+                  <div className={styles.highlight}>
+                    <Scale size={22} />
+                    <div>
+                      <strong>High Court Certified</strong>
+                      <span>Qualified to appear before High Courts &amp; District Courts</span>
+                    </div>
+                  </div>
+                  <div className={styles.highlight}>
+                    <Award size={22} />
+                    <div>
+                      <strong>1000+ Cases Successfully Closed</strong>
+                      <span>Complex criminal, civil &amp; family matters</span>
+                    </div>
+                  </div>
+                  <div className={styles.highlight}>
+                    <BookOpen size={22} />
+                    <div>
+                      <strong>Multi-Practice Specialisation</strong>
+                      <span>Criminal Law, Constitutional Law, Civil Litigation</span>
+                    </div>
+                  </div>
+                </div>
+                <Link href="/lawyers" className={styles.principalCta}>
+                  Meet the Full Team <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── PRACTICE AREAS ─── */}
+        <section className={styles.practiceSection}>
+          <div className="container">
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                What We Do
               </p>
-            </div>
-            
-            <div className={styles.servicesGrid}>
-              <div className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>⚖️</div>
-                <h3>Criminal Law</h3>
-                <p>Expert defense in all criminal matters including bail applications, FIR quashment, trials, and appeals before all courts.</p>
-                <ul className={styles.serviceList}>
-                  <li>Bail Applications</li>
-                  <li>FIR Quashment</li>
-                  <li>Criminal Trials</li>
-                  <li>Appeals & Revisions</li>
-                </ul>
-                <Link href="/services/criminal-law" className={styles.serviceLink}>
-                  Explore Criminal Law →
-                </Link>
-              </div>
-              
-              <div className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>👨‍👩‍👧‍👦</div>
-                <h3>Family Law</h3>
-                <p>Compassionate and professional handling of family matters with sensitivity and expertise.</p>
-                <ul className={styles.serviceList}>
-                  <li>Khula & Divorce</li>
-                  <li>Child Custody</li>
-                  <li>Maintenance Claims</li>
-                  <li>Guardianship</li>
-                </ul>
-                <Link href="/services/family-law" className={styles.serviceLink}>
-                  Explore Family Law →
-                </Link>
-              </div>
-
-              <div className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>🏢</div>
-                <h3>Corporate Law</h3>
-                <p>Complete corporate legal services from business formation to complex commercial transactions.</p>
-                <ul className={styles.serviceList}>
-                  <li>Company Registration</li>
-                  <li>Contract Drafting</li>
-                  <li>Mergers & Acquisitions</li>
-                  <li>Corporate Compliance</li>
-                </ul>
-                <Link href="/services/corporate-law" className={styles.serviceLink}>
-                  Explore Corporate Law →
-                </Link>
-              </div>
-              
-              <div className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>🏠</div>
-                <h3>Property Law</h3>
-                <p>Expert guidance on property transactions, disputes, and inheritance matters.</p>
-                <ul className={styles.serviceList}>
-                  <li>Property Disputes</li>
-                  <li>Title Verification</li>
-                  <li>Succession Certificates</li>
-                  <li>Property Transfer</li>
-                </ul>
-                <Link href="/services/property-law" className={styles.serviceLink}>
-                  Explore Property Law →
-                </Link>
-              </div>
-
-              <div className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>📋</div>
-                <h3>Civil Law</h3>
-                <p>Comprehensive civil litigation services for all types of civil disputes and matters.</p>
-                <ul className={styles.serviceList}>
-                  <li>Civil Suits</li>
-                  <li>Injunctions</li>
-                  <li>Contract Disputes</li>
-                  <li>Money Recovery</li>
-                </ul>
-                <Link href="/services/civil-law" className={styles.serviceLink}>
-                  Explore Civil Law →
-                </Link>
-              </div>
-
-              <div className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>💻</div>
-                <h3>Cyber Crime</h3>
-                <p>Specialized representation in FIA cyber crime cases and digital fraud matters.</p>
-                <ul className={styles.serviceList}>
-                  <li>FIA Cases</li>
-                  <li>Online Harassment</li>
-                  <li>Digital Fraud</li>
-                  <li>Data Protection</li>
-                </ul>
-                <Link href="/services/cyber-crime" className={styles.serviceLink}>
-                  Explore Cyber Law →
-                </Link>
-              </div>
+              <h2>Our Practice Areas</h2>
+              <p className={styles.sectionDesc}>Comprehensive legal services delivered by experienced professionals across all major courts of Pakistan.</p>
             </div>
 
-            <div className="text-center" style={{marginTop: '3rem'}}>
-              <Link href="/practice-areas" className="btn btn-secondary">
-                View All Practice Areas
-              </Link>
+            <div className={styles.practiceGrid}>
+              {[
+                { img: '/images/criminal_law.png', title: 'Criminal Law', desc: 'Bail applications, FIR quashment, criminal trials and appeals before all courts.', href: '/services/criminal-law' },
+                { img: '/images/family_law.png', title: 'Family Law', desc: 'Khula, divorce, child custody, maintenance and guardianship matters.', href: '/services/family-law' },
+                { img: '/images/corporate_law.png', title: 'Corporate Law', desc: 'Company registration, contract drafting, mergers, acquisitions and compliance.', href: '/services/corporate-law' },
+                { img: '/images/property_law.png', title: 'Property Law', desc: 'Property disputes, title verification, succession certificates and transfers.', href: '/services/property-law' },
+                { img: '/images/civil_law.png', title: 'Civil Law', desc: 'Civil suits, injunctions, contract disputes and money recovery.', href: '/services/civil-litigation' },
+                { img: '/images/cyber_law.png', title: 'Cyber Crime', desc: 'FIA cases, online harassment, digital fraud and data protection matters.', href: '/services/cyber-law' },
+              ].map((area) => (
+                <Link href={area.href} key={area.title} className={styles.practiceCard}>
+                  <div className={styles.practiceCardImg}>
+                    <Image src={area.img} alt={area.title} fill className={styles.practiceImg} />
+                    <div className={styles.practiceCardOverlay} />
+                    <h3 className={styles.practiceCardTitle}>{area.title}</h3>
+                  </div>
+                  <div className={styles.practiceCardBody}>
+                    <p>{area.desc}</p>
+                    <span className={styles.practiceCardLink}>Learn More <ArrowRight size={14} /></span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className={`section ${styles.whyUsSection}`}>
+        {/* ─── WHY CHOOSE US ─── */}
+        <section className={styles.whySection}>
           <div className="container">
-            <div className="text-center" style={{marginBottom: '3rem'}}>
-              <span className={styles.sectionLabel}>Why Choose Us</span>
-              <h2>Your Success is Our Commitment</h2>
-            </div>
-            
-            <div className={styles.whyUsGrid}>
-              <div className={styles.whyUsCard}>
-                <div className={styles.whyUsIcon}>🎓</div>
-                <h3>Experienced Team</h3>
-                <p>Our attorneys hold advanced degrees and have successfully represented clients in thousands of cases across all levels of Pakistani courts.</p>
+            <div className={styles.whyGrid}>
+              <div className={styles.whyLeft}>
+                <p className={styles.eyebrowLight}>
+                  <span className={styles.eyebrowLineLight} />
+                  Why Choose Us
+                </p>
+                <h2 className={styles.whyTitle}>Your Success<br />Is Our Only<br />Commitment.</h2>
+                <p className={styles.whyDesc}>We combine decades of legal expertise with a client-first approach to deliver results that matter.</p>
+                <Link href="/book-consultation" className={styles.whyCta}>
+                  Get Free Consultation <ArrowRight size={16} />
+                </Link>
               </div>
-              
-              <div className={styles.whyUsCard}>
-                <div className={styles.whyUsIcon}>🤝</div>
-                <h3>Client-Focused</h3>
-                <p>We prioritize clear communication, transparent processes, and keeping you informed at every stage of your legal matter.</p>
-              </div>
-              
-              <div className={styles.whyUsCard}>
-                <div className={styles.whyUsIcon}>⭐</div>
-                <h3>Proven Results</h3>
-                <p>With a 98% success rate and countless satisfied clients, our track record speaks for itself in delivering favorable outcomes.</p>
-              </div>
-              
-              <div className={styles.whyUsCard}>
-                <div className={styles.whyUsIcon}>🔒</div>
-                <h3>Confidential & Ethical</h3>
-                <p>We maintain the highest standards of professional ethics and ensure complete confidentiality in all client matters.</p>
-              </div>
-              
-              <div className={styles.whyUsCard}>
-                <div className={styles.whyUsIcon}>⚡</div>
-                <h3>Quick Response</h3>
-                <p>Our team is available 24/7 for urgent legal matters, ensuring you get timely assistance when you need it most.</p>
-              </div>
-              
-              <div className={styles.whyUsCard}>
-                <div className={styles.whyUsIcon}>💰</div>
-                <h3>Transparent Pricing</h3>
-                <p>No hidden costs. We provide clear, upfront fee structures and flexible payment plans to suit your budget.</p>
+              <div className={styles.whyRight}>
+                {[
+                  { icon: <GraduationCap size={28} />, title: 'Highly Qualified Team', desc: 'Our attorneys hold advanced degrees and have appeared in thousands of cases across all levels of Pakistani courts.' },
+                  { icon: <Handshake size={28} />, title: 'Client-First Approach', desc: 'Clear communication and total transparency at every stage of your case.' },
+                  { icon: <Star size={28} />, title: 'Proven Track Record', desc: '98% success rate across criminal, civil, family and corporate matters.' },
+                  { icon: <Lock size={28} />, title: 'Strictly Confidential', desc: 'Your case details remain completely private. Always.' },
+                  { icon: <Zap size={28} />, title: '24/7 Availability', desc: 'Urgent legal matters receive our immediate attention, day or night.' },
+                  { icon: <CircleDollarSign size={28} />, title: 'Transparent Fees', desc: 'No hidden costs. Clear upfront fee structures with flexible payment options.' },
+                ].map((item) => (
+                  <div key={item.title} className={styles.whyCard}>
+                    <div className={styles.whyCardIcon}>{item.icon}</div>
+                    <div>
+                      <h4>{item.title}</h4>
+                      <p>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className={`section ${styles.testimonialsSection}`}>
+        {/* ─── TESTIMONIALS ─── */}
+        <section className={styles.testimonialsSection}>
           <div className="container">
-            <div className="text-center" style={{marginBottom: '3rem'}}>
-              <span className={styles.sectionLabel}>Client Testimonials</span>
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                Client Testimonials
+              </p>
               <h2>What Our Clients Say</h2>
             </div>
-            
             <div className={styles.testimonialsGrid}>
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialStars}>★★★★★</div>
-                <p className={styles.testimonialText}>
-                  "Karachi Legal House handled my property dispute with exceptional professionalism. Their expertise and dedication resulted in a favorable judgment. Highly recommended!"
-                </p>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Ahmed Khan</strong>
-                  <span>Property Dispute Client</span>
+              {[
+                { quote: 'Karachi Legal House handled my property dispute with exceptional professionalism. Their expertise and dedication resulted in a favorable judgment. Highly recommended!', name: 'Ahmed Khan', role: 'Property Dispute Client' },
+                { quote: 'I was facing a very difficult criminal case. The team\'s strategic approach secured my bail and eventual acquittal. I will forever be grateful.', name: 'Fatima Malik', role: 'Criminal Defence Client' },
+                { quote: 'Their family law team handled my custody case with real sensitivity and professionalism. They understood my concerns and fought for my children\'s best interests.', name: 'Sarah Qureshi', role: 'Family Law Client' },
+              ].map((t) => (
+                <div key={t.name} className={styles.testimonialCard}>
+                  <div className={styles.testimonialStars}>★★★★★</div>
+                  <p className={styles.testimonialQuote}>"{t.quote}"</p>
+                  <div className={styles.testimonialAuthor}>
+                    <strong>{t.name}</strong>
+                    <span>{t.role}</span>
+                  </div>
                 </div>
-              </div>
-              
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialStars}>★★★★★</div>
-                <p className={styles.testimonialText}>
-                  "I was facing a difficult criminal case. The team's expertise in criminal law and their strategic approach secured my bail and eventual acquittal. Forever grateful."
-                </p>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Fatima Malik</strong>
-                  <span>Criminal Defense Client</span>
-                </div>
-              </div>
-              
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialStars}>★★★★★</div>
-                <p className={styles.testimonialText}>
-                  "Their family law team handled my custody case with sensitivity and professionalism. They understood my concerns and fought for my children's best interests."
-                </p>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Sarah Qureshi</strong>
-                  <span>Family Law Client</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center" style={{marginTop: '3rem'}}>
-              <Link href="/success-stories" className="btn btn-secondary">
-                Read More Success Stories
-              </Link>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className={`section ${styles.ctaSection}`}>
-          <div className={`container text-center`}>
-            <h2>Get Expert Legal Consultation Today</h2>
-            <p className={styles.ctaDesc}>
-              Don't face legal challenges alone. Our experienced attorneys are ready to provide the guidance and representation you need. Schedule your free consultation now.
-            </p>
-            <div className={styles.ctaActions}>
-              <Link href="/book-consultation" className="btn btn-primary">
-                Book Free Consultation
-              </Link>
-              <a href="tel:+923001234567" className="btn btn-secondary">
-                Call: +92 300 1234567
-              </a>
-            </div>
-            <div className={styles.ctaContact}>
-              <p>Available 24/7 for urgent matters</p>
-              <div className={styles.contactMethods}>
-                <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer">
-                  WhatsApp
-                </a>
-                <span>•</span>
-                <a href="mailto:info@karachilegalhouse.com">
-                  Email
-                </a>
-                <span>•</span>
-                <Link href="/contact">
-                  Office Visit
+        {/* ─── CTA BANNER ─── */}
+        <section className={styles.ctaSection}>
+          <div className="container">
+            <div className={styles.ctaInner}>
+              <div>
+                <h2 className={styles.ctaTitle}>Ready to Discuss Your Case?</h2>
+                <p className={styles.ctaDesc}>Our experienced attorneys are available now. Schedule your free, confidential consultation today.</p>
+              </div>
+              <div className={styles.ctaActions}>
+                <Link href="/book-consultation" className={styles.ctaPrimary}>
+                  Book Free Consultation
                 </Link>
+                <a href="tel:+923001234567" className={styles.ctaSecondary}>
+                  <Phone size={18} /> Call Now
+                </a>
               </div>
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>

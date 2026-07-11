@@ -1,15 +1,15 @@
 :root {
-  /* Ultra-Premium Color Palette */
-  --primary: #0a0f1c; /* Deep Midnight */
-  --primary-light: #162032; /* Lighter Midnight */
-  --accent: #c5a85c; /* Rich Gold */
-  --accent-light: #dfc888;
-  --accent-dark: #a2853b;
-  --background: #fdfdfc; /* Off-white ivory */
-  --surface: #ffffff;
-  --text-main: #1f2937;
-  --text-muted: #4b5563;
-  --text-inverse: #f8fafc;
+  /* Professional Black & White Theme */
+  --primary: #000000; /* Pure Black */
+  --primary-light: #1a1a1a; /* Dark Gray */
+  --accent: #333333; /* Charcoal Gray */
+  --accent-light: #666666; /* Medium Gray */
+  --accent-dark: #000000; /* Black */
+  --background: #ffffff; /* Pure White */
+  --surface: #f5f5f5; /* Light Gray */
+  --text-main: #000000;
+  --text-muted: #666666;
+  --text-inverse: #ffffff;
   
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -17,28 +17,28 @@
   --spacing-xl: 4rem;
   --spacing-xxl: 6rem;
   
-  --border-radius: 4px; /* Sharper edges for professional look */
-  --border-radius-lg: 12px;
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --border-radius: 0px; /* Sharp edges for modern look */
+  --border-radius-lg: 0px;
+  --transition: all 0.3s ease;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
   
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-shadow: 0 8px 32px 0 rgba(10, 15, 28, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #060a12;
-    --surface: #0a0f1c;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --glass-bg: rgba(10, 15, 28, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.05);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-    --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    --background: #ffffff;
+    --surface: #f5f5f5;
+    --text-main: #000000;
+    --text-muted: #666666;
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -122,38 +122,38 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--accent);
+  background-color: #000000;
   color: #fff;
-  border-color: var(--accent);
-  box-shadow: 0 4px 15px rgba(197, 168, 92, 0.3);
+  border-color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-dark);
-  border-color: var(--accent-dark);
-  box-shadow: 0 8px 25px rgba(197, 168, 92, 0.4);
+  background-color: #333333;
+  border-color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
+  color: #000000;
+  border-color: #000000;
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary);
+  background-color: #000000;
   color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   .btn-secondary {
-    color: var(--accent);
-    border-color: var(--accent);
+    color: #000000;
+    border-color: #000000;
   }
   .btn-secondary:hover {
-    background-color: var(--accent);
-    color: var(--primary);
+    background-color: #000000;
+    color: #ffffff;
   }
 }
 

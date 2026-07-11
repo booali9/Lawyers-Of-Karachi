@@ -5,6 +5,7 @@ export const servicesData = {
     shortTitle: "Criminal Law",
     desc: "Expert legal representation in all criminal proceedings across Pakistan",
     icon: "⚖️",
+    image: "/images/criminal_law.png",
     overview: "At Karachi Legal House, our criminal defense attorneys bring decades of combined experience in defending clients facing serious criminal charges. We understand the stress and uncertainty that criminal proceedings bring, and we are committed to protecting your rights and securing the best possible outcome. Our team has successfully handled thousands of criminal cases before Sessions Courts, High Courts, and the Supreme Court of Pakistan.",
     services: [
       {
@@ -55,10 +56,11 @@ export const servicesData = {
   },
 
   "family-law": {
-    title: "Family Law Services",
+    title: "Family Law & Divorce",
     shortTitle: "Family Law",
-    desc: "Compassionate and professional legal representation for family matters",
+    desc: "Compassionate legal support for sensitive family matters",
     icon: "👨‍👩‍👧‍👦",
+    image: "/images/family_law.png",
     overview: "Family law matters require both legal expertise and emotional sensitivity. Our family law team at Karachi Legal House provides compassionate yet assertive representation in divorce, child custody, maintenance, and other family disputes. We understand the personal nature of these cases and work diligently to protect your rights while minimizing emotional stress.",
     services: [
       { title: "Divorce & Khula", desc: "Complete legal assistance in divorce proceedings, khula applications, and dissolution of marriage under Islamic and civil law." },
@@ -91,10 +93,11 @@ export const servicesData = {
   },
 
   "corporate-law": {
-    title: "Corporate & Business Law",
+    title: "Corporate & Commercial Law",
     shortTitle: "Corporate Law",
-    desc: "Comprehensive legal solutions for businesses and corporations",
+    desc: "Comprehensive legal solutions for businesses of all sizes",
     icon: "🏢",
+    image: "/images/corporate_law.png",
     overview: "In today's complex business environment, having expert legal counsel is essential. Karachi Legal House provides comprehensive corporate and commercial legal services to businesses of all sizes, from startups to established corporations. Our corporate law team assists with business formation, contracts, compliance, mergers, and commercial disputes, ensuring your business operates smoothly and legally.",
     services: [
       { title: "Company Registration", desc: "Complete assistance with SECP registration, business incorporation, and licensing for all types of companies." },
@@ -129,8 +132,9 @@ export const servicesData = {
   "property-law": {
     title: "Property & Real Estate Law",
     shortTitle: "Property Law",
-    desc: "Expert legal services for all property and real estate matters",
+    desc: "Expert legal guidance for property transactions and disputes",
     icon: "🏠",
+    image: "/images/property_law.png",
     overview: "Property is often your most valuable asset, and protecting it requires expert legal guidance. Karachi Legal House provides comprehensive property law services including dispute resolution, title verification, succession certificates, property transfers, and litigation. Our property law experts have extensive experience handling complex real estate matters across Pakistan.",
     services: [
       { title: "Property Disputes", desc: "Litigation and resolution of ownership disputes, boundary conflicts, and illegal occupation cases." },
@@ -162,11 +166,12 @@ export const servicesData = {
     ]
   },
 
-  "civil-law": {
+  "civil-litigation": {
     title: "Civil Litigation",
     shortTitle: "Civil Law",
-    desc: "Comprehensive civil litigation services across all courts",
-    icon: "📋",
+    desc: "Strategic representation in all types of civil disputes",
+    icon: "📜",
+    image: "/images/civil_law.png",
     overview: "Civil disputes require strategic legal representation and thorough knowledge of civil procedure. Karachi Legal House provides expert civil litigation services covering contract disputes, money recovery, injunctions, specific performance, and declaratory suits. Our civil litigation team represents clients at all levels of civil courts with a focus on achieving favorable outcomes efficiently.",
     services: [
       { title: "Civil Suits", desc: "Filing and defending civil suits for various claims and legal remedies." },

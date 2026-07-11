@@ -1,12 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Phone, Mail, MessageCircle, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import styles from "./service.module.css";
 import { servicesData } from "./servicesData";
 
-export function generateMetadata({ params }) {
-  const service = servicesData[params.slug];
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = servicesData[slug];
   if (!service) return { title: "Service Not Found" };
   
   return {
@@ -15,8 +18,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ServicePage({ params }) {
-  const service = servicesData[params.slug];
+export default async function ServicePage({ params }) {
+  const { slug } = await params;
+  const service = servicesData[slug];
 
   if (!service) {
     notFound();
@@ -26,42 +30,63 @@ export default function ServicePage({ params }) {
     <>
       <Navbar />
       <main className={styles.serviceMain}>
-        {/* Hero Section */}
+        {/* ─── HERO ─── */}
         <section className={styles.serviceHero}>
+          <Image
+            src={service.image || '/images/hero_banner.png'}
+            alt={service.title}
+            fill
+            priority
+            className={styles.heroBgImg}
+          />
+          <div className={styles.heroOverlay} />
+          <div className={`container ${styles.heroInner}`}>
+            <p className={styles.heroEyebrow}><span className={styles.eyebrowLine} />{service.shortTitle}</p>
+            <h1 className={styles.heroTitle}>{service.title}</h1>
+            <p className={styles.heroDesc}>{service.desc}</p>
+            <div className={styles.heroActions}>
+              <Link href="/book-consultation" className={styles.heroCta}>
+                Get Free Consultation
+              </Link>
+              <a href="tel:+923001234567" className={styles.heroPhone}>
+                <Phone size={18} /> +92 300 123 4567
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── OVERVIEW ─── */}
+        <section className={styles.overviewSection}>
           <div className="container">
-            <div className={styles.heroContent}>
-              <span className={styles.heroIcon}>{service.icon}</span>
-              <h1>{service.title}</h1>
-              <p className={styles.heroDesc}>{service.desc}</p>
-              <div className={styles.heroActions}>
-                <Link href="/book-consultation" className="btn btn-primary">
-                  Get Free Consultation
-                </Link>
-                <a href="tel:+923001234567" className="btn btn-secondary">
-                  Call: +92 300 1234567
-                </a>
+            <div className={styles.overviewGrid}>
+              <div className={styles.overviewContent}>
+                <p className={styles.eyebrowDark}><span className={styles.eyebrowLineDark} />Overview</p>
+                <h2>Expert Representation in {service.shortTitle}</h2>
+                <p className={styles.overviewText}>{service.overview}</p>
+              </div>
+              <div className={styles.overviewSidebar}>
+                <div className={styles.sidebarCard}>
+                  <h3>Need Immediate Assistance?</h3>
+                  <p>Our legal team is available for urgent consultations regarding your matter.</p>
+                  <a href="tel:+923001234567" className={styles.sidebarPhone}>
+                    <Phone size={16} /> +92 300 123 4567
+                  </a>
+                  <Link href="/book-consultation" className={styles.sidebarCta}>
+                    Schedule Meeting <ArrowRight size={14} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Overview */}
-        <section className="section">
+        {/* ─── SERVICES OFFERED ─── */}
+        <section className={styles.servicesSection}>
           <div className="container">
-            <div className={styles.overviewSection}>
-              <h2>Overview</h2>
-              <p className={styles.overviewText}>{service.overview}</p>
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrowDark}><span className={styles.eyebrowLineDark} />What We Handle</p>
+              <h2>Specific Areas of Expertise</h2>
             </div>
-          </div>
-        </section>
-
-        {/* Services Offered */}
-        <section className={`section ${styles.servicesOffered}`}>
-          <div className="container">
-            <h2 className="text-center">Our {service.shortTitle} Services</h2>
-            <p className="text-center" style={{color: 'var(--text-muted)', marginBottom: '3rem'}}>
-              Comprehensive legal solutions tailored to your needs
-            </p>
             <div className={styles.servicesGrid}>
               {service.services.map((item, index) => (
                 <div key={index} className={styles.serviceItem}>
@@ -74,50 +99,59 @@ export default function ServicePage({ params }) {
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="section">
+        {/* ─── WHY CHOOSE US & PROCESS ─── */}
+        <section className={styles.splitSection}>
           <div className="container">
-            <h2 className="text-center">Why Choose Us for {service.shortTitle}</h2>
-            <div className={styles.whyChooseGrid}>
-              {service.whyChoose.map((reason, index) => (
-                <div key={index} className={styles.whyChooseItem}>
-                  <span className={styles.checkmark}>✓</span>
-                  <span>{reason}</span>
+            <div className={styles.splitGrid}>
+              {/* Why Choose Us */}
+              <div className={styles.whyCol}>
+                <p className={styles.eyebrowDark}><span className={styles.eyebrowLineDark} />Why Us</p>
+                <h2>Why Choose Karachi Legal House</h2>
+                <div className={styles.whyList}>
+                  {service.whyChoose.map((reason, index) => (
+                    <div key={index} className={styles.whyItem}>
+                      <CheckCircle2 size={24} className={styles.whyIcon} />
+                      <span>{reason}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
 
-        {/* Process */}
-        <section className={`section ${styles.processSection}`}>
-          <div className="container">
-            <h2 className="text-center">Our Process</h2>
-            <p className="text-center" style={{color: 'var(--text-muted)', marginBottom: '3rem'}}>
-              How we handle your {service.shortTitle.toLowerCase()} case
-            </p>
-            <div className={styles.processSteps}>
-              {service.process.map((step, index) => (
-                <div key={index} className={styles.processStep}>
-                  <div className={styles.stepNumber}>{index + 1}</div>
-                  <div className={styles.stepContent}>
-                    <h3>{step.step}</h3>
-                    <p>{step.desc}</p>
+              {/* Process */}
+              <div className={styles.processCol}>
+                <div className={styles.processCard}>
+                  <h2>Our Approach to Your Case</h2>
+                  <div className={styles.processList}>
+                    {service.process.map((step, index) => (
+                      <div key={index} className={styles.processStep}>
+                        <div className={styles.stepNum}>{index + 1}</div>
+                        <div>
+                          <h4>{step.step}</h4>
+                          <p>{step.desc}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* FAQs */}
-        <section className="section">
+        {/* ─── FAQS ─── */}
+        <section className={styles.faqSection}>
           <div className="container">
-            <h2 className="text-center">Frequently Asked Questions</h2>
+            <div className={styles.sectionHeaderCenter}>
+              <p className={styles.eyebrowDarkCenter}><span className={styles.eyebrowLineDark} />FAQ</p>
+              <h2>Frequently Asked Questions</h2>
+            </div>
             <div className={styles.faqsContainer}>
               {service.faqs.map((faq, index) => (
                 <div key={index} className={styles.faqItem}>
-                  <h3 className={styles.faqQuestion}>{faq.q}</h3>
+                  <div className={styles.faqHeader}>
+                    <ChevronRight size={20} className={styles.faqIcon} />
+                    <h3>{faq.q}</h3>
+                  </div>
                   <p className={styles.faqAnswer}>{faq.a}</p>
                 </div>
               ))}
@@ -125,31 +159,31 @@ export default function ServicePage({ params }) {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className={`section ${styles.ctaSection}`}>
-          <div className="container text-center">
-            <h2>Ready to Get Started?</h2>
-            <p className={styles.ctaDesc}>
-              Don't face legal challenges alone. Our experienced {service.shortTitle.toLowerCase()} attorneys are ready to help you achieve the best possible outcome.
-            </p>
-            <div className={styles.ctaActions}>
-              <Link href="/book-consultation" className="btn btn-primary">
-                Schedule Free Consultation
-              </Link>
-              <Link href="/practice-areas" className="btn btn-secondary">
-                View All Services
-              </Link>
-            </div>
-            <div className={styles.ctaContact}>
-              <p>Available 24/7 for Urgent Matters</p>
-              <div className={styles.contactOptions}>
-                <a href="tel:+923001234567">📞 +92 300 1234567</a>
-                <a href="mailto:info@karachilegalhouse.com">✉️ info@karachilegalhouse.com</a>
-                <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+        {/* ─── CTA ─── */}
+        <section className={styles.ctaSection}>
+          <div className="container">
+            <div className={styles.ctaInner}>
+              <div>
+                <h2 className={styles.ctaTitle}>Ready to Discuss Your Case?</h2>
+                <p className={styles.ctaDesc}>
+                  Don't face legal challenges alone. Our experienced {service.shortTitle.toLowerCase()} attorneys are ready to help.
+                </p>
+                <div className={styles.ctaContactLine}>
+                  <a href="tel:+923001234567"><Phone size={14} /> +92 300 1234567</a>
+                  <span className={styles.ctaDot}>•</span>
+                  <a href="mailto:info@karachilegalhouse.com"><Mail size={14} /> info@karachilegalhouse.com</a>
+                  <span className={styles.ctaDot}>•</span>
+                  <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer"><MessageCircle size={14} /> WhatsApp</a>
+                </div>
+              </div>
+              <div className={styles.ctaActions}>
+                <Link href="/book-consultation" className={styles.ctaPrimary}>Schedule Consultation</Link>
+                <Link href="/practice-areas" className={styles.ctaSecondary}>View All Services</Link>
               </div>
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>

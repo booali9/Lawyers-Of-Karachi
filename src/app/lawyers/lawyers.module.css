@@ -1,435 +1,130 @@
-.lawyersMain {
-  flex: 1;
-}
+.lawyersMain { flex: 1; }
 
-/* Hero Section */
+/* ─── HERO ─── */
 .lawyersHero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-  padding: 8rem 0 5rem 0;
+  position: relative;
+  height: 75vh;
+  min-height: 500px;
   margin-top: 80px;
-  text-align: center;
-}
-
-.heroLabel {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 700;
-  font-family: var(--font-inter), sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-}
-
-.lawyersHero h1 {
-  color: #fff;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1.5rem;
-}
-
-.heroDesc {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .lawyersHero {
-    padding: 6rem 0 4rem 0;
-    margin-top: 70px;
-  }
-}
-
-/* Overview Section */
-.overviewGrid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.overviewContent h2 {
-  margin-bottom: 2rem;
-  color: var(--primary);
-}
-
-.overviewText {
-  color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-}
-
-.statsBox {
-  background: var(--surface);
-  padding: 3rem 2rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.statItem {
-  text-align: center;
-  padding: 1.5rem;
-  border-bottom: 2px solid var(--accent);
-}
-
-.statItem:last-child {
-  border-bottom: none;
-}
-
-.statItem strong {
-  display: block;
-  font-size: 2.5rem;
-  color: var(--accent);
-  font-family: var(--font-playfair), serif;
-  margin-bottom: 0.5rem;
-}
-
-.statItem span {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-@media (max-width: 992px) {
-  .overviewGrid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .overviewContent h2 {
-    color: var(--accent);
-  }
-}
-
-/* Profiles Section */
-.profilesSection {
-  background-color: var(--surface);
-}
-
-.lawyersGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 3rem;
-}
-
-@media (max-width: 576px) {
-  .lawyersGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.lawyerCard {
-  background: var(--background);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
+  align-items: flex-end;
   overflow: hidden;
 }
-
-.lawyerCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
+.heroBg { object-fit: cover; object-position: center; z-index: 0; }
+.heroOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.15) 100%);
+  z-index: 1;
 }
-
-.cardHeader {
-  background: linear-gradient(to bottom right, var(--primary), var(--primary-light));
-  padding: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  color: #fff;
+.heroInner { position: relative; z-index: 2; padding-bottom: 5rem; }
+.eyebrow {
+  display: flex; align-items: center; gap: 1rem;
+  font-size: 0.75rem; font-family: var(--font-inter), sans-serif;
+  text-transform: uppercase; letter-spacing: 3px;
+  color: rgba(255,255,255,0.6); margin-bottom: 1.2rem;
 }
-
-.lawyerAvatar {
-  width: 80px;
-  height: 80px;
-  background: var(--accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: 700;
+.eyebrowLine { display: block; width: 40px; height: 1px; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+.heroTitle {
   font-family: var(--font-playfair), serif;
-  color: #fff;
-  flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.2rem;
 }
+.heroDesc { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 520px; line-height: 1.7; margin: 0; }
 
-.lawyerInfo h3 {
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+/* ─── STATS BAR ─── */
+.statsBar { background: #000; padding: 2.5rem 0; }
+.statsRow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 4rem; flex-wrap: wrap;
 }
+.statItem { display: flex; flex-direction: column; gap: 0.3rem; text-align: center; }
+.statNum { font-family: var(--font-playfair), serif; font-size: 1.8rem; font-weight: 700; color: #fff; line-height: 1; }
+.statLabel { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-inter), sans-serif; }
+.statDivider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
 
-.lawyerTitle {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
+/* ─── SECTION HEADER ─── */
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionHeader .eyebrow { justify-content: center; color: #888; }
+.sectionHeader .eyebrowLine { background: #888; }
+.sectionHeader h2 { font-family: var(--font-playfair), serif; font-size: clamp(2rem, 4vw, 3rem); color: #000; }
 
-.credentials {
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.cardBody {
-  padding: 2.5rem;
-}
-
-.experienceBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(197, 168, 92, 0.1);
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--accent);
-}
-
-.expIcon {
-  font-size: 1.2rem;
-}
-
-.experienceBadge span:last-child {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.specialization {
-  margin-bottom: 1.5rem;
-}
-
-.specialization h4 {
-  color: var(--primary);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  font-family: var(--font-inter), sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-}
-
-.specializationTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.specTag {
-  background: var(--surface);
-  color: var(--text-main);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.lawyerBio {
-  color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
-}
-
-/* Details Section */
-.detailsSection {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.detailsSummary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.95rem;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition);
-}
-
-.detailsSummary:hover {
-  color: var(--accent-dark);
-}
-
-.detailsSummary::marker {
-  display: none;
-}
-
-.detailsSummary::before {
-  content: '▼';
-  font-size: 0.7rem;
-  transition: var(--transition);
-}
-
-.detailsSection[open] .detailsSummary::before {
-  transform: rotate(180deg);
-}
-
-.detailsContent {
-  margin-top: 1.5rem;
+/* ─── PROFILES ─── */
+.profilesSection { background: #f5f5f5; padding: 8rem 0; }
+.lawyersGrid {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: #d0d0d0;
 }
+.lawyerCard { display: flex; flex-direction: column; background: #fff; }
+.lawyerImageWrapper { position: relative; height: 420px; overflow: hidden; }
+.lawyerPhoto { object-fit: cover; object-position: top; filter: grayscale(100%); transition: all 0.5s ease; }
+.lawyerCard:hover .lawyerPhoto { filter: grayscale(0%); transform: scale(1.04); }
+.lawyerOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  z-index: 1;
+}
+.lawyerCardInfo { position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; z-index: 2; }
+.lawyerCardInfo h3 { font-family: var(--font-playfair), serif; font-size: 1.5rem; color: #fff; margin: 0 0 0.3rem; }
+.lawyerTitle { font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-inter), sans-serif; margin: 0; }
 
-.education h5,
-.achievements h5 {
-  color: var(--primary);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+.cardContent { padding: 2rem 2rem 2.5rem; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; }
+.credentials { font-size: 0.82rem; color: #555; font-family: var(--font-inter), sans-serif; letter-spacing: 0.5px; margin: 0; }
+.expBadge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: #000; font-family: var(--font-inter), sans-serif; font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag { padding: 0.3rem 0.8rem; background: #f0f0f0; font-size: 0.75rem; font-family: var(--font-inter), sans-serif; color: #333; letter-spacing: 0.3px; }
+.lawyerBio { font-size: 0.88rem; color: #666; line-height: 1.7; margin: 0; flex-grow: 1; }
+.cardCta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem; font-family: var(--font-inter), sans-serif;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  color: #000; transition: gap 0.2s ease; margin-top: 0.5rem;
 }
+.cardCta:hover { gap: 0.8rem; }
 
-.education ul,
-.achievements ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+@media (max-width: 768px) { .lawyersGrid { grid-template-columns: 1fr; } .lawyerImageWrapper { height: 360px; } }
 
-.education li,
-.achievements li {
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  position: relative;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
+/* ─── WHY SECTION ─── */
+.whySection { background: #fff; padding: 8rem 0; }
+.whyGrid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 7rem; align-items: center; }
+.whyImageCol { position: relative; }
+.whyImageWrapper { position: relative; width: 100%; aspect-ratio: 4/5; }
+.whyImg { object-fit: cover; filter: grayscale(100%); }
+.whyContent {}
+.whyContent h2 { font-family: var(--font-playfair), serif; font-size: clamp(2rem, 4vw, 3rem); color: #000; line-height: 1.15; margin-bottom: 2.5rem; }
+.whyContent .eyebrow { color: #888; }
+.whyContent .eyebrowLine { background: #888; }
+.whyList { display: flex; flex-direction: column; gap: 0; }
+.whyItem { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid #eeeeee; }
+.whyItem:first-child { border-top: 1px solid #eeeeee; }
+.whyIcon { flex-shrink: 0; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #000; color: #fff; }
+.whyItem h4 { font-family: var(--font-playfair), serif; font-size: 1.1rem; color: #000; margin-bottom: 0.3rem; }
+.whyItem p { font-size: 0.88rem; color: #666; line-height: 1.7; margin: 0; }
 
-.education li::before,
-.achievements li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: bold;
-}
+@media (max-width: 992px) { .whyGrid { grid-template-columns: 1fr; gap: 3rem; } }
 
-@media (prefers-color-scheme: dark) {
-  .lawyerCard {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .specialization h4 {
-    color: var(--accent);
-  }
-  .specTag {
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-  .detailsSection {
-    border-top-color: rgba(255, 255, 255, 0.1);
-  }
-  .education h5,
-  .achievements h5 {
-    color: var(--accent);
-  }
+/* ─── CTA ─── */
+.ctaSection { background: #000; padding: 6rem 0; }
+.ctaInner { display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.ctaTitle { font-family: var(--font-playfair), serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: #fff; margin-bottom: 0.8rem; }
+.ctaDesc { font-size: 0.95rem; color: #888; line-height: 1.7; max-width: 480px; margin: 0; }
+.ctaActions { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+.ctaPrimary {
+  display: inline-flex; align-items: center; padding: 1rem 2rem;
+  background: #fff; color: #000; font-size: 0.8rem;
+  font-family: var(--font-inter), sans-serif; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  transition: all 0.25s ease; border: 1px solid #fff; white-space: nowrap;
 }
+.ctaPrimary:hover { background: transparent; color: #fff; }
+.ctaSecondary {
+  display: inline-flex; align-items: center; padding: 1rem 2rem;
+  border: 1px solid #333; color: #fff; font-size: 0.8rem;
+  font-family: var(--font-inter), sans-serif; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  transition: all 0.25s ease; white-space: nowrap;
+}
+.ctaSecondary:hover { border-color: #fff; }
 
-/* Why Team Section */
-.whyTeamSection {
-  background-color: var(--background);
-}
-
-.whyTeamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
-}
-
-.whyItem {
-  background: var(--surface);
-  padding: 2.5rem 2rem;
-  border-radius: var(--border-radius-lg);
-  text-align: center;
-  transition: var(--transition);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: var(--shadow-sm);
-}
-
-.whyItem:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
-}
-
-.whyIcon {
-  font-size: 3.5rem;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-.whyItem h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.whyItem p {
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .whyItem {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .whyItem h3 {
-    color: var(--accent);
-  }
-}
-
-/* CTA Section */
-.ctaSection {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-}
-
-.ctaSection h2 {
-  color: #fff;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.ctaDesc {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ctaActions {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 576px) {
-  .ctaActions {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+@media (max-width: 768px) { .ctaInner { flex-direction: column; text-align: center; } .ctaActions { justify-content: center; } }

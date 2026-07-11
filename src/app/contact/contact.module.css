@@ -1,500 +1,166 @@
-.contactMain {
-  flex: 1;
-}
+.contactMain { flex: 1; }
 
-/* Hero Section */
+/* ─── HERO ─── */
 .contactHero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-  padding: 8rem 0 5rem 0;
-  margin-top: 80px;
-  text-align: center;
+  position: relative; height: 75vh; min-height: 500px;
+  margin-top: 80px; display: flex; align-items: flex-end; overflow: hidden;
 }
-
-.heroLabel {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 700;
-  font-family: var(--font-inter), sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+.heroBg { object-fit: cover; object-position: center; z-index: 0; }
+.heroOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.15) 100%);
+  z-index: 1;
 }
-
-.contactHero h1 {
-  color: #fff;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1.5rem;
+.heroInner { position: relative; z-index: 2; padding-bottom: 5rem; }
+.eyebrow {
+  display: flex; align-items: center; gap: 1rem; font-size: 0.75rem;
+  font-family: var(--font-inter), sans-serif; text-transform: uppercase;
+  letter-spacing: 3px; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem;
 }
-
-.heroDesc {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.7;
+.eyebrowLine { display: block; width: 40px; height: 1px; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+.heroTitle {
+  font-family: var(--font-playfair), serif; font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.2rem;
 }
+.heroDesc { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 520px; line-height: 1.7; margin: 0; }
+@media (max-width: 768px) { .contactHero { margin-top: 70px; height: 60vh; } }
 
-@media (max-width: 768px) {
-  .contactHero {
-    padding: 6rem 0 4rem 0;
-    margin-top: 70px;
-  }
-}
-
-/* Quick Contact Cards */
-.quickContact {
-  background-color: var(--surface);
-  margin-top: -3rem;
-  position: relative;
-  z-index: 10;
-}
-
+/* ─── QUICK STRIP ─── */
+.quickStrip { background: #000; padding: 0; }
 .quickGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #1a1a1a;
 }
-
 .quickCard {
-  background: var(--background);
-  padding: 2.5rem 2rem;
-  border-radius: var(--border-radius-lg);
-  text-align: center;
-  transition: var(--transition);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: var(--shadow-lg);
-  text-decoration: none;
-  color: inherit;
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  padding: 2.5rem 2rem; border-right: 1px solid #1a1a1a;
+  transition: all 0.2s ease; text-decoration: none;
 }
+.quickCard:last-child { border-right: none; }
+.quickCard:hover { background: #111; }
+.quickIcon { flex-shrink: 0; color: #ffffff; margin-top: 2px; }
+.quickCard h3 { font-family: var(--font-playfair), serif; font-size: 1rem; color: #fff; margin-bottom: 0.3rem; }
+.quickCard p { font-size: 0.82rem; color: #888; margin: 0 0 0.3rem; font-family: var(--font-inter), sans-serif; }
+.quickCard span { font-size: 0.72rem; color: #555; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-inter), sans-serif; }
+@media (max-width: 992px) { .quickGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .quickGrid { grid-template-columns: 1fr; } }
 
-.quickCard:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
+/* ─── MAIN SECTION ─── */
+.mainSection { padding: 8rem 0; background: #ffffff; }
+.contactGrid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 7rem; align-items: start; }
+
+/* Form */
+.formCol {}
+.eyebrowLineDark { display: block; width: 40px; height: 1px; background: #888; flex-shrink: 0; }
+.formCol .eyebrow { color: #888; }
+.formTitle {
+  font-family: var(--font-playfair), serif; font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700; color: #000; line-height: 1.15; margin-bottom: 1rem;
 }
+.formDesc { font-size: 0.95rem; color: #666; line-height: 1.7; margin-bottom: 2.5rem; }
 
-.quickIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.quickCard h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-
-.quickCard p {
-  color: var(--text-muted);
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.availability {
-  display: inline-block;
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 600;
-  padding: 0.4rem 1rem;
-  background: rgba(197, 168, 92, 0.1);
-  border-radius: 20px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .quickCard {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .quickCard h3 {
-    color: var(--accent);
-  }
-}
-
-/* Contact Grid */
-.contactGrid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-}
-
-@media (max-width: 992px) {
-  .contactGrid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-/* Form Section */
-.formSection h2 {
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-
-.formDesc {
-  color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  line-height: 1.7;
-}
-
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.formRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-@media (max-width: 576px) {
-  .formRow {
-    grid-template-columns: 1fr;
-  }
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
+.contactForm { display: flex; flex-direction: column; gap: 1.5rem; }
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.formGroup { display: flex; flex-direction: column; gap: 0.5rem; }
 .formGroup label {
-  font-weight: 600;
-  color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 0.78rem; font-family: var(--font-inter), sans-serif;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #000;
 }
-
 .formGroup input,
-.formGroup textarea,
-.formGroup select {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: var(--border-radius);
-  font-family: var(--font-inter), sans-serif;
-  font-size: 1rem;
-  background: var(--surface);
-  color: var(--text-main);
-  transition: var(--transition);
-}
-
-.formGroup input:focus,
-.formGroup textarea:focus,
-.formGroup select:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(197, 168, 92, 0.1);
-}
-
+.formGroup select,
 .formGroup textarea {
-  resize: vertical;
-  min-height: 150px;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #d0d0d0;
+  background: #fafafa;
+  font-size: 0.9rem;
+  font-family: var(--font-inter), sans-serif;
+  color: #333;
+  transition: all 0.2s ease;
+  outline: none;
+  border-radius: 0;
+  appearance: none;
 }
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #000;
+  background: #fff;
+}
+.formGroup textarea { resize: vertical; min-height: 150px; }
 
 .checkboxLabel {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  cursor: pointer;
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  font-size: 0.85rem; color: #555; cursor: pointer; font-family: var(--font-inter), sans-serif;
 }
+.checkboxLabel input { margin-top: 3px; flex-shrink: 0; accent-color: #000; }
 
-.checkboxLabel input[type="checkbox"] {
-  width: auto;
-  margin-top: 0.2rem;
-  cursor: pointer;
+.submitBtn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 2.5rem; background: #000; color: #fff;
+  font-size: 0.82rem; font-family: var(--font-inter), sans-serif;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  border: 1px solid #000; cursor: pointer; transition: all 0.25s ease;
+  width: fit-content;
 }
+.submitBtn:hover { background: transparent; color: #000; }
+.formNote { font-size: 0.78rem; color: #999; font-family: var(--font-inter), sans-serif; }
 
-.checkboxLabel span {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
+@media (max-width: 768px) { .formRow { grid-template-columns: 1fr; } }
 
-.formNote {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  margin-top: 1rem;
+/* Info Panel */
+.infoCol { display: flex; flex-direction: column; gap: 0; }
+.infoImageWrapper { position: relative; height: 300px; overflow: hidden; }
+.infoImg { object-fit: cover; filter: grayscale(100%); }
+.infoImgOverlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); }
+.infoCards { display: flex; flex-direction: column; gap: 0; border: 1px solid #e8e8e8; border-top: none; }
+.infoCard {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.5rem; border-bottom: 1px solid #e8e8e8;
 }
+.infoCard:last-child { border-bottom: none; }
+.infoIcon { flex-shrink: 0; color: #000; margin-top: 2px; }
+.infoCard strong { display: block; font-size: 0.78rem; font-family: var(--font-inter), sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 0.4rem; }
+.infoCard p { font-size: 0.85rem; color: #555; line-height: 1.7; margin: 0; }
 
-@media (prefers-color-scheme: dark) {
-  .formSection h2 {
-    color: var(--accent);
-  }
-  .formGroup input,
-  .formGroup textarea,
-  .formGroup select {
-    border-color: rgba(255, 255, 255, 0.15);
-  }
-}
+@media (max-width: 1100px) { .contactGrid { grid-template-columns: 1fr; gap: 4rem; } }
 
-/* Info Section */
-.infoSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+/* ─── OFFICES ─── */
+.officesSection { background: #f5f5f5; padding: 8rem 0; }
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionHeader .eyebrow { justify-content: center; color: #888; }
+.sectionHeader h2 { font-family: var(--font-playfair), serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #000; }
+.officesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #d0d0d0; }
+.officeCard { background: #fff; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.officeCard h3 { font-family: var(--font-playfair), serif; font-size: 1.2rem; color: #000; margin: 0; padding-bottom: 1.2rem; border-bottom: 1px solid #eee; }
+.officeDetails { display: flex; flex-direction: column; gap: 1rem; }
+.officeDetail { display: flex; align-items: flex-start; gap: 0.8rem; }
+.detailIcon { flex-shrink: 0; color: #000; margin-top: 2px; }
+.officeDetail p { font-size: 0.85rem; color: #555; line-height: 1.6; margin: 0; }
+.officeDetail a { color: #000; font-weight: 600; }
+.officeDetail a:hover { text-decoration: underline; }
 
-.infoCard,
-.hoursCard,
-.socialCard {
-  background: var(--surface);
-  padding: 2.5rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
+@media (max-width: 992px) { .officesGrid { grid-template-columns: 1fr; } }
 
-.infoCard h2 {
-  color: var(--primary);
-  margin-bottom: 2rem;
+/* ─── EMERGENCY ─── */
+.emergencySection { background: #000; padding: 5rem 0; }
+.emergencyInner { display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.emergencyTitle { font-family: var(--font-playfair), serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: #fff; margin-bottom: 0.8rem; }
+.emergencyDesc { font-size: 0.95rem; color: #888; line-height: 1.7; max-width: 500px; margin: 0; }
+.emergencyActions { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+.emergencyPrimary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 2rem; background: #fff; color: #000;
+  font-size: 0.8rem; font-family: var(--font-inter), sans-serif;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  transition: all 0.25s ease; border: 1px solid #fff; white-space: nowrap;
 }
-
-.infoList {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.emergencyPrimary:hover { background: transparent; color: #fff; }
+.emergencySecondary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 2rem; border: 1px solid #333; color: #fff;
+  font-size: 0.8rem; font-family: var(--font-inter), sans-serif;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  transition: all 0.25s ease; white-space: nowrap;
 }
-
-.infoItem {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-
-.infoIcon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.infoItem strong {
-  display: block;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-}
-
-.infoItem p {
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 0.3rem;
-}
-
-.infoItem a {
-  color: var(--text-muted);
-  transition: var(--transition);
-}
-
-.infoItem a:hover {
-  color: var(--accent);
-}
-
-.hoursCard h3,
-.socialCard h3 {
-  color: var(--primary);
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
-}
-
-.hoursList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.hoursList li {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  color: var(--text-muted);
-}
-
-.hoursList li:last-child {
-  border-bottom: none;
-}
-
-.hoursList li.emergency {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.socialLinks {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.socialLinks a {
-  padding: 0.8rem 1.5rem;
-  background: var(--background);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--border-radius);
-  color: var(--text-main);
-  font-weight: 600;
-  transition: var(--transition);
-  text-decoration: none;
-}
-
-.socialLinks a:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-@media (prefers-color-scheme: dark) {
-  .infoCard,
-  .hoursCard,
-  .socialCard {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .infoCard h2,
-  .hoursCard h3,
-  .socialCard h3 {
-    color: var(--accent);
-  }
-  .infoItem strong {
-    color: var(--accent);
-  }
-  .hoursList li {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-  }
-  .socialLinks a {
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Offices Section */
-.officesSection {
-  background-color: var(--surface);
-}
-
-.officesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-}
-
-.officeCard {
-  background: var(--background);
-  padding: 2.5rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-}
-
-.officeCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
-}
-
-.officeCard h3 {
-  color: var(--primary);
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--accent);
-}
-
-.officeDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.officeDetail {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.detailIcon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.officeDetail p {
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.officeDetail a {
-  color: var(--text-muted);
-  transition: var(--transition);
-}
-
-.officeDetail a:hover {
-  color: var(--accent);
-}
-
-.directionsLink {
-  display: inline-flex;
-  align-items: center;
-  color: var(--accent);
-  font-weight: 600;
-  transition: var(--transition);
-  text-decoration: none;
-}
-
-.directionsLink:hover {
-  color: var(--accent-dark);
-  transform: translateX(5px);
-}
-
-@media (max-width: 576px) {
-  .officesGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .officeCard {
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  .officeCard h3 {
-    color: var(--accent);
-  }
-}
-
-/* Emergency Banner */
-.emergencyBanner {
-  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-  color: #fff;
-}
-
-.emergencyBanner h2 {
-  color: #fff;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.emergencyDesc {
-  font-size: 1.2rem;
-  color: #fecaca;
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.emergencyActions {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 576px) {
-  .emergencyActions {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+.emergencySecondary:hover { border-color: #fff; }
+@media (max-width: 768px) { .emergencyInner { flex-direction: column; text-align: center; } .emergencyActions { justify-content: center; } }
