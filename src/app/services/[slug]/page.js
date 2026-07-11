@@ -7,11 +7,10 @@ import { Phone, Mail, MessageCircle, ArrowRight, CheckCircle2, ChevronRight } fr
 import styles from "./service.module.css";
 import { servicesData } from "./servicesData";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const service = servicesData[slug];
+export function generateMetadata({ params }) {
+  const service = servicesData[params.slug];
   if (!service) return { title: "Service Not Found" };
-  
+
   return {
     title: `${service.title} | Karachi Legal House`,
     description: service.desc,
