@@ -75,9 +75,9 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <a href="tel:+923001234567" className={styles.phoneLink}>
+          <a href="tel:+923112610683" className={styles.phoneLink}>
             <Phone size={16} />
-            +92 300 1234567
+            +92 311 2610683
           </a>
           <Link href="/contact" className={styles.ctaBtn}>
             Book Consultation
@@ -103,8 +103,8 @@ export default function Navbar() {
           <Link href="/lawyers" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Our Team</Link>
           <Link href="/contact" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           <div className={styles.mobileCTA}>
-            <a href="tel:+923001234567" className={styles.mobilePhoneLink}>
-              <Phone size={16} /> +92 300 1234567
+            <a href="tel:+923112610683" className={styles.mobilePhoneLink}>
+              <Phone size={16} /> +92 311 2610683
             </a>
             <Link href="/contact" className={styles.ctaBtn} onClick={() => setMobileMenuOpen(false)}>
               Book Consultation
@@ -115,3 +115,4 @@ export default function Navbar() {
     </header>
   );
 }
+

@@ -435,6 +435,35 @@
 }
 
 /* ═══════════════════════════════════════════
+   CLIENTS SECTION
+═══════════════════════════════════════════ */
+.clientsSection { background: #f9f9f9; padding: 6rem 0; border-top: 1px solid #eeeeee; }
+
+.clientsGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.clientLogo {
+  width: 200px;
+  height: 120px;
+  object-fit: fill;
+  transition: all 0.3s ease;
+}
+
+.clientLogo:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .clientsGrid { gap: 3rem; }
+  .clientLogo { max-width: 140px; }
+}
+
+/* ═══════════════════════════════════════════
    TESTIMONIALS
 ═══════════════════════════════════════════ */
 .testimonialsSection { background: #ffffff; padding: 8rem 0; }
@@ -526,4 +555,30 @@
 @media (max-width: 768px) {
   .ctaInner { flex-direction: column; text-align: center; }
   .ctaActions { justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════
+   PARTNERS SECTION
+═══════════════════════════════════════════ */
+.partnersSection { background: #ffffff; padding: 4rem 0 8rem; }
+
+.partnersHeader { text-align: center; margin-bottom: 5rem; display: flex; flex-direction: column; align-items: center; }
+.partnersDivider { display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; max-width: 300px; margin: 0 auto 1.5rem; }
+.partnersDividerLine { flex: 1; height: 1px; background: #cccccc; }
+.partnersDividerIcon { color: #888888; }
+.partnersHeader h2 { font-family: var(--font-playfair), serif; font-size: 2.2rem; font-weight: 700; color: #3a3240; margin: 0; }
+
+.partnersList { display: flex; flex-direction: column; gap: 4rem; max-width: 900px; margin: 0 auto; }
+
+.partnerRow { display: flex; gap: 2rem; align-items: center; }
+.partnerProfile { flex-shrink: 0; width: 280px; text-align: center; border-right: 1px solid #eeeeee; padding-right: 2rem; }
+.partnerImage { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1.2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.partnerName { font-family: var(--font-inter), sans-serif; font-size: 1.25rem; font-weight: 700; color: #000000; margin-bottom: 0.4rem; }
+.partnerTitle { font-family: var(--font-inter), sans-serif; font-size: 0.75rem; color: #777777; line-height: 1.6; }
+
+.partnerBio { font-size: 0.95rem; color: #555555; line-height: 1.85; text-align: justify; flex: 1; margin: 0; }
+
+@media (max-width: 768px) {
+  .partnerRow { flex-direction: column; text-align: center; gap: 2rem; }
+  .partnerProfile { border-right: none; padding-right: 0; width: 100%; }
 }

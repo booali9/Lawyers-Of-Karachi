@@ -245,8 +245,8 @@ export default function ServicesPage() {
               <Link href="/book-consultation" className="btn btn-primary">
                 Book Free Consultation
               </Link>
-              <a href="tel:+923001234567" className="btn btn-secondary">
-                Call: +92 300 1234567
+              <a href="tel:+923112610683" className="btn btn-secondary">
+                Call: +92 311 2610683
               </a>
             </div>
             <div className={styles.ctaInfo}>
@@ -259,3 +259,4 @@ export default function ServicesPage() {
     </>
   );
 }
+

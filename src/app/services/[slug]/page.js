@@ -47,7 +47,7 @@ export default async function ServicePage({ params }) {
               <Link href="/book-consultation" className={styles.heroCta}>
                 Get Free Consultation
               </Link>
-              <a href="tel:+923001234567" className={styles.heroPhone}>
+              <a href="tel:+923112610683" className={styles.heroPhone}>
                 <Phone size={18} /> +92 300 123 4567
               </a>
             </div>
@@ -67,7 +67,7 @@ export default async function ServicePage({ params }) {
                 <div className={styles.sidebarCard}>
                   <h3>Need Immediate Assistance?</h3>
                   <p>Our legal team is available for urgent consultations regarding your matter.</p>
-                  <a href="tel:+923001234567" className={styles.sidebarPhone}>
+                  <a href="tel:+923112610683" className={styles.sidebarPhone}>
                     <Phone size={16} /> +92 300 123 4567
                   </a>
                   <Link href="/book-consultation" className={styles.sidebarCta}>
@@ -168,7 +168,7 @@ export default async function ServicePage({ params }) {
                   Don't face legal challenges alone. Our experienced {service.shortTitle.toLowerCase()} attorneys are ready to help.
                 </p>
                 <div className={styles.ctaContactLine}>
-                  <a href="tel:+923001234567"><Phone size={14} /> +92 300 1234567</a>
+                  <a href="tel:+923112610683"><Phone size={14} /> +92 311 2610683</a>
                   <span className={styles.ctaDot}>•</span>
                   <a href="mailto:info@karachilegalhouse.com"><Mail size={14} /> info@karachilegalhouse.com</a>
                   <span className={styles.ctaDot}>•</span>

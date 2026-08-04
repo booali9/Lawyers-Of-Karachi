@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Scale, Award, BookOpen, Users, GraduationCap, Handshake, Star, Lock, Zap, CircleDollarSign, Phone, ArrowRight } from "lucide-react";
+import { Scale, Award, BookOpen, Users, GraduationCap, Handshake, Star, Lock, Zap, CircleDollarSign, Phone, ArrowRight, Landmark } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -37,8 +37,8 @@ export default function Home() {
                 <Link href="/contact" className={styles.heroCta}>
                   Book Free Consultation <ArrowRight size={18} />
                 </Link>
-                <a href="tel:+923001234567" className={styles.heroPhone}>
-                  <Phone size={18} /> +92 300 1234567
+                <a href="tel:+923112610683" className={styles.heroPhone}>
+                  <Phone size={18} /> +92 311 2610683
                 </a>
               </div>
             </div>
@@ -118,6 +118,46 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ─── PARTNERS ─── */}
+        <section className={styles.partnersSection}>
+          <div className="container">
+            <div className={styles.partnersHeader}>
+              <div className={styles.partnersDivider}>
+                <div className={styles.partnersDividerLine} />
+                <Landmark size={24} className={styles.partnersDividerIcon} />
+                <div className={styles.partnersDividerLine} />
+              </div>
+              <h2>Partners</h2>
+            </div>
+
+            <div className={styles.partnersList}>
+              {/* Partner 1: Jahangir */}
+              <div className={styles.partnerRow}>
+                <div className={styles.partnerProfile}>
+                  <img src="/images/lawyer-1.jpeg" alt="Lawyer Jahangir" className={styles.partnerImage} />
+                  <h3 className={styles.partnerName}>Lawyer Jahangir</h3>
+                  <div className={styles.partnerTitle}>Barrister At Law, Advocate Supreme Court</div>
+                </div>
+                <p className={styles.partnerBio}>
+                  Lawyer Jahangir, "clearly one of the leading lawyers of his generation in Karachi" (Chambers Asia Pacific, 2011) and a "sharp counsel who consistently puts all the pieces together well" (Chambers Asia Pacific, 2010), handles a remarkably wide range of civil, corporate and commercial disputes with an exceptional record of success. He has appeared in over 3000 cases before the High Court of Sindh and Supreme Court of Pakistan and has been appointed as amicus curiae in various cases by the Honorable Courts. His advocacy has led to more than 100 reported judgments that have contributed to significant development in the law. He is a leading member of the Sindh High Court Bar Association, where he was elected as General Secretary in the years 2009-10 and 2010-11 and Joint Secretary in 1996-97.
+                </p>
+              </div>
+
+              {/* Partner 2: Fayazuddin */}
+              <div className={styles.partnerRow}>
+                <div className={styles.partnerProfile}>
+                  <img src="/images/lawyer-fayazuddin.jpg" alt="Lawyer Fayazuddin" className={styles.partnerImage} />
+                  <h3 className={styles.partnerName}>Lawyer Fayazuddin</h3>
+                  <div className={styles.partnerTitle}>Barrister At Law, Advocate Supreme Court</div>
+                </div>
+                <p className={styles.partnerBio}>
+                  Lawyer Fayazuddin is a regular practitioner of general civil and constitutional law and regularly appears before the Honorable Sindh High Court in a variety of contentious matter. He represents private, institutional and government sector clients in service matters, property disputes, election matters, power sector disputes, regulatory matters, matters relating to media regulation, national accountability bureau and various other civil and constitutional disputes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ─── PRACTICE AREAS ─── */}
         <section className={styles.practiceSection}>
           <div className="container">
@@ -191,6 +231,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* ─── CLIENTS ─── */}
+        <section className={styles.clientsSection}>
+          <div className="container">
+            <div className={styles.sectionHeader} style={{marginBottom: "3rem"}}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                Trusted By
+              </p>
+              <h2>Our Clients</h2>
+            </div>
+            <div className={styles.clientsGrid}>
+              <img src="/images/js-bank.png" alt="JS Bank" className={styles.clientLogo} />
+              <img src="/images/synteks.png" alt="Synteks" className={styles.clientLogo} />
+            </div>
+          </div>
+        </section>
 
         {/* ─── TESTIMONIALS ─── */}
         <section className={styles.testimonialsSection}>
@@ -233,7 +289,7 @@ export default function Home() {
                 <Link href="/contact" className={styles.ctaPrimary}>
                   Book Free Consultation
                 </Link>
-                <a href="tel:+923001234567" className={styles.ctaSecondary}>
+                <a href="tel:+923112610683" className={styles.ctaSecondary}>
                   <Phone size={18} /> Call Now
                 </a>
               </div>
@@ -246,3 +302,4 @@ export default function Home() {
     </>
   );
 }
+

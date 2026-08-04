@@ -51,7 +51,7 @@ export default function BookConsultationPage() {
                     </div>
                     <div className={styles.formGroup}>
                       <label htmlFor="phone">Phone Number *</label>
-                      <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required />
+                      <input type="tel" id="phone" name="phone" placeholder="+92 311 2610683" required />
                     </div>
                   </div>
 
@@ -151,8 +151,8 @@ export default function BookConsultationPage() {
                   <h3>Need Immediate Assistance?</h3>
                   <p>For urgent legal matters, contact us directly:</p>
                   <div className={styles.urgentContacts}>
-                    <a href="tel:+923001234567" className={styles.urgentLink}>
-                      📞 +92 300 1234567
+                    <a href="tel:+923112610683" className={styles.urgentLink}>
+                      📞 +92 311 2610683
                     </a>
                     <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className={styles.urgentLink}>
                       💬 WhatsApp Chat
@@ -171,3 +171,4 @@ export default function BookConsultationPage() {
     </>
   );
 }
+
