@@ -125,7 +125,7 @@ export default function TermsConditionsPage() {
                   <p><strong>Karachi Legal House</strong></p>
                   <p>Office # 405, 4th Floor, Bahria Complex IV</p>
                   <p>MT Khan Road, DHA Phase 5, Karachi, Pakistan</p>
-                  <p>Phone: +92 300 1234567</p>
+                  <p>Phone: +92 311 2610683</p>
                   <p>Email: info@karachilegalhouse.com</p>
                 </div>
               </div>
@@ -137,3 +137,4 @@ export default function TermsConditionsPage() {
     </>
   );
 }
+

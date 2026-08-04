@@ -15,7 +15,7 @@ export default function ContactPage() {
     {
       name: "Main Office — DHA",
       address: "Office # 405, 4th Floor, Bahria Complex IV, MT Khan Road, DHA Phase 5, Karachi",
-      phone: "+92 300 1234567",
+      phone: "+92 311 2610683",
       email: "info@karachilegalhouse.com",
       hours: "Mon–Fri: 9:00 AM – 6:00 PM  |  Sat: 10:00 AM – 2:00 PM"
     },
@@ -55,7 +55,7 @@ export default function ContactPage() {
         <div className={styles.quickStrip}>
           <div className="container">
             <div className={styles.quickGrid}>
-              <a href="tel:+923001234567" className={styles.quickCard}>
+              <a href="tel:+923112610683" className={styles.quickCard}>
                 <Phone size={28} className={styles.quickIcon} />
                 <div>
                   <h3>Call Us</h3>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label htmlFor="phone">Phone Number *</label>
-                      <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required />
+                      <input type="tel" id="phone" name="phone" placeholder="+92 311 2610683" required />
                     </div>
                     <div className={styles.formGroup}>
                       <label htmlFor="subject">Practice Area *</label>
@@ -233,7 +233,7 @@ export default function ContactPage() {
                 <p className={styles.emergencyDesc}>Our attorneys are available 24/7 for legal emergencies. Don't hesitate to reach out immediately.</p>
               </div>
               <div className={styles.emergencyActions}>
-                <a href="tel:+923001234567" className={styles.emergencyPrimary}>
+                <a href="tel:+923112610683" className={styles.emergencyPrimary}>
                   <Phone size={18} /> Emergency Hotline
                 </a>
                 <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className={styles.emergencySecondary}>
@@ -249,3 +249,4 @@ export default function ContactPage() {
     </>
   );
 }
+

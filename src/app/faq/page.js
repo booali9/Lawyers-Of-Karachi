@@ -36,7 +36,7 @@ export default function FAQPage() {
       faqs: [
         {
           q: "What should I do if I'm arrested?",
-          a: "Remain calm and exercise your right to remain silent. Do not make any statements without a lawyer present. Contact our emergency legal hotline (+92 300 1234567) immediately. We provide 24/7 emergency legal assistance and can arrange bail representation within hours."
+          a: "Remain calm and exercise your right to remain silent. Do not make any statements without a lawyer present. Contact our emergency legal hotline (+92 311 2610683) immediately. We provide 24/7 emergency legal assistance and can arrange bail representation within hours."
         },
         {
           q: "Can an FIR be cancelled or quashed?",
@@ -166,8 +166,8 @@ export default function FAQPage() {
                 <Link href="/book-consultation" className="btn btn-primary">
                   Schedule Consultation
                 </Link>
-                <a href="tel:+923001234567" className="btn btn-secondary">
-                  Call: +92 300 1234567
+                <a href="tel:+923112610683" className="btn btn-secondary">
+                  Call: +92 311 2610683
                 </a>
               </div>
             </div>
@@ -178,3 +178,4 @@ export default function FAQPage() {
     </>
   );
 }
+
