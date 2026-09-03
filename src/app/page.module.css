@@ -327,52 +327,6 @@
   text-decoration: none;
 }
 
-/* Typographic panel — no stock photography. */
-.practiceCardHead {
-  position: relative;
-  height: 210px;
-  padding: 1.6rem 1.6rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(155deg, #141414 0%, #262626 55%, #101010 100%);
-  overflow: hidden;
-}
-.practiceCardHead::after {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  pointer-events: none;
-  transition: inset 0.35s ease, border-color 0.35s ease;
-}
-.practiceCard:hover .practiceCardHead::after {
-  inset: 7px;
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.practiceCardTitle {
-  position: relative;
-  z-index: 1;
-  font-family: var(--font-playfair), serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-  max-width: 12ch;
-  line-height: 1.2;
-}
-
-.practiceNum {
-  position: relative;
-  z-index: 1;
-  align-self: flex-start;
-  font-family: var(--font-playfair), serif;
-  font-size: 0.85rem;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.55);
-}
-
 .practiceAll {
   display: flex;
   flex-wrap: wrap;
