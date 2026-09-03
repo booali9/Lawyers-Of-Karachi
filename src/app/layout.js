@@ -17,9 +17,24 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Karachi Legal House | Professional Law Firm in Pakistan",
-  description: "Karachi Legal House is a premier law firm in Pakistan offering expert legal services in Criminal Law, Family Law, Corporate Law, and more. Get a free case evaluation today.",
-  keywords: ["Lawyer in Karachi", "Law Firm Pakistan", "Legal Services", "Criminal Lawyer", "Family Lawyer", "Karachi Legal House"],
+  title: {
+    default: "Shams Law Chamber | Barristers & Advocates — Karachi, Hyderabad, Sukkur",
+    template: "%s | Shams Law Chamber",
+  },
+  description:
+    "Shams Law Chamber is a full-service law firm established in 2002 and registered with the Sindh Bar Council (No. 663/BC), with offices in Karachi, Hyderabad and Sukkur. Litigation, corporate advisory, dispute resolution and regulatory compliance across 16 areas of law.",
+  keywords: [
+    "Shams Law Chamber",
+    "Lawyer in Karachi",
+    "Law Firm Sindh",
+    "Advocate High Court Sindh",
+    "Corporate Lawyer Pakistan",
+    "Criminal Lawyer Karachi",
+    "Family Lawyer Karachi",
+    "Jahangir Shams",
+    "Fayazuddin Rajper",
+  ],
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({ children }) {

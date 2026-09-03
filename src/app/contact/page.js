@@ -3,38 +3,16 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, ArrowRight } from "lucide-react";
+import { firm, contact, offices } from "@/data/firm";
 import styles from "./contact.module.css";
 
 export const metadata = {
-  title: "Contact Us | Karachi Legal House - Get in Touch",
-  description: "Contact Karachi Legal House for legal consultation. Visit our offices in Karachi. Available 24/7 for legal emergencies.",
+  title: "Contact Us",
+  description:
+    "Contact Shams Law Chamber — Karachi head office at Old Sunset Boulevard, DHA Phase II, with regional offices in Hyderabad and Sukkur. Call or WhatsApp +92 310 3381280.",
 };
 
 export default function ContactPage() {
-  const offices = [
-    {
-      name: "Main Office — DHA",
-      address: "Office # 405, 4th Floor, Bahria Complex IV, MT Khan Road, DHA Phase 5, Karachi",
-      phone: "+92 311 2610683",
-      email: "info@karachilegalhouse.com",
-      hours: "Mon–Fri: 9:00 AM – 6:00 PM  |  Sat: 10:00 AM – 2:00 PM"
-    },
-    {
-      name: "Branch Office — Clifton",
-      address: "Suite 201, Ocean Tower, Block 8, Clifton, Karachi",
-      phone: "+92 321 9876543",
-      email: "clifton@karachilegalhouse.com",
-      hours: "Mon–Sat: 10:00 AM – 5:00 PM"
-    },
-    {
-      name: "Branch Office — Saddar",
-      address: "3rd Floor, Kassam Chambers, Abdullah Haroon Road, Saddar, Karachi",
-      phone: "+92 333 4567890",
-      email: "saddar@karachilegalhouse.com",
-      hours: "Mon–Fri: 9:00 AM – 5:00 PM"
-    }
-  ];
-
   return (
     <>
       <Navbar />
@@ -42,12 +20,12 @@ export default function ContactPage() {
 
         {/* ─── HERO BANNER ─── */}
         <section className={styles.contactHero}>
-          <Image src="/images/corporate_law.png" alt="Contact Karachi Legal House" fill priority className={styles.heroBg} />
+          <Image src="/images/hero_banner.png" alt="" fill priority className={styles.heroBg} />
           <div className={styles.heroOverlay} />
           <div className={`container ${styles.heroInner}`}>
             <p className={styles.eyebrow}><span className={styles.eyebrowLine} />Get in Touch</p>
-            <h1 className={styles.heroTitle}>Contact<br />Karachi Legal House</h1>
-            <p className={styles.heroDesc}>We're here to help with your legal matters. Reach out for consultation, inquiries, or urgent legal assistance.</p>
+            <h1 className={styles.heroTitle}>Contact<br />{firm.name}</h1>
+            <p className={styles.heroDesc}>Schedule an online call, a WhatsApp consultation, or an in-person appointment at our Karachi, Hyderabad or Sukkur office.</p>
           </div>
         </section>
 
@@ -55,28 +33,28 @@ export default function ContactPage() {
         <div className={styles.quickStrip}>
           <div className="container">
             <div className={styles.quickGrid}>
-              <a href="tel:+923112610683" className={styles.quickCard}>
+              <a href={contact.phoneHref} className={styles.quickCard}>
                 <Phone size={28} className={styles.quickIcon} />
                 <div>
                   <h3>Call Us</h3>
-                  <p>+92 300 123 4567</p>
-                  <span>Available 24/7</span>
+                  <p>{contact.phone}</p>
+                  <span>Karachi Head Office</span>
                 </div>
               </a>
-              <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className={styles.quickCard}>
+              <a href={contact.whatsappHref} target="_blank" rel="noreferrer" className={styles.quickCard}>
                 <MessageCircle size={28} className={styles.quickIcon} />
                 <div>
                   <h3>WhatsApp</h3>
-                  <p>+92 300 123 4567</p>
-                  <span>Instant Response</span>
+                  <p>{contact.whatsapp}</p>
+                  <span>WhatsApp Consultation</span>
                 </div>
               </a>
-              <a href="mailto:info@karachilegalhouse.com" className={styles.quickCard}>
+              <a href={contact.emailHref} className={styles.quickCard}>
                 <Mail size={28} className={styles.quickIcon} />
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@karachilegalhouse.com</p>
-                  <span>Reply within 24hrs</span>
+                  <p>{contact.email}</p>
+                  <span>Reply within 24 hours</span>
                 </div>
               </a>
               <Link href="/book-consultation" className={styles.quickCard}>
@@ -84,7 +62,7 @@ export default function ContactPage() {
                 <div>
                   <h3>Book Appointment</h3>
                   <p>Schedule a Consultation</p>
-                  <span>Free Initial Consultation</span>
+                  <span>Online, WhatsApp or In-Person</span>
                 </div>
               </Link>
             </div>
@@ -100,7 +78,7 @@ export default function ContactPage() {
               <div className={styles.formCol}>
                 <p className={styles.eyebrow}><span className={styles.eyebrowLineDark} />Send a Message</p>
                 <h2 className={styles.formTitle}>Tell Us About<br />Your Legal Matter</h2>
-                <p className={styles.formDesc}>Fill out the form below and our legal team will get back to you within 24 hours.</p>
+                <p className={styles.formDesc}>Fill out the form below and our team will get back to you within 24 hours.</p>
                 <form className={styles.contactForm}>
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
@@ -115,17 +93,21 @@ export default function ContactPage() {
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label htmlFor="phone">Phone Number *</label>
-                      <input type="tel" id="phone" name="phone" placeholder="+92 311 2610683" required />
+                      <input type="tel" id="phone" name="phone" placeholder="+92 3XX XXXXXXX" required />
                     </div>
                     <div className={styles.formGroup}>
                       <label htmlFor="subject">Practice Area *</label>
                       <select id="subject" name="subject" required>
                         <option value="">Select area of law</option>
                         <option value="criminal">Criminal Law</option>
+                        <option value="civil">Civil &amp; Commercial Law</option>
                         <option value="family">Family Law</option>
-                        <option value="corporate">Corporate Law</option>
-                        <option value="property">Property Law</option>
-                        <option value="civil">Civil Litigation</option>
+                        <option value="banking">Banking &amp; Finance Law</option>
+                        <option value="tax">Tax &amp; Customs Law</option>
+                        <option value="property">Property &amp; Inheritance Law</option>
+                        <option value="corporate">Corporate &amp; Securities Law</option>
+                        <option value="constitutional">Constitutional Law</option>
+                        <option value="cyber">Cyber Crime Law</option>
                         <option value="other">Other Legal Matter</option>
                       </select>
                     </div>
@@ -137,7 +119,7 @@ export default function ContactPage() {
                   <div className={styles.formGroup}>
                     <label className={styles.checkboxLabel}>
                       <input type="checkbox" required />
-                      <span>I agree to the Terms & Conditions and Privacy Policy</span>
+                      <span>I agree to the Terms &amp; Conditions and Privacy Policy</span>
                     </label>
                   </div>
                   <button type="submit" className={styles.submitBtn}>
@@ -150,36 +132,40 @@ export default function ContactPage() {
               {/* Info Panel */}
               <div className={styles.infoCol}>
                 <div className={styles.infoImageWrapper}>
-                  <Image src="/images/civil_law.png" alt="Office" fill className={styles.infoImg} />
+                  <Image src="/images/hero_banner.png" alt="" fill className={styles.infoImg} />
                   <div className={styles.infoImgOverlay} />
                 </div>
                 <div className={styles.infoCards}>
                   <div className={styles.infoCard}>
                     <MapPin size={20} className={styles.infoIcon} />
                     <div>
-                      <strong>Main Office</strong>
-                      <p>Office # 405, 4th Floor, Bahria Complex IV, MT Khan Road, DHA Phase 5, Karachi</p>
+                      <strong>Karachi Head Office</strong>
+                      <p>{offices[0].lines.join(", ")}</p>
                     </div>
                   </div>
                   <div className={styles.infoCard}>
                     <Phone size={20} className={styles.infoIcon} />
                     <div>
-                      <strong>Phone Numbers</strong>
-                      <p>Main: +92 300 123 4567<br />Clifton: +92 321 987 6543<br />Saddar: +92 333 456 7890</p>
+                      <strong>Phone &amp; WhatsApp</strong>
+                      <p>Karachi / Sukkur: {contact.phone}<br />Hyderabad: {contact.altPhone}</p>
                     </div>
                   </div>
                   <div className={styles.infoCard}>
                     <Mail size={20} className={styles.infoIcon} />
                     <div>
-                      <strong>Email Addresses</strong>
-                      <p>info@karachilegalhouse.com<br />corporate@karachilegalhouse.com</p>
+                      <strong>Email</strong>
+                      <p>{contact.email}</p>
                     </div>
                   </div>
                   <div className={styles.infoCard}>
                     <Clock size={20} className={styles.infoIcon} />
                     <div>
                       <strong>Office Hours</strong>
-                      <p>Mon–Fri: 9:00 AM – 6:00 PM<br />Sat: 10:00 AM – 2:00 PM<br />Emergency: 24/7</p>
+                      <p>
+                        {contact.hours.map((h) => (
+                          <span key={h.days}>{h.days}: {h.time}<br /></span>
+                        ))}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -190,32 +176,32 @@ export default function ContactPage() {
         </section>
 
         {/* ─── OFFICES ─── */}
-        <section className={styles.officesSection}>
+        <section className={`${styles.officesSection} cut-top`}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <p className={styles.eyebrow}><span className={styles.eyebrowLine} />Our Locations</p>
-              <h2>Office Locations</h2>
+              <h2>Regional Offices</h2>
             </div>
             <div className={styles.officesGrid}>
-              {offices.map((office, index) => (
-                <div key={index} className={styles.officeCard}>
-                  <h3>{office.name}</h3>
+              {offices.map((office) => (
+                <div key={office.city} className={styles.officeCard}>
+                  <h3>{office.city} — {office.role}</h3>
                   <div className={styles.officeDetails}>
                     <div className={styles.officeDetail}>
                       <MapPin size={18} className={styles.detailIcon} />
-                      <p>{office.address}</p>
+                      <p>{office.lines.join(", ")}</p>
                     </div>
                     <div className={styles.officeDetail}>
                       <Phone size={18} className={styles.detailIcon} />
-                      <p><a href={`tel:${office.phone.replace(/\s/g, '')}`}>{office.phone}</a></p>
+                      <p><a href={office.phoneHref}>{office.phone}</a></p>
                     </div>
                     <div className={styles.officeDetail}>
                       <Mail size={18} className={styles.detailIcon} />
-                      <p><a href={`mailto:${office.email}`}>{office.email}</a></p>
+                      <p><a href={contact.emailHref}>{contact.email}</a></p>
                     </div>
                     <div className={styles.officeDetail}>
                       <Clock size={18} className={styles.detailIcon} />
-                      <p>{office.hours}</p>
+                      <p>{contact.hours.map((h) => `${h.days}: ${h.time}`).join("  |  ")}</p>
                     </div>
                   </div>
                 </div>
@@ -224,19 +210,19 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* ─── EMERGENCY BANNER ─── */}
-        <section className={styles.emergencySection}>
+        {/* ─── URGENT BANNER ─── */}
+        <section className={`${styles.emergencySection} cut-top-reverse`}>
           <div className="container">
             <div className={styles.emergencyInner}>
               <div>
                 <h2 className={styles.emergencyTitle}>Need Urgent Legal Assistance?</h2>
-                <p className={styles.emergencyDesc}>Our attorneys are available 24/7 for legal emergencies. Don't hesitate to reach out immediately.</p>
+                <p className={styles.emergencyDesc}>For time-sensitive matters — arrests, notices, injunctions — reach our Karachi office directly by phone or WhatsApp.</p>
               </div>
               <div className={styles.emergencyActions}>
-                <a href="tel:+923112610683" className={styles.emergencyPrimary}>
-                  <Phone size={18} /> Emergency Hotline
+                <a href={contact.phoneHref} className={styles.emergencyPrimary}>
+                  <Phone size={18} /> {contact.phone}
                 </a>
-                <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className={styles.emergencySecondary}>
+                <a href={contact.whatsappHref} target="_blank" rel="noreferrer" className={styles.emergencySecondary}>
                   <MessageCircle size={18} /> WhatsApp Now
                 </a>
               </div>
@@ -249,4 +235,3 @@ export default function ContactPage() {
     </>
   );
 }
-

@@ -1,4 +1,10 @@
 :root {
+  /* Accent scale — monochrome */
+  --accent: #000000;          /* accents on light backgrounds */
+  --accent-muted: #7a7a7a;    /* secondary labels on light backgrounds */
+  --accent-tint: rgba(0, 0, 0, 0.05);
+  --accent-inverse: #ffffff;  /* accents on dark backgrounds */
+
   /* Professional Black & White Theme */
   --primary: #000000;
   --primary-light: #1a1a1a;
@@ -160,6 +166,52 @@ address { font-style: normal; }
 }
 
 .text-center { text-align: center; }
+
+/* ===== Angled section cuts =====
+   A section with .cut-top paints a diagonal wedge of its own background over
+   the bottom of the section before it, so the boundary runs at an angle.
+   Requires a solid background on the section (the wedge inherits it). */
+:root { --cut-h: clamp(28px, 4vw, 64px); }
+
+.cut-top,
+.cut-top-reverse { position: relative; }
+
+.cut-top::before,
+.cut-top-reverse::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--cut-h) * -1 + 1px);
+  height: var(--cut-h);
+  background: inherit;
+  pointer-events: none;
+  z-index: 2;
+}
+/* edge rises towards the right */
+.cut-top::before { clip-path: polygon(0 100%, 100% 0, 100% 100%); }
+/* edge rises towards the left */
+.cut-top-reverse::before { clip-path: polygon(0 0, 100% 100%, 0 100%); }
+
+/* ===== Accents ===== */
+.accent-rule {
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--accent);
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
 
 /* ===== Animations ===== */
 .reveal {

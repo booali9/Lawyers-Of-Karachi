@@ -6,8 +6,8 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 import styles from "./blog.module.css";
 
 export const metadata = {
-  title: "Legal Blog | Karachi Legal House - Legal News & Insights",
-  description: "Read latest legal news, Supreme Court judgments, legal guides, and expert insights on Pakistani law. Stay informed with Karachi Legal House blog.",
+  title: "Legal Blog | Shams Law Chamber - Legal News & Insights",
+  description: "Read latest legal news, Supreme Court judgments, legal guides, and expert insights on Pakistani law. Stay informed with Shams Law Chamber blog.",
 };
 
 export default function BlogPage() {
@@ -17,54 +17,54 @@ export default function BlogPage() {
       title: "Understanding Bail Laws in Pakistan: Your Complete Guide",
       excerpt: "Learn about bail procedures, types of bail, and your rights under Pakistani criminal law. Essential information for anyone facing criminal charges.",
       date: "June 15, 2026",
-      author: "Advocate Shehroze Ahmed",
+      author: "Shams Law Chamber",
       readTime: "8 min read",
-      image: "/images/criminal_law.png"
+      image: "/images/hero_banner.png"
     },
     {
       category: "Family Law",
       title: "Khula Process in Pakistan: Step-by-Step Guide for 2026",
       excerpt: "Complete guide to filing for khula in Pakistan, required documents, court procedures, and timeline. Everything you need to know about dissolution of marriage.",
       date: "June 10, 2026",
-      author: "Advocate Shehroze Ahmed",
+      author: "Shams Law Chamber",
       readTime: "10 min read",
-      image: "/images/family_law.png"
+      image: "/images/hero_banner.png"
     },
     {
       category: "Corporate Law",
       title: "How to Register a Company in Pakistan: SECP Process",
       excerpt: "Step-by-step guide to company registration with SECP, required documents, fees, and timeline. Start your business legally in Pakistan.",
       date: "June 5, 2026",
-      author: "Advocate Shehroze Ahmed",
+      author: "Shams Law Chamber",
       readTime: "12 min read",
-      image: "/images/corporate_law.png"
+      image: "/images/hero_banner.png"
     },
     {
       category: "Property Law",
       title: "Property Transfer Process in Pakistan: Complete Documentation Guide",
       excerpt: "Learn about property transfer procedures, documentation requirements, and legal precautions to avoid fraud in real estate transactions.",
       date: "May 28, 2026",
-      author: "Advocate Shehroze Ahmed",
+      author: "Shams Law Chamber",
       readTime: "9 min read",
-      image: "/images/property_law.png"
+      image: "/images/hero_banner.png"
     },
     {
       category: "Civil Law",
       title: "Filing a Civil Suit in Pakistan: What You Need to Know",
       excerpt: "Understanding the civil litigation process, from filing the initial plaint to the final judgment and decree. A practical guide for litigants.",
       date: "May 20, 2026",
-      author: "Advocate Shehroze Ahmed",
+      author: "Shams Law Chamber",
       readTime: "11 min read",
-      image: "/images/civil_law.png"
+      image: "/images/hero_banner.png"
     },
     {
       category: "Cyber Crime",
       title: "PECA 2016: Your Rights and Cyber Defamation in Pakistan",
       excerpt: "How to report cyber harassment, digital fraud, and online defamation to the FIA under the Prevention of Electronic Crimes Act.",
       date: "May 15, 2026",
-      author: "Advocate Shehroze Ahmed",
+      author: "Shams Law Chamber",
       readTime: "7 min read",
-      image: "/images/cyber_law.png"
+      image: "/images/hero_banner.png"
     }
   ];
 
@@ -84,7 +84,7 @@ export default function BlogPage() {
             </span>
             <h1>Legal Blog &amp; Insights</h1>
             <p className={styles.heroDesc}>
-              Expert analysis, legal guides, and updates on Pakistani law by Advocate Shehroze Ahmed and the team at Karachi Legal House.
+              Expert analysis, legal guides, and updates on Pakistani law by the advocates of Shams Law Chamber.
             </p>
           </div>
         </section>

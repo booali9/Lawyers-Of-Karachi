@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
   if (!service) return { title: "Service Not Found" };
 
   return {
-    title: `${service.title} | Karachi Legal House`,
+    title: `${service.title} | Shams Law Chamber`,
     description: service.desc,
   };
 }
@@ -47,8 +47,8 @@ export default async function ServicePage({ params }) {
               <Link href="/book-consultation" className={styles.heroCta}>
                 Get Free Consultation
               </Link>
-              <a href="tel:+923112610683" className={styles.heroPhone}>
-                <Phone size={18} /> +92 300 123 4567
+              <a href="tel:+923103381280" className={styles.heroPhone}>
+                <Phone size={18} /> +92 310 3381280
               </a>
             </div>
           </div>
@@ -67,8 +67,8 @@ export default async function ServicePage({ params }) {
                 <div className={styles.sidebarCard}>
                   <h3>Need Immediate Assistance?</h3>
                   <p>Our legal team is available for urgent consultations regarding your matter.</p>
-                  <a href="tel:+923112610683" className={styles.sidebarPhone}>
-                    <Phone size={16} /> +92 300 123 4567
+                  <a href="tel:+923103381280" className={styles.sidebarPhone}>
+                    <Phone size={16} /> +92 310 3381280
                   </a>
                   <Link href="/book-consultation" className={styles.sidebarCta}>
                     Schedule Meeting <ArrowRight size={14} />
@@ -105,7 +105,7 @@ export default async function ServicePage({ params }) {
               {/* Why Choose Us */}
               <div className={styles.whyCol}>
                 <p className={styles.eyebrowDark}><span className={styles.eyebrowLineDark} />Why Us</p>
-                <h2>Why Choose Karachi Legal House</h2>
+                <h2>Why Choose Shams Law Chamber</h2>
                 <div className={styles.whyList}>
                   {service.whyChoose.map((reason, index) => (
                     <div key={index} className={styles.whyItem}>
@@ -168,11 +168,11 @@ export default async function ServicePage({ params }) {
                   Don't face legal challenges alone. Our experienced {service.shortTitle.toLowerCase()} attorneys are ready to help.
                 </p>
                 <div className={styles.ctaContactLine}>
-                  <a href="tel:+923112610683"><Phone size={14} /> +92 311 2610683</a>
+                  <a href="tel:+923103381280"><Phone size={14} /> +92 310 3381280</a>
                   <span className={styles.ctaDot}>•</span>
-                  <a href="mailto:info@karachilegalhouse.com"><Mail size={14} /> info@karachilegalhouse.com</a>
+                  <a href="mailto:AdvJahangirshams@gmail.com"><Mail size={14} /> AdvJahangirshams@gmail.com</a>
                   <span className={styles.ctaDot}>•</span>
-                  <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer"><MessageCircle size={14} /> WhatsApp</a>
+                  <a href="https://wa.me/923103381280" target="_blank" rel="noreferrer"><MessageCircle size={14} /> WhatsApp</a>
                 </div>
               </div>
               <div className={styles.ctaActions}>

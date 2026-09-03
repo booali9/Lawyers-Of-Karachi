@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { contact } from '@/data/firm';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -26,7 +28,7 @@ export default function Navbar() {
     { name: 'Family Law', href: '/services/family-law' },
     { name: 'Corporate Law', href: '/services/corporate-law' },
     { name: 'Property Law', href: '/services/property-law' },
-    { name: 'Civil Law', href: '/services/civil-law' },
+    { name: 'Civil Litigation', href: '/services/civil-litigation' },
     { name: 'Constitutional Law', href: '/services/constitutional-law' },
     { name: 'Cyber Crime', href: '/services/cyber-crime' },
     { name: 'Banking & Finance', href: '/services/banking-finance' },
@@ -38,11 +40,16 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className={styles.logo}>
-          <Link href="/" className={styles.logoLink}>
-            <div className={styles.logoText}>
-              <span className={styles.logoPrimary}>Karachi Legal House</span>
-              <span className={styles.logoTagline}>Advocates &amp; Legal Consultants</span>
-            </div>
+          <Link href="/" className={styles.logoLink} aria-label="Shams Law Chamber — home">
+            <Image
+              src="/logo-slc.png"
+              alt="Shams Law Chamber"
+              width={1717}
+              height={253}
+              sizes="(max-width: 480px) 320px, (max-width: 992px) 390px, 470px"
+              priority
+              className={styles.logoMark}
+            />
           </Link>
         </div>
 
@@ -57,7 +64,7 @@ export default function Navbar() {
             onMouseLeave={() => setPracticeAreasOpen(false)}
           >
             <Link href="/practice-areas" className={styles.navLink}>
-              Services <ChevronDown size={14} className={styles.dropdownArrow} />
+              Practice Areas <ChevronDown size={14} className={styles.dropdownArrow} />
             </Link>
             {practiceAreasOpen && (
               <div className={styles.dropdownMenu}>
@@ -66,6 +73,9 @@ export default function Navbar() {
                     {area.name}
                   </Link>
                 ))}
+                <Link href="/practice-areas" className={`${styles.dropdownItem} ${styles.dropdownAll}`}>
+                  All 16 Practice Areas
+                </Link>
               </div>
             )}
           </div>
@@ -75,9 +85,9 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <a href="tel:+923112610683" className={styles.phoneLink}>
+          <a href={contact.phoneHref} className={styles.phoneLink}>
             <Phone size={16} />
-            +92 311 2610683
+            {contact.phone}
           </a>
           <Link href="/contact" className={styles.ctaBtn}>
             Book Consultation
@@ -99,12 +109,12 @@ export default function Navbar() {
         <div className={styles.mobileMenu}>
           <Link href="/" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link href="/about" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link href="/practice-areas" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/practice-areas" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Practice Areas</Link>
           <Link href="/lawyers" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Our Team</Link>
           <Link href="/contact" className={styles.mobileLink} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           <div className={styles.mobileCTA}>
-            <a href="tel:+923112610683" className={styles.mobilePhoneLink}>
-              <Phone size={16} /> +92 311 2610683
+            <a href={contact.phoneHref} className={styles.mobilePhoneLink}>
+              <Phone size={16} /> {contact.phone}
             </a>
             <Link href="/contact" className={styles.ctaBtn} onClick={() => setMobileMenuOpen(false)}>
               Book Consultation

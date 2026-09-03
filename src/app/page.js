@@ -2,10 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Scale, Award, BookOpen, Users, GraduationCap, Handshake, Star, Lock, Zap, CircleDollarSign, Phone, ArrowRight, Landmark } from "lucide-react";
+import { Scale, Landmark, ShieldCheck, Users, Globe, HeartHandshake, BadgeCheck, Phone, ArrowRight, MapPin } from "lucide-react";
+import LogoMarquee from "@/components/LogoMarquee";
+import { firm, contact, offices, firmStats, practiceAreas, clientGroups, clientLogos, mediaLogos, whyUs } from "@/data/firm";
+import { partners } from "@/data/team";
 import styles from "./page.module.css";
 
+const whyIcons = [
+  <Users size={26} key="a" />,
+  <Globe size={26} key="b" />,
+  <Scale size={26} key="c" />,
+  <Landmark size={26} key="d" />,
+  <HeartHandshake size={26} key="e" />,
+  <BadgeCheck size={26} key="f" />,
+];
+
 export default function Home() {
+  const featured = practiceAreas.filter((a) => a.href).slice(0, 6);
+
   return (
     <>
       <Navbar />
@@ -16,7 +30,7 @@ export default function Home() {
           <div className={styles.heroOverlay} />
           <Image
             src="/images/hero_banner.png"
-            alt="Karachi Legal House"
+            alt=""
             fill
             priority
             className={styles.heroBgImage}
@@ -25,93 +39,102 @@ export default function Home() {
             <div className={styles.heroContent}>
               <p className={styles.heroEyebrow}>
                 <span className={styles.eyebrowLine} />
-                Advocates &amp; Legal Consultants — Karachi
+                Barristers &amp; Advocates — Karachi · Hyderabad · Sukkur
               </p>
               <h1 className={styles.heroTitle}>
-                Trusted Legal<br />Excellence Since<br />Day One.
+                Comprehensive<br />Legal Excellence<br />Across Sindh.
               </h1>
               <p className={styles.heroDesc}>
-                Led by Advocate Shehroze Ahmed (BA LL.B), our firm delivers expert representation in Criminal, Civil, Family, and Corporate Law across all courts of Pakistan.
+                Litigation, corporate advisory, dispute resolution and regulatory compliance —
+                delivered since {firm.founded} by a chamber registered with the {firm.barCouncil}
+                {" "}under Registration No. {firm.barRegNo}.
               </p>
               <div className={styles.heroActions}>
-                <Link href="/contact" className={styles.heroCta}>
-                  Book Free Consultation <ArrowRight size={18} />
+                <Link href="/book-consultation" className={styles.heroCta}>
+                  Book a Consultation <ArrowRight size={18} />
                 </Link>
-                <a href="tel:+923112610683" className={styles.heroPhone}>
-                  <Phone size={18} /> +92 311 2610683
+                <a href={contact.phoneHref} className={styles.heroPhone}>
+                  <Phone size={18} /> {contact.phone}
                 </a>
               </div>
             </div>
 
             <div className={styles.heroStats}>
-              <div className={styles.heroStat}>
-                <span className={styles.statNum}>25+</span>
-                <span className={styles.statLabel}>Years Experience</span>
-              </div>
-              <div className={styles.statDivider} />
-              <div className={styles.heroStat}>
-                <span className={styles.statNum}>1000+</span>
-                <span className={styles.statLabel}>Cases Won</span>
-              </div>
-              <div className={styles.statDivider} />
-              <div className={styles.heroStat}>
-                <span className={styles.statNum}>98%</span>
-                <span className={styles.statLabel}>Success Rate</span>
-              </div>
+              {firmStats.slice(0, 3).map((stat, i) => (
+                <div key={stat.label} className={styles.heroStatCell}>
+                  {i > 0 && <div className={styles.statDivider} />}
+                  <div className={styles.heroStat}>
+                    <span className={styles.statNum}>{stat.num}</span>
+                    <span className={styles.statLabel}>{stat.label}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ─── PRINCIPAL LAWYER ─── */}
-        <section className={styles.principalSection}>
+        {/* ─── CLIENT LOGO TICKER ─── */}
+        <section className={`${styles.tickerSection} cut-top`} aria-label="Clients we represent">
           <div className="container">
-            <div className={styles.principalGrid}>
-              <div className={styles.principalImageCol}>
-                <div className={styles.principalImageWrapper}>
-                  <Image
-                    src="/images/lawyer-1.jpeg"
-                    alt="Advocate Shehroze Ahmed"
-                    fill
-                    className={styles.principalImg}
-                  />
+            <p className={styles.tickerLabel}>Trusted by leading institutions across Sindh</p>
+          </div>
+          <LogoMarquee items={clientLogos} duration={55} label="Client logos" />
+        </section>
+
+        {/* ─── THE CHAMBER ─── */}
+        <section className={`${styles.introSection} cut-top-reverse`}>
+          <div className="container">
+            <div className={styles.introGrid}>
+              <div className={styles.introImageCol}>
+                <div className={styles.introImageWrapper}>
+                  <Image src="/images/team/jahangir-shams.jpg" alt="Shams Law Chamber" fill className={styles.introImg} />
                 </div>
-                <div className={styles.principalImageAccent} />
+                <div className={styles.introFrame} />
+                <div className={styles.introBadge}>
+                  <span className={styles.introBadgeNum}>{firm.founded}</span>
+                  <span className={styles.introBadgeLabel}>Year Established</span>
+                </div>
               </div>
-              <div className={styles.principalTextCol}>
+
+              <div className={styles.introTextCol}>
                 <p className={styles.eyebrow}>
                   <span className={styles.eyebrowLine} />
-                  Principal Lawyer
+                  About the Chamber
                 </p>
-                <h2 className={styles.principalName}>Advocate<br />Shehroze Ahmed</h2>
-                <p className={styles.principalQual}>BA LL.B &nbsp;|&nbsp; Karachi University</p>
-                <p className={styles.principalBio}>
-                  Advocate Shehroze Ahmed is the founding principal of Karachi Legal House with a distinguished track record spanning criminal defence, constitutional law, and civil litigation. He has successfully represented clients across all tiers of Pakistani courts.
+                <h2 className={styles.introTitle}>A Decades-Long<br />Tradition of Litigation<br />and Advisory Excellence</h2>
+                <div className={styles.accentRule} />
+                <p className={styles.introBody}>
+                  Founded in {firm.founded} by {firm.founderName} in Khairpur Mirs, {firm.name}{" "}
+                  has grown over more than two decades into one of Sindh&apos;s most established
+                  full-service law firms, with a footprint spanning Karachi, Hyderabad, Sukkur,
+                  Larkana, Nawabshah, Mirpurkhas, Noushero Feroze, Ghotki, Gambat and Shikarpur.
                 </p>
-                <div className={styles.highlights}>
-                  <div className={styles.highlight}>
-                    <Scale size={22} />
-                    <div>
-                      <strong>High Court Certified</strong>
-                      <span>Qualified to appear before High Courts &amp; District Courts</span>
+                <p className={styles.introBody}>
+                  The firm&apos;s next generation of leadership joined in 2016, when Mr. Fayazuddin
+                  Rajper took charge of the Chamber&apos;s affairs and built a diversified litigation
+                  and advisory practice from the Karachi office alongside his brother,
+                  Mr. Jahangir Shams. The Chamber is widely recognised as a top-tier Administrative
+                  &amp; Constitutional, Commercial and Taxation law chamber in the Sindh province.
+                </p>
+
+                <div className={styles.introFacts}>
+                  {[
+                    { icon: <ShieldCheck size={22} />, title: `${firm.barCouncil} — Reg. No. ${firm.barRegNo}`, desc: 'A duly registered law firm authorised to practise throughout Sindh and before the Superior Courts of Pakistan.' },
+                    { icon: <Scale size={22} />, title: '4,000+ clients represented, 99% success ratio', desc: 'Across criminal defence, civil and commercial litigation, family, banking and constitutional matters.' },
+                    { icon: <Landmark size={22} />, title: 'Three regional offices, one Sindh-wide network', desc: 'Karachi, Hyderabad and Sukkur, reaching the District and Sessions Courts throughout the province.' },
+                  ].map((item) => (
+                    <div key={item.title} className={styles.fact}>
+                      {item.icon}
+                      <div>
+                        <strong>{item.title}</strong>
+                        <span>{item.desc}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles.highlight}>
-                    <Award size={22} />
-                    <div>
-                      <strong>1000+ Cases Successfully Closed</strong>
-                      <span>Complex criminal, civil &amp; family matters</span>
-                    </div>
-                  </div>
-                  <div className={styles.highlight}>
-                    <BookOpen size={22} />
-                    <div>
-                      <strong>Multi-Practice Specialisation</strong>
-                      <span>Criminal Law, Constitutional Law, Civil Litigation</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                <Link href="/lawyers" className={styles.principalCta}>
-                  Meet the Full Team <ArrowRight size={16} />
+
+                <Link href="/about" className={styles.introCta}>
+                  More About the Firm <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
@@ -119,7 +142,7 @@ export default function Home() {
         </section>
 
         {/* ─── PARTNERS ─── */}
-        <section className={styles.partnersSection}>
+        <section className={`${styles.partnersSection} cut-top`}>
           <div className="container">
             <div className={styles.partnersHeader}>
               <div className={styles.partnersDivider}>
@@ -131,58 +154,50 @@ export default function Home() {
             </div>
 
             <div className={styles.partnersList}>
-              {/* Partner 1: Jahangir */}
-              <div className={styles.partnerRow}>
-                <div className={styles.partnerProfile}>
-                  <img src="/images/lawyer-1.jpeg" alt="Lawyer Jahangir" className={styles.partnerImage} />
-                  <h3 className={styles.partnerName}>Lawyer Jahangir</h3>
-                  <div className={styles.partnerTitle}>Barrister At Law, Advocate Supreme Court</div>
+              {partners.map((partner) => (
+                <div key={partner.slug} className={styles.partnerRow}>
+                  <div className={styles.partnerProfile}>
+                    <img src={partner.avatar || partner.photo} alt={partner.name} className={styles.partnerImage} />
+                    <h3 className={styles.partnerName}>{partner.name}</h3>
+                    <div className={styles.partnerTitle}>{partner.role}, {partner.court}</div>
+                    <div className={styles.partnerCreds}>{partner.credentials}</div>
+                  </div>
+                  <p className={styles.partnerBio}>
+                    {partner.bio} {partner.bioExtra}
+                  </p>
                 </div>
-                <p className={styles.partnerBio}>
-                  Lawyer Jahangir, "clearly one of the leading lawyers of his generation in Karachi" (Chambers Asia Pacific, 2011) and a "sharp counsel who consistently puts all the pieces together well" (Chambers Asia Pacific, 2010), handles a remarkably wide range of civil, corporate and commercial disputes with an exceptional record of success. He has appeared in over 3000 cases before the High Court of Sindh and Supreme Court of Pakistan and has been appointed as amicus curiae in various cases by the Honorable Courts. His advocacy has led to more than 100 reported judgments that have contributed to significant development in the law. He is a leading member of the Sindh High Court Bar Association, where he was elected as General Secretary in the years 2009-10 and 2010-11 and Joint Secretary in 1996-97.
-                </p>
-              </div>
+              ))}
+            </div>
 
-              {/* Partner 2: Fayazuddin */}
-              <div className={styles.partnerRow}>
-                <div className={styles.partnerProfile}>
-                  <img src="/images/lawyer-fayazuddin.jpg" alt="Lawyer Fayazuddin" className={styles.partnerImage} />
-                  <h3 className={styles.partnerName}>Lawyer Fayazuddin</h3>
-                  <div className={styles.partnerTitle}>Barrister At Law, Advocate Supreme Court</div>
-                </div>
-                <p className={styles.partnerBio}>
-                  Lawyer Fayazuddin is a regular practitioner of general civil and constitutional law and regularly appears before the Honorable Sindh High Court in a variety of contentious matter. He represents private, institutional and government sector clients in service matters, property disputes, election matters, power sector disputes, regulatory matters, matters relating to media regulation, national accountability bureau and various other civil and constitutional disputes.
-                </p>
-              </div>
+            <div className={styles.teamCta}>
+              <p>Supported by senior associates, associates and interns across three offices.</p>
+              <Link href="/lawyers" className={styles.introCta}>
+                Meet the Full Team <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </section>
 
         {/* ─── PRACTICE AREAS ─── */}
-        <section className={styles.practiceSection}>
+        <section className={`${styles.practiceSection} cut-top-reverse`}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <p className={styles.eyebrow}>
                 <span className={styles.eyebrowLine} />
                 What We Do
               </p>
-              <h2>Our Practice Areas</h2>
-              <p className={styles.sectionDesc}>Comprehensive legal services delivered by experienced professionals across all major courts of Pakistan.</p>
+              <h2>Areas of Practice</h2>
+              <p className={styles.sectionDesc}>
+                A full-service practice spanning sixteen areas of law — from criminal defence and
+                constitutional litigation to corporate advisory, banking, tax and intellectual property.
+              </p>
             </div>
 
             <div className={styles.practiceGrid}>
-              {[
-                { img: '/images/criminal_law.png', title: 'Criminal Law', desc: 'Bail applications, FIR quashment, criminal trials and appeals before all courts.', href: '/services/criminal-law' },
-                { img: '/images/family_law.png', title: 'Family Law', desc: 'Khula, divorce, child custody, maintenance and guardianship matters.', href: '/services/family-law' },
-                { img: '/images/corporate_law.png', title: 'Corporate Law', desc: 'Company registration, contract drafting, mergers, acquisitions and compliance.', href: '/services/corporate-law' },
-                { img: '/images/property_law.png', title: 'Property Law', desc: 'Property disputes, title verification, succession certificates and transfers.', href: '/services/property-law' },
-                { img: '/images/civil_law.png', title: 'Civil Law', desc: 'Civil suits, injunctions, contract disputes and money recovery.', href: '/services/civil-law' },
-                { img: '/images/cyber_law.png', title: 'Cyber Crime', desc: 'FIA cases, online harassment, digital fraud and data protection matters.', href: '/services/cyber-crime' },
-              ].map((area) => (
+              {featured.map((area) => (
                 <Link href={area.href} key={area.title} className={styles.practiceCard}>
-                  <div className={styles.practiceCardImg}>
-                    <Image src={area.img} alt={area.title} fill className={styles.practiceImg} />
-                    <div className={styles.practiceCardOverlay} />
+                  <div className={styles.practiceCardHead}>
+                    <span className={styles.practiceNum}>{area.n}</span>
                     <h3 className={styles.practiceCardTitle}>{area.title}</h3>
                   </div>
                   <div className={styles.practiceCardBody}>
@@ -192,35 +207,40 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+
+            <div className={styles.practiceAll}>
+              {practiceAreas.filter((a) => !featured.includes(a)).map((area) => (
+                <span key={area.title} className={styles.practiceChip}>
+                  <em>{area.n}</em> {area.title}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* ─── WHY CHOOSE US ─── */}
-        <section className={styles.whySection}>
+        {/* ─── WHY SHAMS LAW CHAMBER ─── */}
+        <section className={`${styles.whySection} cut-top`}>
           <div className="container">
             <div className={styles.whyGrid}>
               <div className={styles.whyLeft}>
                 <p className={styles.eyebrowLight}>
                   <span className={styles.eyebrowLineLight} />
-                  Why Choose Us
+                  Why Shams Law Chamber
                 </p>
-                <h2 className={styles.whyTitle}>Your Success<br />Is Our Only<br />Commitment.</h2>
-                <p className={styles.whyDesc}>We combine decades of legal expertise with a client-first approach to deliver results that matter.</p>
+                <h2 className={styles.whyTitle}>Institutional<br />Trust, Built<br />Over 24 Years.</h2>
+                <p className={styles.whyDesc}>
+                  A record of service that continues to shape the Chamber&apos;s culture of integrity
+                  and rigour — from the District and Sessions Courts of Sindh to the Superior Courts
+                  of Pakistan.
+                </p>
                 <Link href="/contact" className={styles.whyCta}>
-                  Get Free Consultation <ArrowRight size={16} />
+                  Speak to Our Counsel <ArrowRight size={16} />
                 </Link>
               </div>
               <div className={styles.whyRight}>
-                {[
-                  { icon: <GraduationCap size={28} />, title: 'Highly Qualified Team', desc: 'Our attorneys hold advanced degrees and have appeared in thousands of cases across all levels of Pakistani courts.' },
-                  { icon: <Handshake size={28} />, title: 'Client-First Approach', desc: 'Clear communication and total transparency at every stage of your case.' },
-                  { icon: <Star size={28} />, title: 'Proven Track Record', desc: '98% success rate across criminal, civil, family and corporate matters.' },
-                  { icon: <Lock size={28} />, title: 'Strictly Confidential', desc: 'Your case details remain completely private. Always.' },
-                  { icon: <Zap size={28} />, title: '24/7 Availability', desc: 'Urgent legal matters receive our immediate attention, day or night.' },
-                  { icon: <CircleDollarSign size={28} />, title: 'Transparent Fees', desc: 'No hidden costs. Clear upfront fee structures with flexible payment options.' },
-                ].map((item) => (
+                {whyUs.map((item, i) => (
                   <div key={item.title} className={styles.whyCard}>
-                    <div className={styles.whyCardIcon}>{item.icon}</div>
+                    <div className={styles.whyCardIcon}>{whyIcons[i]}</div>
                     <div>
                       <h4>{item.title}</h4>
                       <p>{item.desc}</p>
@@ -231,46 +251,77 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* ─── CLIENTS ─── */}
-        <section className={styles.clientsSection}>
-          <div className="container">
-            <div className={styles.sectionHeader} style={{marginBottom: "3rem"}}>
-              <p className={styles.eyebrow}>
-                <span className={styles.eyebrowLine} />
-                Trusted By
-              </p>
-              <h2>Our Clients</h2>
-            </div>
-            <div className={styles.clientsGrid}>
-              <img src="/images/js-bank.png" alt="JS Bank" className={styles.clientLogo} />
-              <img src="/images/synteks.png" alt="Synteks" className={styles.clientLogo} />
-            </div>
-          </div>
-        </section>
 
-        {/* ─── TESTIMONIALS ─── */}
-        <section className={styles.testimonialsSection}>
+        {/* ─── CLIENTS ─── */}
+        <section className={`${styles.clientsSection} cut-top-reverse`}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <p className={styles.eyebrow}>
                 <span className={styles.eyebrowLine} />
-                Client Testimonials
+                Affiliations &amp; Notable Clients
               </p>
-              <h2>What Our Clients Say</h2>
+              <h2>Trusted By</h2>
+              <p className={styles.sectionDesc}>
+                Enduring relationships with clients spanning heavy industry, banking and finance,
+                telecommunications, security services and technology.
+              </p>
             </div>
-            <div className={styles.testimonialsGrid}>
-              {[
-                { quote: 'Karachi Legal House handled my property dispute with exceptional professionalism. Their expertise and dedication resulted in a favorable judgment. Highly recommended!', name: 'Ahmed Khan', role: 'Property Dispute Client' },
-                { quote: "I was facing a very difficult criminal case. The team's strategic approach secured my bail and eventual acquittal. I will forever be grateful.", name: 'Fatima Malik', role: 'Criminal Defence Client' },
-                { quote: 'Their family law team handled my custody case with real sensitivity and professionalism. They understood my concerns and fought for my children\'s best interests.', name: 'Sarah Qureshi', role: 'Family Law Client' },
-              ].map((t) => (
-                <div key={t.name} className={styles.testimonialCard}>
-                  <div className={styles.testimonialStars}>★★★★★</div>
-                  <p className={styles.testimonialQuote}>"{t.quote}"</p>
-                  <div className={styles.testimonialAuthor}>
-                    <strong>{t.name}</strong>
-                    <span>{t.role}</span>
-                  </div>
+          </div>
+
+          <div className={styles.clientsMarquee}>
+            <LogoMarquee items={clientLogos} duration={50} reverse label="Client logos" />
+          </div>
+
+          <div className="container">
+            <div className={styles.clientGroups}>
+              {clientGroups.map((group) => (
+                <div key={group.title} className={styles.clientGroup}>
+                  <h3 className={styles.clientGroupTitle}>{group.title}</h3>
+                  <p className={styles.clientGroupBlurb}>{group.blurb}</p>
+                  <ul className={styles.clientNames}>
+                    {group.names.map((name) => <li key={name}>{name}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── MEDIA RECOGNITION ─── */}
+        <section className={`${styles.mediaSection} cut-top`} aria-label="Media recognition">
+          <div className="container">
+            <div className={styles.mediaHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                Media Recognition
+              </p>
+              <p className={styles.mediaDesc}>
+                The firm&apos;s work and its partners&apos; commentary have been featured in leading
+                Pakistani news and media outlets.
+              </p>
+            </div>
+          </div>
+          <LogoMarquee items={mediaLogos} duration={35} size="sm" label="Media outlet logos" />
+        </section>
+
+        {/* ─── OFFICES ─── */}
+        <section className={`${styles.officesSection} cut-top-reverse`}>
+          <div className="container">
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                Where We Practise
+              </p>
+              <h2>Our Offices</h2>
+            </div>
+            <div className={styles.officesGrid}>
+              {offices.map((office) => (
+                <div key={office.city} className={styles.officeCard}>
+                  <MapPin size={20} className={styles.officeIcon} />
+                  <span className={styles.officeRole}>{office.role}</span>
+                  <h3>{office.city}</h3>
+                  <p>{office.lines.map((l) => <span key={l}>{l}<br /></span>)}</p>
+                  <a href={office.phoneHref} className={styles.officePhone}>{office.phone}</a>
                 </div>
               ))}
             </div>
@@ -278,19 +329,22 @@ export default function Home() {
         </section>
 
         {/* ─── CTA BANNER ─── */}
-        <section className={styles.ctaSection}>
+        <section className={`${styles.ctaSection} cut-top`}>
           <div className="container">
             <div className={styles.ctaInner}>
               <div>
-                <h2 className={styles.ctaTitle}>Ready to Discuss Your Case?</h2>
-                <p className={styles.ctaDesc}>Our experienced attorneys are available now. Schedule your free, confidential consultation today.</p>
+                <h2 className={styles.ctaTitle}>Ready to Discuss Your Matter?</h2>
+                <p className={styles.ctaDesc}>
+                  Schedule an online call, a WhatsApp consultation, or an in-person appointment with
+                  our lawyers.
+                </p>
               </div>
               <div className={styles.ctaActions}>
-                <Link href="/contact" className={styles.ctaPrimary}>
-                  Book Free Consultation
+                <Link href="/book-consultation" className={styles.ctaPrimary}>
+                  Book a Consultation
                 </Link>
-                <a href="tel:+923112610683" className={styles.ctaSecondary}>
-                  <Phone size={18} /> Call Now
+                <a href={contact.phoneHref} className={styles.ctaSecondary}>
+                  <Phone size={18} /> {contact.phone}
                 </a>
               </div>
             </div>
@@ -302,4 +356,3 @@ export default function Home() {
     </>
   );
 }
-

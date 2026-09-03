@@ -5,8 +5,8 @@ export const servicesData = {
     shortTitle: "Criminal Law",
     desc: "Expert legal representation in all criminal proceedings across Pakistan",
     icon: "⚖️",
-    image: "/images/criminal_law.png",
-    overview: "At Karachi Legal House, our criminal defense attorneys bring decades of combined experience in defending clients facing serious criminal charges. We understand the stress and uncertainty that criminal proceedings bring, and we are committed to protecting your rights and securing the best possible outcome. Our team has successfully handled thousands of criminal cases before Sessions Courts, High Courts, and the Supreme Court of Pakistan.",
+    image: "/images/hero_banner.png",
+    overview: "At Shams Law Chamber, our criminal defense attorneys bring decades of combined experience in defending clients facing serious criminal charges. We understand the stress and uncertainty that criminal proceedings bring, and we are committed to protecting your rights and securing the best possible outcome. Our team has successfully handled thousands of criminal cases before Sessions Courts, High Courts, and the Supreme Court of Pakistan.",
     services: [
       {
         title: "Bail Applications",
@@ -60,8 +60,8 @@ export const servicesData = {
     shortTitle: "Family Law",
     desc: "Compassionate legal support for sensitive family matters",
     icon: "👨‍👩‍👧‍👦",
-    image: "/images/family_law.png",
-    overview: "Family law matters require both legal expertise and emotional sensitivity. Our family law team at Karachi Legal House provides compassionate yet assertive representation in divorce, child custody, maintenance, and other family disputes. We understand the personal nature of these cases and work diligently to protect your rights while minimizing emotional stress.",
+    image: "/images/hero_banner.png",
+    overview: "Family law matters require both legal expertise and emotional sensitivity. Our family law team at Shams Law Chamber provides compassionate yet assertive representation in divorce, child custody, maintenance, and other family disputes. We understand the personal nature of these cases and work diligently to protect your rights while minimizing emotional stress.",
     services: [
       { title: "Divorce & Khula", desc: "Complete legal assistance in divorce proceedings, khula applications, and dissolution of marriage under Islamic and civil law." },
       { title: "Child Custody", desc: "Representation in custody disputes, visitation rights, and guardianship matters ensuring the best interests of children." },
@@ -97,8 +97,8 @@ export const servicesData = {
     shortTitle: "Corporate Law",
     desc: "Comprehensive legal solutions for businesses of all sizes",
     icon: "🏢",
-    image: "/images/corporate_law.png",
-    overview: "In today's complex business environment, having expert legal counsel is essential. Karachi Legal House provides comprehensive corporate and commercial legal services to businesses of all sizes, from startups to established corporations. Our corporate law team assists with business formation, contracts, compliance, mergers, and commercial disputes, ensuring your business operates smoothly and legally.",
+    image: "/images/hero_banner.png",
+    overview: "In today's complex business environment, having expert legal counsel is essential. Shams Law Chamber provides comprehensive corporate and commercial legal services to businesses of all sizes, from startups to established corporations. Our corporate law team assists with business formation, contracts, compliance, mergers, and commercial disputes, ensuring your business operates smoothly and legally.",
     services: [
       { title: "Company Registration", desc: "Complete assistance with SECP registration, business incorporation, and licensing for all types of companies." },
       { title: "Contract Drafting", desc: "Preparation and review of commercial contracts, agreements, MOUs, and business documents." },
@@ -134,8 +134,8 @@ export const servicesData = {
     shortTitle: "Property Law",
     desc: "Expert legal guidance for property transactions and disputes",
     icon: "🏠",
-    image: "/images/property_law.png",
-    overview: "Property is often your most valuable asset, and protecting it requires expert legal guidance. Karachi Legal House provides comprehensive property law services including dispute resolution, title verification, succession certificates, property transfers, and litigation. Our property law experts have extensive experience handling complex real estate matters across Pakistan.",
+    image: "/images/hero_banner.png",
+    overview: "Property is often your most valuable asset, and protecting it requires expert legal guidance. Shams Law Chamber provides comprehensive property law services including dispute resolution, title verification, succession certificates, property transfers, and litigation. Our property law experts have extensive experience handling complex real estate matters across Pakistan.",
     services: [
       { title: "Property Disputes", desc: "Litigation and resolution of ownership disputes, boundary conflicts, and illegal occupation cases." },
       { title: "Title Verification", desc: "Complete due diligence and title verification before property purchase to ensure clear ownership." },
@@ -171,8 +171,8 @@ export const servicesData = {
     shortTitle: "Civil Law",
     desc: "Strategic representation in all types of civil disputes",
     icon: "📜",
-    image: "/images/civil_law.png",
-    overview: "Civil disputes require strategic legal representation and thorough knowledge of civil procedure. Karachi Legal House provides expert civil litigation services covering contract disputes, money recovery, injunctions, specific performance, and declaratory suits. Our civil litigation team represents clients at all levels of civil courts with a focus on achieving favorable outcomes efficiently.",
+    image: "/images/hero_banner.png",
+    overview: "Civil disputes require strategic legal representation and thorough knowledge of civil procedure. Shams Law Chamber provides expert civil litigation services covering contract disputes, money recovery, injunctions, specific performance, and declaratory suits. Our civil litigation team represents clients at all levels of civil courts with a focus on achieving favorable outcomes efficiently.",
     services: [
       { title: "Civil Suits", desc: "Filing and defending civil suits for various claims and legal remedies." },
       { title: "Injunctions", desc: "Applications for temporary and permanent injunctions to prevent wrongful acts." },
@@ -208,7 +208,7 @@ export const servicesData = {
     shortTitle: "Constitutional Law",
     desc: "Protection of fundamental rights through constitutional petitions",
     icon: "📜",
-    overview: "When fundamental rights are violated by state actions, constitutional remedies provide powerful legal protection. Karachi Legal House specializes in constitutional law, filing writ petitions before High Courts and the Supreme Court to safeguard fundamental rights, challenge illegal orders, and seek judicial review of governmental actions.",
+    overview: "When fundamental rights are violated by state actions, constitutional remedies provide powerful legal protection. Shams Law Chamber specializes in constitutional law, filing writ petitions before High Courts and the Supreme Court to safeguard fundamental rights, challenge illegal orders, and seek judicial review of governmental actions.",
     services: [
       { title: "Writ Petitions", desc: "Filing constitutional petitions including habeas corpus, mandamus, prohibition, and certiorari." },
       { title: "Fundamental Rights", desc: "Protection of constitutional rights including freedom, equality, and due process." },
@@ -244,7 +244,7 @@ export const servicesData = {
     shortTitle: "Cyber Crime",
     desc: "Specialized legal services for cyber crime and digital law matters",
     icon: "💻",
-    overview: "In the digital age, cyber crimes have become increasingly prevalent. Karachi Legal House provides specialized representation in FIA cyber crime cases, online fraud, digital harassment, and data protection matters. Our team understands both the legal and technical aspects of cyber law, providing effective defense against cyber crime allegations.",
+    overview: "In the digital age, cyber crimes have become increasingly prevalent. Shams Law Chamber provides specialized representation in FIA cyber crime cases, online fraud, digital harassment, and data protection matters. Our team understands both the legal and technical aspects of cyber law, providing effective defense against cyber crime allegations.",
     services: [
       { title: "FIA Cyber Cases", desc: "Defense in FIA cybercrime wing investigations and prosecutions under PECA." },
       { title: "Online Fraud", desc: "Cases involving online scams, digital fraud, and internet-based financial crimes." },
@@ -280,7 +280,7 @@ export const servicesData = {
     shortTitle: "Banking & Finance",
     desc: "Expert legal services for banking and financial disputes",
     icon: "💼",
-    overview: "Banking and finance matters require specialized legal knowledge. Karachi Legal House provides expert representation in banking disputes, loan recovery defense, cheque bounce cases, and financial regulatory matters. Our team protects your interests whether you're defending against bank claims or pursuing financial remedies.",
+    overview: "Banking and finance matters require specialized legal knowledge. Shams Law Chamber provides expert representation in banking disputes, loan recovery defense, cheque bounce cases, and financial regulatory matters. Our team protects your interests whether you're defending against bank claims or pursuing financial remedies.",
     services: [
       { title: "Banking Litigation", desc: "Representation in disputes with banks and financial institutions." },
       { title: "Loan Recovery Defense", desc: "Defense against loan recovery suits and banking enforcement actions." },

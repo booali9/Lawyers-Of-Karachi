@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import styles from "./legal.module.css";
 
 export const metadata = {
-  title: "Privacy Policy | Karachi Legal House - Data Protection & Privacy",
-  description: "Learn how Karachi Legal House protects your personal information and maintains client confidentiality in accordance with Pakistani law and attorney-client privilege."
+  title: "Privacy Policy | Shams Law Chamber - Data Protection & Privacy",
+  description: "Learn how Shams Law Chamber protects your personal information and maintains client confidentiality in accordance with Pakistani law and attorney-client privilege."
 };
 
 export default function PrivacyPolicyPage() {
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
               <div className={styles.section}>
                 <h2>1. Introduction</h2>
                 <p>
-                  Karachi Legal House ("we," "our," or "us") is committed to protecting your privacy and maintaining the confidentiality of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our legal services.
+                  Shams Law Chamber ("we," "our," or "us") is committed to protecting your privacy and maintaining the confidentiality of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our legal services.
                 </p>
                 <p>
                   As a law firm, we are bound by professional ethics rules and attorney-client privilege, which provide additional protections beyond this Privacy Policy.
@@ -157,11 +157,11 @@ export default function PrivacyPolicyPage() {
                   If you have questions about this Privacy Policy or how we handle your information, please contact us:
                 </p>
                 <div className={styles.contactInfo}>
-                  <p><strong>Karachi Legal House</strong></p>
-                  <p>Office # 405, 4th Floor, Bahria Complex IV</p>
-                  <p>MT Khan Road, DHA Phase 5, Karachi, Pakistan</p>
-                  <p>Phone: +92 311 2610683</p>
-                  <p>Email: privacy@karachilegalhouse.com</p>
+                  <p><strong>Shams Law Chamber</strong></p>
+                  <p>Mezzanine Floor, Building No. 28-C, Old Sunset Boulevard</p>
+                  <p>DHA Phase II, Karachi, Sindh, Pakistan</p>
+                  <p>Phone: +92 310 3381280</p>
+                  <p>Email: AdvJahangirshams@gmail.com</p>
                 </div>
               </div>
             </div>

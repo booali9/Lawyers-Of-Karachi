@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, User } from "lucide-react";
 import styles from "./article.module.css";
 
 export const metadata = {
-  title: "Legal Article | Karachi Legal House",
+  title: "Legal Article | Shams Law Chamber",
 };
 
 export default async function BlogPostPage({ params }) {
@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }) {
                 <Calendar size={16} /> June 2026
               </span>
               <span className={styles.metaItem}>
-                <User size={16} /> Advocate Shehroze Ahmed
+                <User size={16} /> Shams Law Chamber
               </span>
             </div>
           </div>

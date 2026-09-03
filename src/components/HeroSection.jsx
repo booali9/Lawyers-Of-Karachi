@@ -78,7 +78,7 @@ export default function HeroSection() {
           <motion.div ref={lineRef} className={styles.heroRule} variants={childVariants} />
 
           <motion.p className={styles.heroDesc} variants={childVariants}>
-            From the Supreme Court to the High Courts, Karachi Legal House delivers
+            From the Supreme Court to the High Courts, Shams Law Chamber delivers
             unmatched legal representation across Criminal, Family, Corporate, Civil,
             and Property Law.
           </motion.p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./booking.module.css";
 
 export const metadata = {
-  title: "Book Free Legal Consultation | Karachi Legal House - Schedule Appointment",
+  title: "Book a Consultation",
   description: "Schedule a free consultation with experienced lawyers in Karachi. Expert legal advice on criminal, family, property, corporate law. Available 24/7 for urgent matters.",
   keywords: "book consultation Karachi, free legal consultation Pakistan, lawyer appointment Karachi, legal consultation online"
 };
@@ -51,7 +51,7 @@ export default function BookConsultationPage() {
                     </div>
                     <div className={styles.formGroup}>
                       <label htmlFor="phone">Phone Number *</label>
-                      <input type="tel" id="phone" name="phone" placeholder="+92 311 2610683" required />
+                      <input type="tel" id="phone" name="phone" placeholder="+92 310 3381280" required />
                     </div>
                   </div>
 
@@ -151,13 +151,13 @@ export default function BookConsultationPage() {
                   <h3>Need Immediate Assistance?</h3>
                   <p>For urgent legal matters, contact us directly:</p>
                   <div className={styles.urgentContacts}>
-                    <a href="tel:+923112610683" className={styles.urgentLink}>
-                      📞 +92 311 2610683
+                    <a href="tel:+923103381280" className={styles.urgentLink}>
+                      📞 +92 310 3381280
                     </a>
-                    <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className={styles.urgentLink}>
+                    <a href="https://wa.me/923103381280" target="_blank" rel="noreferrer" className={styles.urgentLink}>
                       💬 WhatsApp Chat
                     </a>
-                    <a href="mailto:info@karachilegalhouse.com" className={styles.urgentLink}>
+                    <a href="mailto:AdvJahangirshams@gmail.com" className={styles.urgentLink}>
                       ✉️ Email Us
                     </a>
                   </div>

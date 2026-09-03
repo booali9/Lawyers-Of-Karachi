@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./faq.module.css";
 
 export const metadata = {
-  title: "Frequently Asked Questions | Karachi Legal House",
+  title: "Frequently Asked Questions | Shams Law Chamber",
   description: "Find answers to common legal questions about criminal law, family law, corporate law, property disputes, and legal services in Pakistan.",
 };
 
@@ -36,7 +36,7 @@ export default function FAQPage() {
       faqs: [
         {
           q: "What should I do if I'm arrested?",
-          a: "Remain calm and exercise your right to remain silent. Do not make any statements without a lawyer present. Contact our emergency legal hotline (+92 311 2610683) immediately. We provide 24/7 emergency legal assistance and can arrange bail representation within hours."
+          a: "Remain calm and exercise your right to remain silent. Do not make any statements without a lawyer present. Contact our emergency legal hotline (+92 310 3381280) immediately. We provide 24/7 emergency legal assistance and can arrange bail representation within hours."
         },
         {
           q: "Can an FIR be cancelled or quashed?",
@@ -166,8 +166,8 @@ export default function FAQPage() {
                 <Link href="/book-consultation" className="btn btn-primary">
                   Schedule Consultation
                 </Link>
-                <a href="tel:+923112610683" className="btn btn-secondary">
-                  Call: +92 311 2610683
+                <a href="tel:+923103381280" className="btn btn-secondary">
+                  Call: +92 310 3381280
                 </a>
               </div>
             </div>

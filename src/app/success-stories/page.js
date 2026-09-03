@@ -4,8 +4,8 @@ import Link from "next/link";
 import styles from "./success.module.css";
 
 export const metadata = {
-  title: "Success Stories | Karachi Legal House - Case Results & Client Testimonials",
-  description: "Read about our successful cases and satisfied clients. Karachi Legal House has achieved favorable outcomes in thousands of cases across Criminal, Family, Corporate, and Property Law.",
+  title: "Success Stories | Shams Law Chamber - Case Results & Client Testimonials",
+  description: "Read about our successful cases and satisfied clients. Shams Law Chamber has achieved favorable outcomes in thousands of cases across Criminal, Family, Corporate, and Property Law.",
 };
 
 export default function SuccessStoriesPage() {
@@ -71,7 +71,7 @@ export default function SuccessStoriesPage() {
       name: "Ahmed Hussain",
       case: "Criminal Defense - Bail Application",
       rating: 5,
-      text: "I was devastated when falsely accused in a criminal case. Karachi Legal House not only secured my bail quickly but also fought tirelessly until I was acquitted. Their expertise in criminal law and dedication to my case was exceptional. I'm forever grateful to Advocate Muhammad Taqi and his team.",
+      text: "I was devastated when falsely accused in a criminal case. Shams Law Chamber not only secured my bail quickly but also fought tirelessly until I was acquitted. Their expertise in criminal law and dedication to my case was exceptional. I'm forever grateful to the team.",
       year: "2024"
     },
     {
@@ -85,7 +85,7 @@ export default function SuccessStoriesPage() {
       name: "Rashid Malik",
       case: "Property Dispute Resolution",
       rating: 5,
-      text: "My family property dispute was stuck in courts for 5 years with no progress. Karachi Legal House took over the case and resolved it in just 8 months. Their strategic approach and thorough preparation won us the case. I highly recommend their property law services.",
+      text: "My family property dispute was stuck in courts for 5 years with no progress. Shams Law Chamber took over the case and resolved it in just 8 months. Their strategic approach and thorough preparation won us the case. I highly recommend their property law services.",
       year: "2023"
     },
     {
@@ -99,7 +99,7 @@ export default function SuccessStoriesPage() {
       name: "Bilal Siddiqui",
       case: "Banking Dispute - Loan Recovery Defense",
       rating: 5,
-      text: "I was facing aggressive loan recovery action from a bank. Karachi Legal House negotiated a fair settlement and saved me from legal complications. Advocate Kashif Raza's understanding of banking law helped resolve the matter amicably. Professional and result-oriented service.",
+      text: "I was facing aggressive loan recovery action from a bank. Shams Law Chamber negotiated a fair settlement and saved me from legal complications. The team's understanding of banking law helped resolve the matter amicably. Professional and result-oriented service.",
       year: "2024"
     },
     {

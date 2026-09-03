@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import styles from "../privacy-policy/legal.module.css";
 
 export const metadata = {
-  title: "Terms & Conditions | Karachi Legal House",
-  description: "Terms and conditions for using Karachi Legal House legal services and website."
+  title: "Terms & Conditions | Shams Law Chamber",
+  description: "Terms and conditions for using Shams Law Chamber legal services and website."
 };
 
 export default function TermsConditionsPage() {
@@ -25,7 +25,7 @@ export default function TermsConditionsPage() {
               <div className={styles.section}>
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                  By accessing and using the Karachi Legal House website and services, you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services.
+                  By accessing and using the Shams Law Chamber website and services, you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services.
                 </p>
               </div>
 
@@ -46,7 +46,7 @@ export default function TermsConditionsPage() {
                   <li>Legal research and analysis</li>
                 </ul>
                 <p>
-                  All services are provided by qualified advocates licensed to practice law in Pakistan and registered with the Pakistan Bar Council.
+                  All services are provided by qualified advocates licensed to practise law in Pakistan. Shams Law Chamber is registered with the Sindh Bar Council under Registration No. 663/BC.
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ export default function TermsConditionsPage() {
               <div className={styles.section}>
                 <h2>9. Intellectual Property</h2>
                 <p>
-                  All content on this website, including text, graphics, logos, and software, is the property of Karachi Legal House and protected by Pakistani and international copyright laws.
+                  All content on this website, including text, graphics, logos, and software, is the property of Shams Law Chamber and protected by Pakistani and international copyright laws.
                 </p>
               </div>
 
@@ -122,11 +122,11 @@ export default function TermsConditionsPage() {
               <div className={styles.section}>
                 <h2>12. Contact Information</h2>
                 <div className={styles.contactInfo}>
-                  <p><strong>Karachi Legal House</strong></p>
-                  <p>Office # 405, 4th Floor, Bahria Complex IV</p>
-                  <p>MT Khan Road, DHA Phase 5, Karachi, Pakistan</p>
-                  <p>Phone: +92 311 2610683</p>
-                  <p>Email: info@karachilegalhouse.com</p>
+                  <p><strong>Shams Law Chamber</strong></p>
+                  <p>Mezzanine Floor, Building No. 28-C, Old Sunset Boulevard</p>
+                  <p>DHA Phase II, Karachi, Sindh, Pakistan</p>
+                  <p>Phone: +92 310 3381280</p>
+                  <p>Email: AdvJahangirshams@gmail.com</p>
                 </div>
               </div>
             </div>

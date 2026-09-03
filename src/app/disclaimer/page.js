@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import styles from "../privacy-policy/legal.module.css";
 
 export const metadata = {
-  title: "Legal Disclaimer | Karachi Legal House",
-  description: "Important legal disclaimers regarding Karachi Legal House website content and legal services."
+  title: "Legal Disclaimer | Shams Law Chamber",
+  description: "Important legal disclaimers regarding Shams Law Chamber website content and legal services."
 };
 
 export default function DisclaimerPage() {
@@ -74,7 +74,7 @@ export default function DisclaimerPage() {
               <div className={styles.section}>
                 <h2>8. Jurisdiction</h2>
                 <p>
-                  Karachi Legal House is licensed to practice law in Pakistan. The information on this website primarily pertains to Pakistani law. Laws vary by jurisdiction, and content may not apply to your location.
+                  Shams Law Chamber is licensed to practice law in Pakistan. The information on this website primarily pertains to Pakistani law. Laws vary by jurisdiction, and content may not apply to your location.
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ export default function DisclaimerPage() {
               <div className={styles.section}>
                 <h2>11. Professional Conduct</h2>
                 <p>
-                  All attorneys at Karachi Legal House are licensed by the Pakistan Bar Council and adhere to professional ethics rules. Any concerns about professional conduct should be addressed to the Pakistan Bar Council.
+                  All attorneys at Shams Law Chamber are enrolled with the Sindh Bar Council and adhere to professional ethics rules. Any concerns about professional conduct should be addressed to the Sindh Bar Council.
                 </p>
               </div>
 
@@ -112,11 +112,11 @@ export default function DisclaimerPage() {
                   If you need legal advice specific to your situation, please contact us to schedule a consultation:
                 </p>
                 <div className={styles.contactInfo}>
-                  <p><strong>Karachi Legal House</strong></p>
-                  <p>Office # 405, 4th Floor, Bahria Complex IV</p>
-                  <p>MT Khan Road, DHA Phase 5, Karachi, Pakistan</p>
-                  <p>Phone: +92 311 2610683</p>
-                  <p>Email: info@karachilegalhouse.com</p>
+                  <p><strong>Shams Law Chamber</strong></p>
+                  <p>Mezzanine Floor, Building No. 28-C, Old Sunset Boulevard</p>
+                  <p>DHA Phase II, Karachi, Sindh, Pakistan</p>
+                  <p>Phone: +92 310 3381280</p>
+                  <p>Email: AdvJahangirshams@gmail.com</p>
                 </div>
               </div>
             </div>

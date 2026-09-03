@@ -3,11 +3,13 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { Scale, GraduationCap, Handshake, Briefcase, Lock, Zap, ArrowRight, CheckCircle } from "lucide-react";
+import { firm, practiceAreas } from "@/data/firm";
 import styles from "./about.module.css";
 
 export const metadata = {
-  title: "About Us | Karachi Legal House - Premier Law Firm in Pakistan",
-  description: "Learn about Karachi Legal House, a leading law firm in Pakistan. Meet our expert team of advocates and discover our commitment to legal excellence.",
+  title: "About Us",
+  description:
+    "Shams Law Chamber was founded in 2002 by Mr. Shamsuddin Rajper in Khairpur Mirs and has grown into one of Sindh's most established full-service law firms, registered with the Sindh Bar Council (No. 663/BC) with offices in Karachi, Hyderabad and Sukkur.",
 };
 
 export default function AboutPage() {
@@ -20,7 +22,7 @@ export default function AboutPage() {
         <section className={styles.aboutHero}>
           <Image
             src="/images/hero_banner.png"
-            alt="Karachi Legal House"
+            alt=""
             fill
             priority
             className={styles.heroBgImage}
@@ -29,11 +31,13 @@ export default function AboutPage() {
           <div className={`container ${styles.heroInner}`}>
             <p className={styles.heroEyebrow}>
               <span className={styles.eyebrowLine} />
-              About Our Firm
+              About the Chamber
             </p>
-            <h1 className={styles.heroTitle}>Excellence in Legal<br />Practice Since 2010</h1>
+            <h1 className={styles.heroTitle}>A Tradition of Litigation<br />and Advisory Excellence</h1>
             <p className={styles.heroDesc}>
-              A legacy of trust, professionalism, and unwavering commitment to justice across Pakistan.
+              Established in {firm.founded} and registered with the {firm.barCouncil} under Registration
+              No. {firm.barRegNo} — serving individuals, corporations, financial institutions and
+              government bodies across Sindh.
             </p>
           </div>
         </section>
@@ -45,8 +49,8 @@ export default function AboutPage() {
               <div className={styles.storyImageCol}>
                 <div className={styles.storyImageWrapper}>
                   <Image
-                    src="/images/criminal_law.png"
-                    alt="Karachi Legal House Office"
+                    src="/images/hero_banner.png"
+                    alt=""
                     fill
                     className={styles.storyImage}
                   />
@@ -54,12 +58,12 @@ export default function AboutPage() {
                 <div className={styles.storyAccent} />
                 <div className={styles.storyStatsOverlay}>
                   <div className={styles.statItem}>
-                    <span className={styles.statNum}>15+</span>
-                    <span className={styles.statLabel}>Years of Excellence</span>
+                    <span className={styles.statNum}>{firm.yearsPractice} yrs</span>
+                    <span className={styles.statLabel}>Of Continuous Practice</span>
                   </div>
                   <div className={styles.statItem}>
-                    <span className={styles.statNum}>3000+</span>
-                    <span className={styles.statLabel}>Cases Handled</span>
+                    <span className={styles.statNum}>4,000+</span>
+                    <span className={styles.statLabel}>Clients Represented</span>
                   </div>
                 </div>
               </div>
@@ -68,15 +72,28 @@ export default function AboutPage() {
                   <span className={styles.eyebrowLine} />
                   Our Story
                 </p>
-                <h2>Built on Trust,<br />Driven by Results.</h2>
+                <h2>Two Generations,<br />One Chamber.</h2>
                 <p className={styles.storyText}>
-                  Established in 2010, Karachi Legal House has grown from a boutique practice into one of Pakistan's most respected law firms. Our journey began with a clear vision — to provide honest, strategic, and effective legal representation that puts clients first.
+                  Founded in {firm.founded} by {firm.founderName} in Khairpur Mirs, Sindh, {firm.name}{" "}
+                  has grown over more than two decades into one of Sindh&apos;s most established full-service
+                  law firms, with a footprint spanning Karachi, Hyderabad, Sukkur, Larkana, Nawabshah,
+                  Mirpurkhas, Noushero Feroze, Ghotki, Gambat and Shikarpur. Its partners appear regularly
+                  before the District and Sessions Courts, the Sindh High Court and the Superior Courts of Pakistan.
                 </p>
                 <p className={styles.storyText}>
-                  Over the past 15 years, we have successfully represented thousands of clients in matters ranging from criminal defence to complex corporate transactions. Our advocates have argued before the Supreme Court, all High Courts, and numerous specialised tribunals across Pakistan.
+                  Mr. Rajper&apos;s distinguished public-service career includes appointment as Assistant
+                  Prosecutor General of Sindh (2008), Vice President of the Sindh High Court Bar Association,
+                  Sukkur (2019–2020), and his current role as Deputy Attorney General for Pakistan at the
+                  Circuit Bench of the Sindh High Court, Hyderabad — a record of institutional trust that
+                  continues to shape the Chamber&apos;s culture of integrity and rigour.
                 </p>
                 <p className={styles.storyText}>
-                  Today, Karachi Legal House stands as a testament to what dedication, expertise, and integrity can achieve together.
+                  The firm&apos;s next generation of leadership joined in 2016, when Mr. Fayazuddin Rajper —
+                  the founder&apos;s elder son — took charge of the Chamber&apos;s affairs and built a
+                  diversified litigation and advisory practice from the Karachi office alongside his brother,
+                  Mr. Jahangir Shams. In 2024, Mr. Raheem Dad Shujrah joined the practice, bringing a BBA and
+                  an LL.B (Hons.) from the University of London and a dual expertise that bridges corporate
+                  insight with courtroom proficiency.
                 </p>
                 <Link href="/lawyers" className={styles.storyBtn}>
                   Meet Our Team <ArrowRight size={16} />
@@ -87,28 +104,26 @@ export default function AboutPage() {
         </section>
 
         {/* ─── MISSION & VISION ─── */}
-        <section className={styles.missionSection}>
+        <section className={`${styles.missionSection} cut-top`}>
           <div className="container">
             <div className={styles.missionGrid}>
               <div className={styles.missionCard}>
                 <div className={styles.missionImageWrapper}>
-                  <Image src="/images/civil_law.png" alt="Our Mission" fill className={styles.missionImg} />
                   <div className={styles.missionOverlay} />
                   <div className={styles.missionCardContent}>
                     <Scale size={36} className={styles.missionSvg} />
                     <h2>Our Mission</h2>
-                    <p>To deliver the highest quality legal services with integrity, professionalism, and compassion — protecting our clients' rights and contributing to the advancement of justice in Pakistan.</p>
+                    <p>To deliver the highest quality litigation and advisory services with integrity, professionalism and rigour — protecting our clients&apos; rights before every forum from the District Courts of Sindh to the Superior Courts of Pakistan.</p>
                   </div>
                 </div>
               </div>
               <div className={styles.missionCard}>
                 <div className={styles.missionImageWrapper}>
-                  <Image src="/images/corporate_law.png" alt="Our Vision" fill className={styles.missionImg} />
                   <div className={styles.missionOverlay} />
                   <div className={styles.missionCardContent}>
                     <GraduationCap size={36} className={styles.missionSvg} />
                     <h2>Our Vision</h2>
-                    <p>To be recognised as Pakistan's most trusted and innovative law firm — setting the standard for legal excellence, ethical practice, and client satisfaction across all tiers of the judiciary.</p>
+                    <p>To remain the top-tier Administrative &amp; Constitutional, Commercial and Taxation law chamber in Sindh — mentoring a new generation of litigators and extending pro bono counselling, legal aid and Public Interest Litigation to those who need it.</p>
                   </div>
                 </div>
               </div>
@@ -117,7 +132,7 @@ export default function AboutPage() {
         </section>
 
         {/* ─── CORE VALUES ─── */}
-        <section className={styles.valuesSection}>
+        <section className={`${styles.valuesSection} cut-top-reverse`}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <p className={styles.eyebrow}>
@@ -147,52 +162,50 @@ export default function AboutPage() {
         </section>
 
         {/* ─── EXPERTISE (image strip) ─── */}
-        <section className={styles.expertiseSection}>
+        <section className={`${styles.expertiseSection} cut-top`}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <p className={styles.eyebrow}>
                 <span className={styles.eyebrowLine} />
                 What We Do
               </p>
-              <h2>Areas of Expertise</h2>
+              <h2>Sixteen Areas of Practice</h2>
+              <p className={styles.sectionDesc}>A full-service practice — from criminal defence and constitutional litigation to corporate advisory, banking, tax and intellectual property.</p>
             </div>
             <div className={styles.expertiseGrid}>
-              {[
-                { img: '/images/criminal_law.png', label: 'Criminal Defence' },
-                { img: '/images/family_law.png',   label: 'Family Law' },
-                { img: '/images/corporate_law.png',label: 'Corporate Law' },
-                { img: '/images/property_law.png', label: 'Property Law' },
-                { img: '/images/civil_law.png',    label: 'Civil Litigation' },
-                { img: '/images/cyber_law.png',    label: 'Cyber Crime' },
-              ].map((e) => (
-                <div key={e.label} className={styles.expertiseCard}>
-                  <div className={styles.expertiseImgWrapper}>
-                    <Image src={e.img} alt={e.label} fill className={styles.expertiseImg} />
-                    <div className={styles.expertiseOverlay} />
+              {practiceAreas.filter((a) => a.href).slice(0, 6).map((e) => (
+                <Link href={e.href} key={e.title} className={styles.expertiseCard}>
+                  <div className={styles.expertisePanel}>
+                    <span className={styles.expertiseNum}>{e.n}</span>
                   </div>
-                  <span className={styles.expertiseLabel}>{e.label}</span>
-                </div>
+                  <span className={styles.expertiseLabel}>{e.title}</span>
+                </Link>
               ))}
             </div>
+            <ul className={styles.areaList}>
+              {practiceAreas.map((a) => (
+                <li key={a.n}><span>{a.n}</span>{a.title}</li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* ─── CREDENTIALS ─── */}
-        <section className={styles.credentialsSection}>
+        <section className={`${styles.credentialsSection} cut-top-reverse`}>
           <div className="container">
             <div className={styles.sectionHeader}>
               <p className={styles.eyebrow}>
                 <span className={styles.eyebrowLine} />
                 Recognition
               </p>
-              <h2>Professional Credentials</h2>
+              <h2>Registration &amp; Standing</h2>
             </div>
             <div className={styles.credentialsGrid}>
               {[
-                { title: 'Pakistan Bar Council', desc: 'Licensed and registered advocates in good standing' },
-                { title: 'Supreme Court of Pakistan', desc: 'Authorised to practice before the apex court' },
-                { title: 'High Court Bar Association', desc: 'Active members at all High Courts of Pakistan' },
-                { title: 'District Bar Association', desc: 'Registered with all major district bar associations' },
+                { title: 'Sindh Bar Council — Reg. No. 663/BC', desc: 'A duly registered law firm regulated by the Sindh Bar Council and authorised to practise throughout the Province of Sindh' },
+                { title: 'Superior Courts of Pakistan', desc: 'Partners appearing before the Sindh High Court and the Superior Courts of Pakistan' },
+                { title: 'District & Sessions Courts', desc: 'An established network reaching the District and Sessions Courts throughout Sindh' },
+                { title: 'Ranked Chamber', desc: 'Recognised by reputation and by rankings in legal publications as a top-tier Administrative & Constitutional, Commercial and Taxation law chamber in Sindh' },
               ].map((c) => (
                 <div key={c.title} className={styles.credentialCard}>
                   <CheckCircle size={28} className={styles.credentialIcon} />
@@ -205,16 +218,16 @@ export default function AboutPage() {
         </section>
 
         {/* ─── CTA ─── */}
-        <section className={styles.ctaSection}>
+        <section className={`${styles.ctaSection} cut-top`}>
           <div className="container">
             <div className={styles.ctaInner}>
               <div>
                 <h2 className={styles.ctaTitle}>Ready to Discuss Your Legal Matter?</h2>
-                <p className={styles.ctaDesc}>Schedule a free, confidential consultation with our experienced legal team today.</p>
+                <p className={styles.ctaDesc}>Schedule an online call, a WhatsApp consultation, or an in-person appointment with our lawyers.</p>
               </div>
               <div className={styles.ctaActions}>
                 <Link href="/book-consultation" className={styles.ctaPrimary}>
-                  Book Free Consultation
+                  Book a Consultation
                 </Link>
                 <Link href="/lawyers" className={styles.ctaSecondary}>
                   Meet Our Team

@@ -7,7 +7,7 @@ import styles from "./practice.module.css";
 import { servicesData } from "../services/[slug]/servicesData";
 
 export const metadata = {
-  title: "Practice Areas | Karachi Legal House - Comprehensive Legal Services",
+  title: "Practice Areas | Shams Law Chamber - Comprehensive Legal Services",
   description: "Expert legal services across Criminal Law, Civil Law, Family Law, Corporate Law, Property Law, and Cyber Crime in Pakistan.",
 };
 

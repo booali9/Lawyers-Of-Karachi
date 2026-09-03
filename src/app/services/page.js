@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./services.module.css";
 
 export const metadata = {
-  title: "Our Services | Karachi Legal House - Expert Legal Representation",
+  title: "Our Services | Shams Law Chamber - Expert Legal Representation",
   description: "Comprehensive legal services in Criminal Law, Family Law, Corporate Law, Property Law, Civil Law, Constitutional Law, Cyber Crime, and Banking & Finance in Pakistan.",
 };
 
@@ -153,7 +153,7 @@ export default function ServicesPage() {
             <div className={styles.introContent}>
               <h2>Expert Legal Representation Across All Practice Areas</h2>
               <p>
-                At Karachi Legal House, we provide comprehensive legal services across the full spectrum of Pakistani law. 
+                At Shams Law Chamber, we provide comprehensive legal services across the full spectrum of Pakistani law. 
                 Our team of experienced advocates, including Supreme Court practitioners, brings decades of combined 
                 experience in criminal, civil, corporate, and constitutional matters.
               </p>
@@ -204,7 +204,7 @@ export default function ServicesPage() {
         <section className={`section ${styles.whySection}`}>
           <div className="container">
             <div className="text-center" style={{marginBottom: '3rem'}}>
-              <h2>Why Choose Karachi Legal House</h2>
+              <h2>Why Choose Shams Law Chamber</h2>
               <p style={{color: 'var(--text-muted)', fontSize: '1.1rem'}}>
                 Trusted legal expertise you can rely on
               </p>
@@ -245,8 +245,8 @@ export default function ServicesPage() {
               <Link href="/book-consultation" className="btn btn-primary">
                 Book Free Consultation
               </Link>
-              <a href="tel:+923112610683" className="btn btn-secondary">
-                Call: +92 311 2610683
+              <a href="tel:+923103381280" className="btn btn-secondary">
+                Call: +92 310 3381280
               </a>
             </div>
             <div className={styles.ctaInfo}>

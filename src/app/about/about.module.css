@@ -233,32 +233,28 @@
 
 .missionImageWrapper {
   position: relative;
-  height: 500px;
+  min-height: 420px;
+  display: flex;
   overflow: hidden;
-}
-
-.missionImg {
-  object-fit: cover;
-  transition: all 0.5s ease;
-}
-
-.missionCard:hover .missionImg {
-  transform: scale(1.04);
+  background: linear-gradient(155deg, #141414 0%, #262626 55%, #101010 100%);
 }
 
 .missionOverlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%);
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   z-index: 1;
+  transition: inset 0.4s ease, border-color 0.4s ease;
+}
+.missionCard:hover .missionOverlay {
+  inset: 11px;
+  border-color: rgba(255, 255, 255, 0.32);
 }
 
 .missionCardContent {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2.5rem;
+  position: relative;
+  margin-top: auto;
+  padding: 3rem;
   z-index: 2;
 }
 
@@ -396,33 +392,6 @@
   overflow: hidden;
 }
 
-.expertiseImgWrapper {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-
-.expertiseImg {
-  object-fit: cover;
-  object-position: center;
-  transition: all 0.4s ease;
-}
-
-.expertiseOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  transition: background 0.4s ease;
-}
-
-.expertiseCard:hover .expertiseImg {
-  transform: scale(1.06);
-}
-
-.expertiseCard:hover .expertiseOverlay {
-  background: rgba(0,0,0,0.1);
-}
-
 .expertiseLabel {
   display: block;
   padding: 1.2rem 1.5rem;
@@ -441,6 +410,63 @@
 
 @media (max-width: 992px) { .expertiseGrid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 576px) { .expertiseGrid { grid-template-columns: 1fr; } }
+
+.expertisePanel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, #141414 0%, #262626 55%, #101010 100%);
+}
+.expertisePanel::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: inset 0.35s ease, border-color 0.35s ease;
+}
+.expertiseCard:hover .expertisePanel::after { inset: 7px; border-color: rgba(255, 255, 255, 0.35); }
+
+.expertiseNum {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.4rem;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.areaList {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+}
+.areaList li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 1rem 1.2rem;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 0.85rem;
+  color: #222;
+  background: #fff;
+  transition: background 0.2s ease;
+}
+.areaList li:hover { background: #f7f7f7; }
+.areaList li span {
+  font-family: var(--font-playfair), serif;
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 1px;
+}
+@media (max-width: 992px) { .areaList { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .areaList { grid-template-columns: 1fr; } }
 
 /* ═══════════════════════════════════════════
    CREDENTIALS
