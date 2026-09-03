@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { Scale, GraduationCap, Handshake, Briefcase, Lock, Zap, ArrowRight, CheckCircle } from "lucide-react";
+import PracticeVisual from "@/components/PracticeVisual";
 import { firm, practiceAreas } from "@/data/firm";
 import styles from "./about.module.css";
 
@@ -174,10 +175,8 @@ export default function AboutPage() {
             </div>
             <div className={styles.expertiseGrid}>
               {practiceAreas.filter((a) => a.href).slice(0, 6).map((e) => (
-                <Link href={e.href} key={e.title} className={styles.expertiseCard}>
-                  <div className={styles.expertisePanel}>
-                    <span className={styles.expertiseNum}>{e.n}</span>
-                  </div>
+                <Link href={e.href} key={e.title} className={`${styles.expertiseCard} practice-card`}>
+                  <PracticeVisual n={e.n} size="sm" />
                   <span className={styles.expertiseLabel}>{e.title}</span>
                 </Link>
               ))}

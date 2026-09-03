@@ -411,32 +411,6 @@
 @media (max-width: 992px) { .expertiseGrid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 576px) { .expertiseGrid { grid-template-columns: 1fr; } }
 
-.expertisePanel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(155deg, #141414 0%, #262626 55%, #101010 100%);
-}
-.expertisePanel::after {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: inset 0.35s ease, border-color 0.35s ease;
-}
-.expertiseCard:hover .expertisePanel::after { inset: 7px; border-color: rgba(255, 255, 255, 0.35); }
-
-.expertiseNum {
-  font-family: var(--font-playfair), serif;
-  font-size: 2.4rem;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.55);
-}
-
 .areaList {
   list-style: none;
   padding: 0;

@@ -3,7 +3,9 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, GraduationCap, Scale, Briefcase, Handshake } from "lucide-react";
+import PracticeVisual from "@/components/PracticeVisual";
 import styles from "./practice.module.css";
+import { practiceAreas } from "@/data/firm";
 import { servicesData } from "../services/[slug]/servicesData";
 
 export const metadata = {
@@ -12,9 +14,12 @@ export const metadata = {
 };
 
 export default function PracticeAreasPage() {
+  // Match each service page to its number in the firm profile so the card
+  // visual (icon + pattern) is the same one used on the home and about pages.
   const practices = Object.entries(servicesData).map(([slug, data]) => ({
     ...data,
-    link: `/services/${slug}`
+    link: `/services/${slug}`,
+    n: practiceAreas.find((a) => a.href === `/services/${slug}`)?.n,
   }));
 
   return (
@@ -39,11 +44,8 @@ export default function PracticeAreasPage() {
           <div className="container">
             <div className={styles.practiceGrid}>
               {practices.map((practice, index) => (
-                <div key={index} className={styles.practiceCard}>
-                  <div className={styles.cardImageWrapper}>
-                    <Image src={practice.image || '/images/hero_banner.png'} alt={practice.title} fill className={styles.cardImage} />
-                    <div className={styles.cardImageOverlay} />
-                  </div>
+                <div key={index} className={`${styles.practiceCard} practice-card`}>
+                  <PracticeVisual n={practice.n} title={practice.shortTitle} />
                   <div className={styles.cardContent}>
                     <div className={styles.cardHeader}>
                       <h2>{practice.title}</h2>

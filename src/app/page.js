@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Scale, Landmark, ShieldCheck, Users, Globe, HeartHandshake, BadgeCheck, Phone, ArrowRight, MapPin } from "lucide-react";
 import LogoMarquee from "@/components/LogoMarquee";
+import PracticeVisual from "@/components/PracticeVisual";
 import { firm, contact, offices, firmStats, practiceAreas, clientGroups, clientLogos, mediaLogos, whyUs } from "@/data/firm";
 import { partners } from "@/data/team";
 import styles from "./page.module.css";
@@ -195,11 +196,8 @@ export default function Home() {
 
             <div className={styles.practiceGrid}>
               {featured.map((area) => (
-                <Link href={area.href} key={area.title} className={styles.practiceCard}>
-                  <div className={styles.practiceCardHead}>
-                    <span className={styles.practiceNum}>{area.n}</span>
-                    <h3 className={styles.practiceCardTitle}>{area.title}</h3>
-                  </div>
+                <Link href={area.href} key={area.title} className={`${styles.practiceCard} practice-card`}>
+                  <PracticeVisual n={area.n} title={area.title} />
                   <div className={styles.practiceCardBody}>
                     <p>{area.desc}</p>
                     <span className={styles.practiceCardLink}>Learn More <ArrowRight size={14} /></span>

@@ -1,0 +1,164 @@
+.visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(155deg, #141414 0%, #262626 55%, #101010 100%);
+  isolation: isolate;
+}
+
+.md { height: 210px; padding: 1.6rem; }
+.sm { height: 100%; min-height: 220px; padding: 1.4rem; }
+
+/* Inner rule, matching the team monogram tiles. */
+.visual::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  transition: inset 0.35s ease, border-color 0.35s ease;
+  z-index: 3;
+}
+:global(.practice-card:hover) .visual::after,
+.visual:hover::after { inset: 7px; border-color: rgba(255, 255, 255, 0.34); }
+
+/* ── Distinct geometric pattern per practice area ── */
+.pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.5;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+:global(.practice-card:hover) .pattern,
+.visual:hover .pattern { opacity: 0.75; transform: scale(1.04); }
+
+/* 01 — fine diagonal rule */
+[data-variant="01"] .pattern {
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.09) 0 1px, transparent 1px 9px);
+}
+/* 02 — crosshatch */
+[data-variant="02"] .pattern {
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 14px);
+}
+/* 03 — dot matrix */
+[data-variant="03"] .pattern {
+  background-image: radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+/* 04 — vertical columns */
+[data-variant="04"] .pattern {
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.10) 0 1px, transparent 1px 18px);
+}
+/* 05 — ledger rules */
+[data-variant="05"] .pattern {
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.10) 0 1px, transparent 1px 11px);
+}
+/* 06 — chevrons */
+[data-variant="06"] .pattern {
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.09) 0 1px, transparent 1px 12px),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.09) 0 1px, transparent 1px 12px);
+}
+/* 07 — brick / plot grid */
+[data-variant="07"] .pattern {
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.09) 0 1px, transparent 1px 20px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 34px);
+}
+/* 08 — concentric rings */
+[data-variant="08"] .pattern {
+  background: repeating-radial-gradient(circle at 78% 26%, rgba(255,255,255,0.10) 0 1px, transparent 1px 16px);
+}
+/* 09 — steep diagonal */
+[data-variant="09"] .pattern {
+  background: repeating-linear-gradient(-45deg, rgba(255,255,255,0.09) 0 2px, transparent 2px 12px);
+}
+/* 10 — dashes */
+[data-variant="10"] .pattern {
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.14) 50%, transparent 50%);
+  background-size: 12px 2px;
+  background-repeat: repeat;
+}
+/* 11 — circuit grid */
+[data-variant="11"] .pattern {
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 10px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 10px),
+    radial-gradient(rgba(255,255,255,0.18) 1.2px, transparent 1.4px);
+  background-size: auto, auto, 30px 30px;
+}
+/* 12 — radiating burst */
+[data-variant="12"] .pattern {
+  background: repeating-conic-gradient(from 0deg at 76% 24%, rgba(255,255,255,0.10) 0deg 3deg, transparent 3deg 15deg);
+}
+/* 13 — interlocking waves */
+[data-variant="13"] .pattern {
+  background:
+    repeating-radial-gradient(circle at 22% 78%, rgba(255,255,255,0.09) 0 1px, transparent 1px 18px),
+    repeating-radial-gradient(circle at 78% 22%, rgba(255,255,255,0.09) 0 1px, transparent 1px 18px);
+}
+/* 14 — wide pillars */
+[data-variant="14"] .pattern {
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.12) 0 2px, transparent 2px 26px);
+}
+/* 15 — staggered dots */
+[data-variant="15"] .pattern {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.15) 1.3px, transparent 1.5px),
+    radial-gradient(rgba(255,255,255,0.10) 1.3px, transparent 1.5px);
+  background-size: 22px 22px, 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+/* 16 — expanding arcs */
+[data-variant="16"] .pattern {
+  background: repeating-radial-gradient(circle at 12% 88%, rgba(255,255,255,0.11) 0 1px, transparent 1px 22px);
+}
+
+/* ── Foreground ── */
+.icon {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.9rem;
+  width: 92px;
+  height: 92px;
+  color: rgba(255, 255, 255, 0.16);
+  z-index: 1;
+  transition: color 0.35s ease, transform 0.5s ease;
+}
+:global(.practice-card:hover) .icon,
+.visual:hover .icon { color: rgba(255, 255, 255, 0.3); transform: translateY(-3px) scale(1.05); }
+
+.sm .icon { width: 74px; height: 74px; right: 0.9rem; bottom: 0.8rem; }
+
+.num {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  font-family: var(--font-playfair), serif;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-playfair), serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  max-width: 11ch;
+  line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+  .md { height: 180px; }
+  .icon { width: 72px; height: 72px; }
+  .title { font-size: 1.25rem; }
+}
