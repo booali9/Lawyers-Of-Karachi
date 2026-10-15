@@ -90,7 +90,7 @@ export const teamByOffice = [
         members: [
           {
             name: "Mr. Saith Ali",
-            court: "Advocate High Court",
+            court: "Advocate High Court of Pakistan",
             credentials: "LL.B (Hons.)  ·  SZABUL",
             photo: "/images/team/saith-ali.jpg",
             experience: "3 years",
